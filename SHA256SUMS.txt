@@ -3,6 +3,9 @@ a86420ddc7fd29cd517809423248da81963762ea10b8ca94ffb66f9effdec64a  ./code/gnn-exp
 b02b130fd76528f7eb182a4efbf15250f1c88e8becddfea218fbce989c30d591  ./code/noc-simulations/run_comprehensive.sh
 bdfad27267a85633a674856b04f985834d45c9b9d8e8e86d78ed373dbc9c3d02  ./code/noc-simulations/run_noc_experiments.sh
 0ee420a4c9029e013dee7621ed5344cc9375b474d6a19902d950ba5694adb0b7  ./code/noc-simulations/run_5seeds.sh
+7e582186a3188027587d59db360bf3b9d3ae70cd3df18eacb77f6efdf4d05d3b  ./code/analysis/gnn-noc-experiment.py
+a86420ddc7fd29cd517809423248da81963762ea10b8ca94ffb66f9effdec64a  ./code/analysis/graph-noc-demo.py
+ba8e98b22da3512e458d03a0a389979292ecb85d5de40641a48cac60c49440b9  ./code/analysis/gnn-experiment-summary.txt
 9eb17d02c7a6c4cc769fad7bad7e6ebc33816c4b9c1544cc4942f4ca5303dce8  ./figures/gnn-scalability.png
 61dab5eeb830873379301cc7dccb2d06bdd962647fd9c90adf8f3d5163ab8d10  ./figures/gnn-results-summary.png
 bc77766b83997fdfd57dab34db08af054fbec0d7154a1f9d21cfe749491d6cd2  ./figures/booksim_comparison_1.png
@@ -10,6 +13,17 @@ bc77766b83997fdfd57dab34db08af054fbec0d7154a1f9d21cfe749491d6cd2  ./figures/book
 fba61fb03418b0d63ac9e2d8832f073bc1b8e3d2e851000d1a8ead38eef5e75d  ./figures/booksim_adaptive_benefit.png
 66d709b9d56d29a2ccaf172071ca3cb7cc081d74b0baee57c61939879ffad247  ./paper/paper.tex
 665dfcd3b8792b5dc7cdfb62db990adcefa2840d00c34479aaa478df31fb0add  ./paper/paper.pdf
+fd2018a7446a269507ba272d7acab2722eef6cd170df3916b393422a0dc640d3  ./paper/ars-output/ars-lit-review-2026-05-14T08-33-56.prompt.md
+2fb0d460994af5959f667b5efbf5b073cd4f64036432b7ddfe12329a0c55afab  ./paper/ars-output/ars-lit-review-final.md
+de2a919e88d3dae634d33221101de1df142cb194e271d67d212fbd4b29c03af8  ./paper/ars-output/ars-plan-2026-05-14T03-37-13.prompt.md
+f8fac3ad1045451c01ce98e4169f78eb200bb6a6bd64678337bcab6d1585da8e  ./paper/ars-output/ars-plan-2026-05-14T03-38-25.prompt.md
+3abef14b238e6b77c0f861a02c387b6d6b9ef09657f9dbc27cd2cbbf8730d5ae  ./paper/ars-output/ars-plan-2026-05-14T08-33-50.prompt.md
+10f2932acb973c9bcd6089905b9701a715ac9f39135f32c62cf3f319ac9aa1e0  ./paper/ars-output/ars-plan-final.md
+a495df713f2e6d45d2f85dda4e3d2d52021a6167f4fd52f7cddd91700a80f477  ./paper/ars-output/ars-review-final.md
+fc278d7ad8dfa91e6d8734245cf3b9e77b70690a5ea9eb1a5ca405c67e4f5c1e  ./paper/ars-output/paper-GNNocRoute-hoan-chinh.md
+f06aed9b6c5af79a4d9c677132a0235d6ea0c8d4935a9c051f029a294c23e707  ./paper/ars-output/revision-plan-v3.md
+f9348efbcdbaef282d6d3cd37c7088bc3972e75fae990e09c14bf601ed07e71a  ./paper/ars-output/paper-GNNocRoute.tex
+d9f6228de7d1ca45e8fb954370b2238a6d37775d29df9ad8d3fae017345d6917  ./paper/ars-output/paper-GNNocRoute-v3.tex
 99cd312de6dd684b4cbbedbf4d8db30c827f73a076a2c32ca2b5aa850e80bb0c  ./results/gnn-experiment-results.json
 656c29d3510e597f47035a56fe68ade1a764cd0527d2ca164156186f69b9ba58  ./results/booksim2_summary_v2.csv
 52b4d5fcc1d72231b500a6952850443dd5926141fa86d5dffe641e203b171b37  ./results/mesh44_dor_uniform_inj0.02.txt
@@ -534,4 +548,5 @@ f092df89012410eed3df4f9f1b6fe67bf71a5b341a4bc1765486a8613f64616e  ./results/book
 05e420b9e01efdbc228d816af6f5b3dccb917140c9c41e02bb689153ac386723  ./results/aggregate_5seeds.csv
 f6e04d9023f002aad52e0d509388ec404354875e7e6630bf66b0a891661fc30f  ./results/summary_5seeds.csv
 53f21b64c5b48c58ad3af57d61f005e96e3dfdf6d433462642e953de0f9e9717  ./README.md
-4c1462205b8d4cfb3666e02f3a1956422992fcf76919a98ac996a16359c1bacd  ./SHA256SUMS.txt
+5d56fbebde9bc3ca1ee1df693d52129f4b86b874aef98d00540570771c6e1a57  ./SHA256SUMS.txt
+5f57b29c5a5a02b73bbf63f88704228966b62919109376fb7200154f0ed23a49  ./.gitignore
