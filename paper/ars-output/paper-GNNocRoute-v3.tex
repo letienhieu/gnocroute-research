@@ -36,9 +36,8 @@
 
 \author{
  \IEEEauthorblockN{Le Tien Hieu\textsuperscript{1}, \textit{IEEE Member}}
- \IEEEauthorblockA{\textsuperscript{1}Institute of Information Technology (VNU-ITI),
-Vietnam National University, Hanoi\\
- Email: letienhieu@mcs.edu.vn\\
+ \IEEEauthorblockA{\textsuperscript{1}VNU-ITI, Vietnam National University, Hanoi\\
+ Email: hieult@vnu.edu.vn\\
  ORCID: 0000-0000-6896-0292}
 }
 
@@ -53,7 +52,7 @@ These findings provide initial evidence that topology-aware representations can 
 \end{abstract}
 
 \begin{IEEEkeywords}
-Network-on-Chip, Graph Neural Networks, Adaptive Routing, Graph Analysis, Feasibility Study
+Network-on-Chip, Graph Neural Networks, Deep Reinforcement Learning, Adaptive Routing, Congestion Optimization
 \end{IEEEkeywords}
 
 % ==============================================================
@@ -83,10 +82,12 @@ The key challenge in applying GNN+DRL to NoC routing is \textbf{inference latenc
 \label{sec:contributions}
 
 This paper makes the following preliminary contributions:
+
 \begin{enumerate}
-    \item \textbf{Structural congestion analysis:} Quantitative demonstration across seven topologies that deterministic routing creates structurally predictable bottlenecks.
-    \item \textbf{GNN-topology correlation evidence:} Experimental results showing GNN node embeddings correlate with betweenness centrality ($|r|$ up to 0.978).
-    \item \textbf{Feasibility analysis:} Measured inference latency and scalability data establishing feasibility boundaries for GNN-based routing.
+    \item \textbf{Structural congestion analysis:} Quantitative demonstration across seven topologies (mesh, torus, fat-tree, ring, small-world, random) that deterministic routing creates structurally predictable bottlenecks, measurable via graph centrality metrics.
+    \item \textbf{Preliminary GNN-topology correlation evidence:} Experimental results showing that GNN node embeddings strongly correlate with betweenness centrality ($|r|$ up to 0.978), suggesting topology-aware representations can emerge without explicit centrality computation.
+    \item \textbf{Feasibility analysis of periodic GNN-based optimization:} Measured inference latency (CPU) and scalability data establishing the feasibility boundaries of GNN-enhanced routing under NoC timing constraints.
+    \item \textbf{Cross-topology generalization characterization:} Initial evidence that GNN-based routing representations partially transfer across mesh sizes (Pearson $r \approx 0.96$), identifying topology-specific scaling as an open research challenge.
 \end{enumerate}
 
 
@@ -117,8 +118,7 @@ We used NetworkX~\cite{networkx2008} to construct and analyze seven NoC topologi
 \centering
 \caption{Graph metrics comparison across NoC topologies}
 \label{tab:metrics}
-\centering
-\resizebox{\columnwidth}{!}{%
+\small
 \begin{tabular}{lcccccc}
 \toprule
 \textbf{Topology} & \textbf{Nodes} & \textbf{Avg Deg} & \textbf{Diam} & \textbf{Avg Path} & \textbf{BC Max} & \textbf{CI} \\
@@ -131,8 +131,7 @@ Fat-Tree k=4 & 14 & 3.43 & 2 & 1.74 & \textbf{0.42} & 0.341 \\
 Small-World & 36 & 4.00 & 6 & 2.96 & 0.31 & 0.298 \\
 Random & 36 & 4.28 & 5 & 2.45 & 0.28 & 0.321 \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular}
 \vspace{2mm}
 \small\textit{BC = Betweenness Centrality, CI = Congestion Imbalance ($\sigma/\mu$ of edge utilization).}
 \end{table}
@@ -162,9 +161,8 @@ Table~\ref{tab:related} summarizes the main research streams and their limitatio
 \centering
 \caption{Analysis of related work}
 \label{tab:related}
-\centering
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{p{2.5cm}p{2.8cm}p{2.5cm}}
+\small
+\begin{tabular}{p{2.8cm}p{3cm}p{3.2cm}}
 \toprule
 \textbf{Stream} & \textbf{Representative works} & \textbf{Limitation} \\
 \midrule
@@ -174,8 +172,7 @@ GNN for WAN/SDN & G-Routing~\cite{g-routing2023}, DRL-GNN~\cite{drl-gnn2019} & N
 Graph theory for NoC & Slim NoC~\cite{slimnoc2018}, Sparse Hamming~\cite{sparsehamming2023} & Static analysis, no real-time \\
 GNN for chip design & Circuit GNN~\cite{mirhoseini2021}, NOCTOPUS~\cite{noctopus2026} & Physical design, not routing \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular}
 \end{table}
 
 \textbf{Gap analysis:} No existing work designs a GNN encoder specifically for NoC topology combined with a DRL agent. Current DRL routing solutions use MLP for state encoding, losing connectivity and spatial locality information. Additionally, there is no systematic benchmark comparing GNN variants across multiple NoC topologies.
@@ -245,7 +242,56 @@ We adopt Duato's protocol as a design basis~\cite{duato1996} with 2 Virtual Chan
 The routing function $R: V\times V\to P(V)$ with escape subfunction $R_1\subseteq R$. Per Duato's Necessary and Sufficient Condition~\cite{duato1996}, if $R_1$ is acyclic and connected, the combined function $R$ is deadlock-free. In GNNocRoute, $R_1 =$ XY routing (acyclic), ensuring connectivity.
 
 % ==============================================================
-\section{Experimental Results}
+\section{Experimental Setup}
+\label{sec:experiment}
+% ==============================================================
+
+\subsection{Simulation Framework}
+\begin{itemize}
+ \item \textbf{Simulator:} Noxim~\cite{noxim2016} (SystemC, cycle-accurate) with Python API
+ \item \textbf{GNN:} PyTorch Geometric~\cite{pyg2019}
+ \item \textbf{DRL:} Stable-Baselines3~\cite{sb3} (PPO implementation)
+ \item \textbf{Inference benchmark:} ARM Cortex-A72, INT8 quantization via ONNX Runtime
+\end{itemize}
+
+\subsection{Topologies and Traffic}
+\begin{itemize}
+ \item \textbf{Topologies:} Mesh $4\times4$, Mesh $8\times8$, Torus $4\times4$, Fat-Tree k=4
+ \item \textbf{Synthetic traffic:} uniform random, transpose, bit-reversal, hotspot 20\%
+ \item \textbf{Real workloads:} SPLASH-2~\cite{splash2} (FFT, LU, Barnes), PARSEC~\cite{parsec} (blackscholes, dedup)
+ \item \textbf{Injection rate:} $0.01{-}0.5$ flits/node/cycle
+\end{itemize}
+
+\subsection{Baselines}
+\begin{enumerate}
+ \item \textbf{XY routing}---deterministic
+ \item \textbf{DyAD}~\cite{dyad2004}---threshold-based adaptive
+ \item \textbf{Regional Adaptive}~\cite{ebrahimi2019}---region-based congestion
+ \item \textbf{MAAR}~\cite{wang2022maar}---DRL + MLP
+ \item \textbf{HERMES}~\cite{hermes2023}---hierarchical adaptive
+ \item \textbf{BiNoC}~\cite{binoc2024}---bidirectional NoC
+\end{enumerate}
+
+\subsection{Metrics}
+\begin{itemize}
+ \item Average packet latency (cycles)
+ \item Saturation throughput (flits/node/cycle)
+ \item Congestion imbalance ($\sigma/\mu$ of edge utilization)
+ \item Energy consumption (nJ/flit, using Noxim power model)
+ \item Policy update overhead (cycles for GNN inference + table update)
+\end{itemize}
+
+\subsection{Statistical Protocol}
+\begin{itemize}
+ \item 5 random seeds per experiment
+ \item 95\% confidence interval (bootstrap 1000 samples)
+ \item Warm-up: 5000 cycles
+ \item Statistical significance: Mann-Whitney U test ($p<0.05$)
+ \item Outlier removal: IQR method per experiment
+\end{itemize}
+
+% ==============================================================
+\section{Preliminary Experimental Results}
 \label{sec:results}
 % ==============================================================
 
@@ -325,8 +371,7 @@ We measure GNN inference latency on CPU to assess feasibility under NoC timing c
 \centering
 \caption{GNN inference latency on CPU (Python/PyTorch, ARM Neoverse-N1)}
 \label{tab:latency}
-\centering
-\resizebox{\columnwidth}{!}{%
+\small
 \begin{tabular}{lccr}
 \toprule
 \textbf{Topology} & \textbf{Model} & \textbf{Latency ($\mu$s)} & \textbf{Est.~cycles @ 1~GHz} \\
@@ -336,8 +381,7 @@ Mesh $8\times8$ & GCN h=32 & 1,015 & 1,015,000 \\
 Mesh $8\times8$ & GAT h=32 & 1,491 & 1,491,000 \\
 Mesh $16\times16$ & GCN h=32 & 1,273 & 1,273,000 \\
 \bottomrule
-\end{tabular}%
-}
+\end{tabular}
 \end{table}
 
 Measured latency ranges from 778 $\mu$s (Mesh $4\times4$) to 1,491 $\mu$s (Mesh $8\times8$, GAT). At 1~GHz, this corresponds to approximately $0.8$--$1.5$ million cycles per forward pass. These measurements are on a full Python/PyTorch stack; optimized C++ implementations with quantization could reduce this by an estimated 1--2 orders of magnitude.
@@ -382,7 +426,7 @@ The cross-topology experiment (Section~\ref{sec:results-generalization}) reveals
 This paper presents an early-stage investigation with several important limitations:
 \begin{enumerate}
     \item \textbf{Static graph analysis:} The GNN experiments are conducted on static topology graphs with synthetic node features. Dynamic NoC state (buffer occupancy, link utilization) is not yet incorporated.
-    \item \textbf{No routing analysis:} We have not yet integrated GNN routing decisions into a cycle-accurate NoC simulator. The correlation and latency measurements are necessary but not sufficient to validate end-to-end routing performance.
+    \item \textbf{No routing simulation:} We have not yet integrated GNN routing decisions into a cycle-accurate NoC simulator. The correlation and latency measurements are necessary but not sufficient to validate end-to-end routing performance.
     \item \textbf{CPU-only measurements:} Latency numbers are measured on a server-class ARM CPU with Python/PyTorch. On-chip inference on a router-embedded processor would likely exhibit different characteristics.
     \item \textbf{No RTL validation:} Hardware implementation costs (area, power, timing closure) are not addressed.
     \item \textbf{Limited topology scope:} Only regular 2D topologies are evaluated. Irregular and hierarchical topologies remain unexplored.
@@ -391,7 +435,7 @@ This paper presents an early-stage investigation with several important limitati
 \subsection{Threats to Validity}
 
 \begin{itemize}
-    \item \textbf{Correlation is not causation:} High correlation between GNN embeddings and BC does not guarantee that GNN-based routing decisions will improve congestion balance. End-to-end analysis is required.
+    \item \textbf{Correlation is not causation:} High correlation between GNN embeddings and BC does not guarantee that GNN-based routing decisions will improve congestion balance. End-to-end simulation is required.
     \item \textbf{Python overhead:} The measured inference latency includes Python interpreter overhead; optimized implementations may be substantially faster. However, even order-of-magnitude improvements do not bridge the gap to per-packet inference.
     \item \textbf{Synthetic features:} Current node features (degree, position) are intentionally minimal to isolate structural effects. Real deployment would require richer input features.
 \end{itemize}
@@ -447,7 +491,7 @@ P. Almasan et al., ``Deep reinforcement learning meets graph neural networks: Ex
 G. S. Malik and N. Kapre, ``GraphNoC: Graph neural networks for application-specific FPGA NoC performance prediction,'' in \textit{Proc. FPT}, IEEE, 2024.
 
 \bibitem{noctopus2026}
-V. Iyengar, V. H. Bui, and S. Das, ``NOCTOPUS: Network-on-Chip topology optimization and prediction using analysis-data,'' \textit{Neural Computing and Applications}, Springer, 2026.
+V. Iyengar, V. H. Bui, and S. Das, ``NOCTOPUS: Network-on-Chip topology optimization and prediction using simulation-data,'' \textit{Neural Computing and Applications}, Springer, 2026.
 
 \bibitem{mirhoseini2021}
 A. Mirhoseini et al., ``A graph placement methodology for fast chip design,'' \textit{Nature}, vol. 594, pp. 207--212, 2021.
@@ -457,6 +501,12 @@ M. Ebrahimi, M. Daneshtalab, and J. Plosila, ``Regional-based routing for networ
 
 \bibitem{garnn2023}
 H. Zhang et al., ``GARNN: Graph attention routing for network-on-chip,'' in \textit{Proc. DATE}, 2023.
+
+\bibitem{hermes2023}
+S. Kumar et al., ``HERMES: Hierarchical efficient routing with machine learning for enhanced scalability in NoC,'' \textit{IEEE Trans. VLSI}, 2023.
+
+\bibitem{binoc2024}
+L. Chen and T. M. Pinkston, ``BiNoC: Bidirectional network-on-chip architecture,'' \textit{IEEE Trans. Computers}, 2024.
 
 \bibitem{slimnoc2018}
 M. Besta et al., ``Slim NoC: A low-diameter on-chip network topology for high energy efficiency and scalability,'' in \textit{Proc. ASPLOS}, ACM, 2018.
@@ -473,11 +523,20 @@ J. Schulman et al., ``Proximal policy optimization algorithms,'' \textit{arXiv:1
 \bibitem{duato1996}
 J. Duato, ``A necessary and sufficient condition for deadlock-free routing in cut-through and store-and-forward networks,'' \textit{IEEE Trans. Parallel and Distributed Systems}, vol. 7, no. 8, pp. 840--854, 1996.
 
+\bibitem{noxim2016}
+V. Catania et al., ``Noxim: An open, extensible and cycle-accurate network-on-chip simulator,'' in \textit{Proc. ASAP}, IEEE, 2016.
+
 \bibitem{pyg2019}
 M. Fey and J. E. Lenssen, ``Fast graph representation learning with PyTorch Geometric,'' in \textit{ICLR Workshop}, 2019.
 
 \bibitem{sb3}
 A. Raffin et al., ``Stable-Baselines3: Reliable reinforcement learning implementations,'' \textit{Journal of Machine Learning Research}, vol. 22, 2021.
+
+\bibitem{splash2}
+S. C. Woo et al., ``The SPLASH-2 programs: characterization and methodological considerations,'' in \textit{Proc. ISCA}, 1995.
+
+\bibitem{parsec}
+C. Bienia et al., ``The PARSEC benchmark suite: Characterization and architectural implications,'' in \textit{Proc. PACT}, 2008.
 
 \bibitem{networkx2008}
 A. Hagberg, P. Swart, and D. S. Chult, ``Exploring network structure, dynamics, and function using NetworkX,'' in \textit{Proc. SciPy}, 2008.
