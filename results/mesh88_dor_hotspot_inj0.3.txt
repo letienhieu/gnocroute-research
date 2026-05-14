@@ -1,0 +1,3 @@
+Packet latency average = 450.581
+Injected packet rate average = 0.009125
+Accepted packet rate average = 0.0051875

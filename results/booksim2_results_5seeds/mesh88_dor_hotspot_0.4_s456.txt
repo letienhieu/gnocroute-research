@@ -1,0 +1,56 @@
+BEGIN Configuration File: /tmp/noc_mesh88_dor_hotspot_0.4_s456.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = dor;
+num_vcs = 4;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+priority = local_age;
+sim_type = latency;
+warmup_periods = 5;
+sample_period = 2000;
+sim_count = 1;
+print_csv_results = 1;
+traffic = hotspot;
+injection_rate = 0.4;
+packet_size = 1;
+seed = 456;
+
+END Configuration File: /tmp/noc_mesh88_dor_hotspot_0.4_s456.cfg
+Class 0:
+Packet latency average = 866.99
+	minimum = 7
+	maximum = 1939
+Network latency average = 246.728
+	minimum = 7
+	maximum = 1909
+Slowest packet = 360
+Flit latency average = 246.728
+	minimum = 7
+	maximum = 1909
+Slowest flit = 360
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0143203
+	minimum = 0.0025 (at node 57)
+	maximum = 0.136 (at node 11)
+Accepted packet rate average = 0.010375
+	minimum = 0 (at node 0)
+	maximum = 0.664 (at node 11)
+Injected flit rate average = 0.0143203
+	minimum = 0.0025 (at node 57)
+	maximum = 0.136 (at node 11)
+Accepted flit rate average= 0.010375
+	minimum = 0 (at node 0)
+	maximum = 0.664 (at node 11)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 569 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.292155

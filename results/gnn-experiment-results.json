@@ -1,0 +1,410 @@
+{
+  "embedding_correlation": [
+    {
+      "topology": "Mesh 4x4",
+      "model": "GCN",
+      "num_nodes": 16,
+      "max_corr": 0.9783,
+      "avg_corr": 0.7,
+      "emb_dim": 16
+    },
+    {
+      "topology": "Mesh 4x4",
+      "model": "GAT",
+      "num_nodes": 16,
+      "max_corr": 0.8617,
+      "avg_corr": 0.3222,
+      "emb_dim": 16
+    },
+    {
+      "topology": "Mesh 8x8",
+      "model": "GCN",
+      "num_nodes": 64,
+      "max_corr": 0.744,
+      "avg_corr": 0.3867,
+      "emb_dim": 16
+    },
+    {
+      "topology": "Mesh 8x8",
+      "model": "GAT",
+      "num_nodes": 64,
+      "max_corr": 0.8698,
+      "avg_corr": 0.3612,
+      "emb_dim": 16
+    },
+    {
+      "topology": "Torus 4x4",
+      "model": "GCN",
+      "num_nodes": 16,
+      "max_corr": 0,
+      "avg_corr": 0,
+      "emb_dim": 16
+    },
+    {
+      "topology": "Torus 4x4",
+      "model": "GAT",
+      "num_nodes": 16,
+      "max_corr": 0,
+      "avg_corr": 0,
+      "emb_dim": 16
+    },
+    {
+      "topology": "SmallWorld 36",
+      "model": "GCN",
+      "num_nodes": 36,
+      "max_corr": 0.6146,
+      "avg_corr": 0.5805,
+      "emb_dim": 16
+    },
+    {
+      "topology": "SmallWorld 36",
+      "model": "GAT",
+      "num_nodes": 36,
+      "max_corr": 0.2613,
+      "avg_corr": 0.2561,
+      "emb_dim": 16
+    }
+  ],
+  "bc_prediction": [
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GCN",
+      "test_on": "Mesh 8x8",
+      "test_nodes": 64,
+      "mse": 0.037793,
+      "r2": -16.8255,
+      "pearson_r": 0.9584
+    },
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GCN",
+      "test_on": "Torus 4x4",
+      "test_nodes": 16,
+      "mse": 0.092165,
+      "r2": 0,
+      "pearson_r": NaN
+    },
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GCN",
+      "test_on": "SmallWorld 36",
+      "test_nodes": 36,
+      "mse": 0.004114,
+      "r2": -1.0173,
+      "pearson_r": 0.3851
+    },
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GAT",
+      "test_on": "Mesh 8x8",
+      "test_nodes": 64,
+      "mse": 0.072087,
+      "r2": -33.0009,
+      "pearson_r": 0.9722
+    },
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GAT",
+      "test_on": "Torus 4x4",
+      "test_nodes": 16,
+      "mse": 0.195345,
+      "r2": 0,
+      "pearson_r": NaN
+    },
+    {
+      "train_on": "Mesh 4x4",
+      "model": "GAT",
+      "test_on": "SmallWorld 36",
+      "test_nodes": 36,
+      "mse": 0.014886,
+      "r2": -6.2988,
+      "pearson_r": 0.2568
+    }
+  ],
+  "inference_latency": [
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GCN",
+      "hidden_dim": 16,
+      "avg_ms": 0.7668,
+      "avg_us": 766.8,
+      "est_cycles_1ghz": 766847.0,
+      "est_cycles_15ghz": 1150271.0
+    },
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GCN",
+      "hidden_dim": 32,
+      "avg_ms": 0.778,
+      "avg_us": 778.0,
+      "est_cycles_1ghz": 778049.0,
+      "est_cycles_15ghz": 1167073.0
+    },
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GCN",
+      "hidden_dim": 64,
+      "avg_ms": 0.9555,
+      "avg_us": 955.5,
+      "est_cycles_1ghz": 955548.0,
+      "est_cycles_15ghz": 1433322.0
+    },
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GAT",
+      "hidden_dim": 16,
+      "avg_ms": 1.208,
+      "avg_us": 1208.0,
+      "est_cycles_1ghz": 1208009.0,
+      "est_cycles_15ghz": 1812013.0
+    },
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GAT",
+      "hidden_dim": 32,
+      "avg_ms": 1.213,
+      "avg_us": 1213.0,
+      "est_cycles_1ghz": 1213042.0,
+      "est_cycles_15ghz": 1819564.0
+    },
+    {
+      "topology": "Mesh 4x4",
+      "num_nodes": 16,
+      "model": "GAT",
+      "hidden_dim": 64,
+      "avg_ms": 1.4038,
+      "avg_us": 1403.8,
+      "est_cycles_1ghz": 1403786.0,
+      "est_cycles_15ghz": 2105679.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 16,
+      "avg_ms": 0.9951,
+      "avg_us": 995.1,
+      "est_cycles_1ghz": 995127.0,
+      "est_cycles_15ghz": 1492690.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 32,
+      "avg_ms": 1.0145,
+      "avg_us": 1014.5,
+      "est_cycles_1ghz": 1014474.0,
+      "est_cycles_15ghz": 1521711.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 64,
+      "avg_ms": 1.0893,
+      "avg_us": 1089.3,
+      "est_cycles_1ghz": 1089270.0,
+      "est_cycles_15ghz": 1633905.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 16,
+      "avg_ms": 1.6001,
+      "avg_us": 1600.1,
+      "est_cycles_1ghz": 1600057.0,
+      "est_cycles_15ghz": 2400086.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 32,
+      "avg_ms": 1.491,
+      "avg_us": 1491.0,
+      "est_cycles_1ghz": 1490992.0,
+      "est_cycles_15ghz": 2236488.0
+    },
+    {
+      "topology": "Mesh 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 64,
+      "avg_ms": 1.5439,
+      "avg_us": 1543.9,
+      "est_cycles_1ghz": 1543929.0,
+      "est_cycles_15ghz": 2315893.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GCN",
+      "hidden_dim": 16,
+      "avg_ms": 1.184,
+      "avg_us": 1184.0,
+      "est_cycles_1ghz": 1183982.0,
+      "est_cycles_15ghz": 1775974.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GCN",
+      "hidden_dim": 32,
+      "avg_ms": 1.273,
+      "avg_us": 1273.0,
+      "est_cycles_1ghz": 1272967.0,
+      "est_cycles_15ghz": 1909450.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GCN",
+      "hidden_dim": 64,
+      "avg_ms": 1.4112,
+      "avg_us": 1411.2,
+      "est_cycles_1ghz": 1411163.0,
+      "est_cycles_15ghz": 2116744.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GAT",
+      "hidden_dim": 16,
+      "avg_ms": 1.8492,
+      "avg_us": 1849.2,
+      "est_cycles_1ghz": 1849235.0,
+      "est_cycles_15ghz": 2773853.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GAT",
+      "hidden_dim": 32,
+      "avg_ms": 1.8849,
+      "avg_us": 1884.9,
+      "est_cycles_1ghz": 1884861.0,
+      "est_cycles_15ghz": 2827291.0
+    },
+    {
+      "topology": "Mesh 16x16",
+      "num_nodes": 256,
+      "model": "GAT",
+      "hidden_dim": 64,
+      "avg_ms": 2.0604,
+      "avg_us": 2060.4,
+      "est_cycles_1ghz": 2060432.0,
+      "est_cycles_15ghz": 3090649.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 16,
+      "avg_ms": 1.0034,
+      "avg_us": 1003.4,
+      "est_cycles_1ghz": 1003389.0,
+      "est_cycles_15ghz": 1505084.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 32,
+      "avg_ms": 1.0314,
+      "avg_us": 1031.4,
+      "est_cycles_1ghz": 1031430.0,
+      "est_cycles_15ghz": 1547145.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GCN",
+      "hidden_dim": 64,
+      "avg_ms": 1.0843,
+      "avg_us": 1084.3,
+      "est_cycles_1ghz": 1084305.0,
+      "est_cycles_15ghz": 1626458.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 16,
+      "avg_ms": 1.4653,
+      "avg_us": 1465.3,
+      "est_cycles_1ghz": 1465321.0,
+      "est_cycles_15ghz": 2197981.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 32,
+      "avg_ms": 1.5041,
+      "avg_us": 1504.1,
+      "est_cycles_1ghz": 1504141.0,
+      "est_cycles_15ghz": 2256212.0
+    },
+    {
+      "topology": "Torus 8x8",
+      "num_nodes": 64,
+      "model": "GAT",
+      "hidden_dim": 64,
+      "avg_ms": 1.5544,
+      "avg_us": 1554.4,
+      "est_cycles_1ghz": 1554391.0,
+      "est_cycles_15ghz": 2331587.0
+    }
+  ],
+  "scalability": [
+    {
+      "mesh_size": 4,
+      "num_nodes": 16,
+      "num_edges": 24,
+      "inference_us": 773.3,
+      "us_per_node": 48.333
+    },
+    {
+      "mesh_size": 6,
+      "num_nodes": 36,
+      "num_edges": 60,
+      "inference_us": 980.1,
+      "us_per_node": 27.226
+    },
+    {
+      "mesh_size": 8,
+      "num_nodes": 64,
+      "num_edges": 112,
+      "inference_us": 1018.0,
+      "us_per_node": 15.907
+    },
+    {
+      "mesh_size": 10,
+      "num_nodes": 100,
+      "num_edges": 180,
+      "inference_us": 1072.4,
+      "us_per_node": 10.724
+    },
+    {
+      "mesh_size": 12,
+      "num_nodes": 144,
+      "num_edges": 264,
+      "inference_us": 1135.8,
+      "us_per_node": 7.888
+    },
+    {
+      "mesh_size": 16,
+      "num_nodes": 256,
+      "num_edges": 480,
+      "inference_us": 1265.7,
+      "us_per_node": 4.944
+    }
+  ]
+}

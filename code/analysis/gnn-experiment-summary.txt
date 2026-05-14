@@ -1,0 +1,49 @@
+# GNN-NOC Experiment Results — Summary
+# Date: 14/05/2026
+
+## 1. GNN Embedding ↔ Betweenness Centrality Correlation
+| Topology | GCN max|r| | GAT max|r| | N nodes |
+|---|---|---|---|---|
+| Mesh 4×4 | **0.978** | **0.862** | 16 |
+| Mesh 8×8 | **0.744** | **0.870** | 64 |
+| Torus 4×4 | 0.000 | 0.000 | 16 |
+| SmallWorld 36 | 0.615 | 0.261 | 36 |
+
+**Kết luận:** GNN node embeddings (chưa qua training) đã có tương quan rất cao với BC trên Mesh. Torus có correlation=0 vì regular graph (mọi node degree=4, BC phân bố đều). Đây là bằng chứng GNN có thể "học" cấu trúc topology.
+
+## 2. BC Prediction (train Mesh 4×4 → test trên topology khác)
+| Model | Test Topology | R² | Pearson r |
+|---|---|---|---|
+| GCN | Mesh 8×8 | -16.83 | **0.958** |
+| GCN | SmallWorld 36 | -1.02 | **0.385** |
+| GAT | Mesh 8×8 | -33.00 | **0.972** |
+
+**Kết luận quan trọng:** 
+- R² âm vì scale BC giữa Mesh 4×4 và 8×8 khác nhau
+- Nhưng Pearson r ≈ 0.96 → thứ tự ranking BC vẫn đúng!
+- Điều này cho thấy: GNN học được pattern topology NHƯNG cần topology-specific scaling
+- Cơ hội cho research: topology-agnostic normalization
+
+## 3. Inference Latency (CPU, Python/PyTorch)
+| Topology | GCN h=32 | GAT h=32 | Notes |
+|---|---|---|---|
+| Mesh 4×4 | 778 μs (~778K cyc) | 1213 μs | Python overhead lớn |
+| Mesh 8×8 | 1015 μs (~1M cyc) | 1491 μs | |
+| Mesh 16×16 | 1273 μs (~1.3M cyc) | 1885 μs | |
+| Torus 8×8 | 1031 μs | 1504 μs | |
+
+**Kết luận (quan trọng cho paper):**
+- Python/PyTorch trên CPU: ~1 triệu cycles ⇒ KHÔNG khả thi cho per-packet
+- Nhưng với C++ optimized + INT8 quantization: ước tính 10-50K cycles
+- Với P=10000 cycles periodic update ⇒ không khả thi trên Python
+- Với P=100000 cycles ⇒ overhead 10-50% (có thể chấp nhận)
+- **Hướng đi đúng:** periodic update, nhưng cần hardware acceleration hoặc model nhỏ hơn
+
+## 4. Scalability
+| Mesh size | Nodes | Inference time | us/node |
+|---|---|---|---|
+| 4×4 | 16 | 773 μs | 48.3 |
+| 8×8 | 64 | 1018 μs | 15.9 |
+| 16×16 | 256 | 1266 μs | **4.9** |
+
+**Kết luận:** GNN inference scale gần như O(N) — predictable, không explosion.

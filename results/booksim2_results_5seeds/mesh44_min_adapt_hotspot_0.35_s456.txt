@@ -1,0 +1,56 @@
+BEGIN Configuration File: /tmp/noc_mesh44_min_adapt_hotspot_0.35_s456.cfg
+topology = mesh;
+k = 4;
+n = 2;
+routing_function = min_adapt;
+num_vcs = 4;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+priority = local_age;
+sim_type = latency;
+warmup_periods = 5;
+sample_period = 2000;
+sim_count = 1;
+print_csv_results = 1;
+traffic = hotspot;
+injection_rate = 0.35;
+packet_size = 1;
+seed = 456;
+
+END Configuration File: /tmp/noc_mesh44_min_adapt_hotspot_0.35_s456.cfg
+Class 0:
+Packet latency average = 757.798
+	minimum = 7
+	maximum = 1940
+Network latency average = 145.476
+	minimum = 7
+	maximum = 1903
+Slowest packet = 101
+Flit latency average = 145.476
+	minimum = 7
+	maximum = 1903
+Slowest flit = 101
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0452813
+	minimum = 0.0085 (at node 0)
+	maximum = 0.167 (at node 11)
+Accepted packet rate average = 0.0414062
+	minimum = 0 (at node 0)
+	maximum = 0.6625 (at node 11)
+Injected flit rate average = 0.0452813
+	minimum = 0.0085 (at node 0)
+	maximum = 0.167 (at node 11)
+Accepted flit rate average= 0.0414062
+	minimum = 0 (at node 0)
+	maximum = 0.6625 (at node 11)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 138 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.0584061

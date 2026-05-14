@@ -1,0 +1,56 @@
+BEGIN Configuration File: /tmp/noc_mesh88_min_adapt_uniform_0.45_s999.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = min_adapt;
+num_vcs = 4;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+priority = local_age;
+sim_type = latency;
+warmup_periods = 5;
+sample_period = 2000;
+sim_count = 1;
+print_csv_results = 1;
+traffic = uniform;
+injection_rate = 0.45;
+packet_size = 1;
+seed = 999;
+
+END Configuration File: /tmp/noc_mesh88_min_adapt_uniform_0.45_s999.cfg
+Class 0:
+Packet latency average = 536.325
+	minimum = 7
+	maximum = 1801
+Network latency average = 72.7937
+	minimum = 7
+	maximum = 1801
+Slowest packet = 582
+Flit latency average = 72.7937
+	minimum = 7
+	maximum = 1801
+Slowest flit = 582
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.157297
+	minimum = 0.055 (at node 63)
+	maximum = 0.3475 (at node 35)
+Accepted packet rate average = 0.151492
+	minimum = 0.134 (at node 23)
+	maximum = 0.1785 (at node 9)
+Injected flit rate average = 0.157297
+	minimum = 0.055 (at node 63)
+	maximum = 0.3475 (at node 35)
+Accepted flit rate average= 0.151492
+	minimum = 0.134 (at node 23)
+	maximum = 0.1785 (at node 9)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 796 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.689731

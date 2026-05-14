@@ -1,0 +1,56 @@
+BEGIN Configuration File: /tmp/noc_mesh88_adaptive_xy_yx_uniform_0.4_s456.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = adaptive_xy_yx;
+num_vcs = 4;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+priority = local_age;
+sim_type = latency;
+warmup_periods = 5;
+sample_period = 2000;
+sim_count = 1;
+print_csv_results = 1;
+traffic = uniform;
+injection_rate = 0.4;
+packet_size = 1;
+seed = 456;
+
+END Configuration File: /tmp/noc_mesh88_adaptive_xy_yx_uniform_0.4_s456.cfg
+Class 0:
+Packet latency average = 558.108
+	minimum = 7
+	maximum = 1669
+Network latency average = 68.0855
+	minimum = 7
+	maximum = 535
+Slowest packet = 1413
+Flit latency average = 68.0855
+	minimum = 7
+	maximum = 535
+Slowest flit = 9443
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.165852
+	minimum = 0.079 (at node 3)
+	maximum = 0.298 (at node 28)
+Accepted packet rate average = 0.160211
+	minimum = 0.143 (at node 2)
+	maximum = 0.1805 (at node 43)
+Injected flit rate average = 0.165852
+	minimum = 0.079 (at node 3)
+	maximum = 0.298 (at node 28)
+Accepted flit rate average= 0.160211
+	minimum = 0.143 (at node 2)
+	maximum = 0.1805 (at node 43)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 780 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.638464

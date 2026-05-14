@@ -1,0 +1,88 @@
+BEGIN Configuration File: /tmp/noc_mesh88_adaptive_xy_yx_uniform_0.35_s123.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = adaptive_xy_yx;
+num_vcs = 4;
+vc_buf_size = 8;
+wait_for_tail_credit = 1;
+priority = local_age;
+sim_type = latency;
+warmup_periods = 5;
+sample_period = 2000;
+sim_count = 1;
+print_csv_results = 1;
+traffic = uniform;
+injection_rate = 0.35;
+packet_size = 1;
+seed = 123;
+
+END Configuration File: /tmp/noc_mesh88_adaptive_xy_yx_uniform_0.35_s123.cfg
+Class 0:
+Packet latency average = 473.804
+	minimum = 7
+	maximum = 1637
+Network latency average = 66.9789
+	minimum = 7
+	maximum = 776
+Slowest packet = 1061
+Flit latency average = 66.9789
+	minimum = 7
+	maximum = 776
+Slowest flit = 13296
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.170203
+	minimum = 0.074 (at node 23)
+	maximum = 0.2955 (at node 56)
+Accepted packet rate average = 0.164375
+	minimum = 0.1485 (at node 11)
+	maximum = 0.182 (at node 4)
+Injected flit rate average = 0.170203
+	minimum = 0.074 (at node 23)
+	maximum = 0.2955 (at node 56)
+Accepted flit rate average= 0.164375
+	minimum = 0.1485 (at node 11)
+	maximum = 0.182 (at node 4)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 800 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 932.256
+	minimum = 7
+	maximum = 3356
+Network latency average = 68.122
+	minimum = 7
+	maximum = 776
+Slowest packet = 1061
+Flit latency average = 68.122
+	minimum = 7
+	maximum = 776
+Slowest flit = 13296
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.167156
+	minimum = 0.06475 (at node 24)
+	maximum = 0.292 (at node 35)
+Accepted packet rate average = 0.164297
+	minimum = 0.15125 (at node 14)
+	maximum = 0.17975 (at node 45)
+Injected flit rate average = 0.167156
+	minimum = 0.06475 (at node 24)
+	maximum = 0.292 (at node 35)
+Accepted flit rate average= 0.164297
+	minimum = 0.15125 (at node 14)
+	maximum = 0.17975 (at node 45)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 784 (0 measured)
+latency change    = 0.491766
+throughput change = 0.000475511
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 1.28955

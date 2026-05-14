@@ -1,0 +1,4 @@
+Packet latency average = 19.8777
+Injected packet rate average = 0.0203125
+Accepted packet rate average = 0.0199375
+Packet latency average = 19.8958
