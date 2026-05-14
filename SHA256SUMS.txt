@@ -11,6 +11,15 @@ ba8e98b22da3512e458d03a0a389979292ecb85d5de40641a48cac60c49440b9  ./code/analysi
 bc77766b83997fdfd57dab34db08af054fbec0d7154a1f9d21cfe749491d6cd2  ./figures/booksim_comparison_1.png
 241441884ebc27f0581b3eace71665ea156c8507b477b4ac696cadc139fd35d9  ./figures/booksim_traffic_comparison.png
 fba61fb03418b0d63ac9e2d8832f073bc1b8e3d2e851000d1a8ead38eef5e75d  ./figures/booksim_adaptive_benefit.png
+82f8448c545526eb39786209b4a0b3abb06fb65dfad7cf7d4b26b09de9bb8ed9  ./figures/01-topologies.png
+7926d752353b2f4232b43236c3e957043a31c5aecfbc0cf1fabbb1b8bc909ad7  ./figures/02-degree-distributions.png
+dab0f0f26d57c4492481fefdd7c1e0599b30ef31ef72633097d9bc424d70a8a9  ./figures/03-betweenness.png
+c93aca6c03968c1f9d8cf74b3d4752399919ce63e04a1504d879207f9bdedbbb  ./figures/04-metric-comparison.png
+9fc5d347b4eb4d92ee826329798c65ff6a99432e5a90f89433ba23b8b9d70a8f  ./figures/05-routing-comparison.png
+a29ec92fb93a5cea8d09915aa8746f7f22231a37cb6ab87e00fca2d23dec7e1c  ./figures/fig1-bc-heatmap.png
+11ce0cbe3cf01302334e110a451a3321e0d81cc823d45f3d746dceee1a34400c  ./figures/fig2-metric-comparison.png
+6ecd1650c242d0ee1df750bfc182505720b1a2279641138bae3a034a51686238  ./figures/fig3-architecture.png
+0bcf575713df0d0af5151edc3e7c0b67708ba4b2c6267b899aa2a64fbff5a9ee  ./figures/fig4-routing-comparison.png
 66d709b9d56d29a2ccaf172071ca3cb7cc081d74b0baee57c61939879ffad247  ./paper/paper.tex
 665dfcd3b8792b5dc7cdfb62db990adcefa2840d00c34479aaa478df31fb0add  ./paper/paper.pdf
 fd2018a7446a269507ba272d7acab2722eef6cd170df3916b393422a0dc640d3  ./paper/ars-output/ars-lit-review-2026-05-14T08-33-56.prompt.md
@@ -548,5 +557,5 @@ f092df89012410eed3df4f9f1b6fe67bf71a5b341a4bc1765486a8613f64616e  ./results/book
 05e420b9e01efdbc228d816af6f5b3dccb917140c9c41e02bb689153ac386723  ./results/aggregate_5seeds.csv
 f6e04d9023f002aad52e0d509388ec404354875e7e6630bf66b0a891661fc30f  ./results/summary_5seeds.csv
 53f21b64c5b48c58ad3af57d61f005e96e3dfdf6d433462642e953de0f9e9717  ./README.md
-5d56fbebde9bc3ca1ee1df693d52129f4b86b874aef98d00540570771c6e1a57  ./SHA256SUMS.txt
+0daa1d20ffc9e2a973b9e4d84ca76ec675e539afc9daa72cb59ffabaddead5ae  ./SHA256SUMS.txt
 5f57b29c5a5a02b73bbf63f88704228966b62919109376fb7200154f0ed23a49  ./.gitignore
