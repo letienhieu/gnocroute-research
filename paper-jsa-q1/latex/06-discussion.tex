@@ -1,0 +1,28 @@
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+% ============================================================
+
+\subsection{Evaluation of the GNNocRoute-PPO Routing Policy}
+
+Table~\ref{tab:latency} presents the performance of the GNNocRoute-PPO routing policy alongside four baseline algorithms on Mesh $4\times4$ at injection rate 0.1. The experiment reveals several important findings.
+
+Under \textbf{uniform traffic}, GNNocRoute-PPO achieves 19.8 cycles---comparable to XY (19.6) and better than Minimal Adaptive (21.4). This confirms that the precomputed routing table does not introduce overhead under balanced workloads.
+
+Under \textbf{transpose traffic}, GNNocRoute-PPO performs significantly worse (44.0 vs.\ 20.5 cycles for XY). This degradation occurs because the GNN-PPO policy was trained exclusively under uniform traffic and does not generalize to the diagonal communication pattern of transpose traffic. The precomputed routing table selects YX for certain source-destination pairs that create pathologically long routes under this pattern.
+
+Under \textbf{hotspot traffic}, all algorithms saturate at injection rate 0.05+. This confirms that the central bottleneck node in Mesh $4\times4$ cannot be circumvented by routing alone---any algorithm that delivers packets to node (3,3) must contend with the same limited injection bandwidth.
+
+\subsection{Implications for GNN-Based Routing}
+
+The experimental results reveal an important insight: GNN-based topology awareness, while effective at structural encoding ($|r| = 0.978$ with centrality), must be coupled with online adaptation to realize its full potential. A precomputed, offline routing table cannot respond to changing traffic patterns---the very scenarios where topology-aware routing would provide the most benefit.
+
+This finding does not diminish the value of the GNN encoder. Rather, it highlights a clear path forward: integrating the GNN encoder into a fully online DRL agent that periodically updates routing decisions based on real-time congestion observations. The periodic optimization framework (Section~\ref{sec:method}) provides exactly this capability, with the GNN re-encoding at coarse timescales ($10^5$--$10^6$ cycles) and the policy update at finer timescales ($P = 5,000$ cycles).
+
+\subsection{Comparison with Prior Work}
+
+Our findings provide critical context to results reported in the current literature. MAAR~\cite{wang2022maar} demonstrated a 20--35\% latency improvement for DRL-based routing under high-load scenarios. Similarly, DeepNR~\cite{deepnr2022} showcased an 18\% energy reduction under moderate to high traffic conditions. Our study contributes a systematic evaluation of a precomputed GNN-based routing policy, revealing both the promise (topology-aware structural encoding) and the challenges (generalization to unseen traffic patterns) that must be addressed for practical deployment.
+
+\subsection{Limitations and Future Work}
+
+We acknowledge several limitations in our current study. First, the GNN-PPO routing policy is precomputed and offline; a fully online DRL agent trained directly within the BookSim2 environment would enable adaptive routing decisions that respond to observed congestion. Second, the binary action space (XY vs.\ YX selection) limits the policy's expressiveness---a multi-port output selection would provide finer-grained routing control. Third, our evaluation relies on synthetic traffic patterns; validation against real application execution traces (e.g., PARSEC) is required for comprehensive profiling. Finally, transitioning from unsupervised structural encodings to supervised fine-tuning using cycle-accurate routing performance data remains a promising avenue for improving the DRL agent's baseline policy.

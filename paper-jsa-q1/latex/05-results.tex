@@ -1,0 +1,77 @@
+% ============================================================
+\section{Results and Analysis}
+\label{sec:results}
+% ============================================================
+
+This section presents experimental results from BookSim2 cycle-accurate simulations on Mesh $4\times4$ (16 nodes). We compare GNNocRoute-PPO against four baseline routing algorithms across three traffic patterns and six injection rates. Each configuration is simulated with 100 independent sample periods and 5 random seeds.
+
+\subsection{Baseline Routing Comparison}
+
+Table~\ref{tab:latency} compares average packet latency for all five algorithms at injection rate 0.1. This rate represents moderate network load where congestion begins to affect routing performance.
+
+\begin{table}[h]
+\centering
+\caption{Average packet latency (cycles) on Mesh $4\times4$ at injection rate 0.1 (mean $\pm$ 95\% CI, 5 seeds)}
+\label{tab:latency}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+\textbf{Algorithm} & \textbf{Uniform} & \textbf{Transpose} & \textbf{Hotspot} \\
+\midrule
+XY (DOR) & $19.6\pm0.0$ & $20.5\pm0.0$ & $>$500 (saturated)\\
+Adaptive XY/YX & $20.0\pm0.0$ & $20.4\pm0.1$ & $>$500 (saturated)\\
+Minimal Adaptive & $21.4\pm0.1$ & $22.2\pm0.1$ & $>$500 (saturated)\\
+Valiant & $39.7\pm0.1$ & $43.7\pm2.0$ & $>$500 (saturated)\\
+GNNocRoute-PPO & $19.8\pm0.0$ & $44.0\pm2.4$ & $>$500 (saturated)\\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Key observations from Table~\ref{tab:latency}:
+\begin{itemize}
+    \item Under \textbf{uniform traffic}, all minimal routing algorithms perform similarly (19.6--21.4 cycles). GNNocRoute-PPO achieves 19.8 cycles, comparable to XY (19.6) and slightly better than Minimal Adaptive (21.4). Valiant is significantly worse (39.7) due to its non-minimal path selection.
+    \item Under \textbf{transpose traffic}, XY and Adaptive XY/YX achieve comparable performance (20.4--20.5 cycles). GNNocRoute-PPO performs substantially worse at 44.0 cycles, which is 115\% higher than XY. This degradation occurs because the precomputed GNN-PPO routing table, which was trained under uniform traffic, makes suboptimal source-destination routing decisions for the diagonal traffic pattern characteristic of transpose.
+    \item Under \textbf{hotspot traffic}, all algorithms saturate at injection rate 0.1, with mean latency exceeding 500 cycles. This confirms that Mesh $4\times4$ reaches its saturation throughput under hotspot conditions regardless of routing algorithm.
+\end{itemize}
+
+\subsection{Injection Rate Analysis}
+
+Figure~\ref{fig:latency-rate} shows latency as a function of injection rate for each traffic pattern.
+
+\subsubsection{Uniform Traffic}
+
+At low injection rates (0.01--0.05), all minimal algorithms maintain near-zero-load latency of approximately 19.5 cycles. GNNocRoute-PPO matches XY precisely, confirming that at low load, routing decisions have negligible impact on performance since there is no congestion to avoid. At rate 0.2, XY achieves 20.4 cycles and Adaptive XY/YX reaches 22.3, while Valiant exceeds 1,000 cycles (saturated). GNNocRoute-PPO reaches 521 cycles at rate 0.2, indicating earlier saturation than XY due to suboptimal path selection for some source-destination pairs.
+
+\subsubsection{Transpose Traffic}
+
+Transpose traffic reveals the biggest performance gap. XY and Adaptive maintain 19.5--20.5 cycles up to rate 0.1, while GNNocRoute-PPO jumps to 44.0 cycles at rate 0.1. The GNN routing table consistently selects YX routing for certain source-destination pairs, which creates longer paths under the diagonal transpose pattern. At rates above 0.1, all algorithms saturate.
+
+\subsubsection{Hotspot Traffic}
+
+Under hotspot traffic, all algorithms remain near zero-load up to rate 0.02 ($\sim$20 cycles). At rate 0.05, mean latency increases sharply to 400--500 cycles for all algorithms, indicating that the central hotspot node (3,3) creates a bottleneck that cannot be avoided by any routing strategy. GNNocRoute-PPO reaches 591 cycles at rate 0.05, compared to 478 for XY and 448 for Minimal Adaptive, suggesting that the GNN policy does not effectively redirect traffic away from the congested center.
+
+\subsection{GNN Encoder Analysis}
+
+Despite the limitations of the current routing policy, the GNN encoder demonstrates strong topology learning capability. Figure~\ref{fig:gnn-analysis} shows the correlation between GNN node embeddings and betweenness centrality across topologies.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\columnwidth]{fig4-congestion-imbalance.png}
+\caption{GNN node embeddings vs. betweenness centrality across topologies.}
+\label{fig:gnn-analysis}
+\end{figure}
+
+The GATv2 encoder achieves $|r| = 0.978$ correlation with betweenness centrality on Mesh $4\times4$, demonstrating that topology-aware representations emerge without explicit supervision. This validates the core hypothesis of the GNNocRoute framework: GNNs can capture structural bottlenecks that are critical for routing optimization.
+
+\subsection{Discussion}
+
+The experimental results reveal an important nuance: while the GNN encoder successfully learns topology-aware representations, the downstream PPO routing policy does not yet translate this awareness into consistently better routing decisions. Several factors contribute:
+
+\begin{itemize}
+    \item \textbf{Training under limited traffic patterns:} The PPO policy was trained primarily under uniform random traffic. Under unseen patterns (transpose, hotspot), the policy generalizes poorly.
+    \item \textbf{Binary action space limitation:} The current routing table only selects between XY and YX for each source-destination pair. This coarse-grained action space limits the router's ability to adapt to dynamic congestion.
+    \item \textbf{Offline, precomputed policy:} The routing table is fixed after training. A fully online DRL agent would adapt to observed traffic patterns, potentially achieving better performance.
+\end{itemize}
+
+Despite these limitations, the topology-aware embeddings from the GNN encoder provide structural information (0.978 correlation with centrality) that heuristic algorithms lack. Integrating this information into a fully adaptive online routing agent remains an important direction for future work.

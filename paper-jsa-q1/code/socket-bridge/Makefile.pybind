@@ -1,0 +1,91 @@
+# ============================================================
+# Makefile: Build BookSim2 as Python module (PyBind11)
+# ============================================================
+# Usage:
+#   make pybind        # Build booksim.so
+#   python3 -c "import booksim; print(dir(booksim))"  # Test
+# ============================================================
+
+BOOKSIM_SRC = /home/opc/.openclaw/workspace/booksim2/src
+PYBIND_SRC = booksim_pybind.cpp
+
+# Find Python include paths
+PYTHON_INC = $(shell python3 -m pybind11 --includes 2>/dev/null || echo "-I/usr/include/python3.9")
+PYTHON_LIB = $(shell python3-config --ldflags 2>/dev/null || echo "-lpython3.9")
+
+# BookSim2 source files (core)
+BOOKSIM_OBJS = $(BOOKSIM_SRC)/routefunc.o \
+               $(BOOKSIM_SRC)/trafficmanager.o \
+               $(BOOKSIM_SRC)/booksim_config.o \
+               $(BOOKSIM_SRC)/buffer.o \
+               $(BOOKSIM_SRC)/buffer_state.o \
+               $(BOOKSIM_SRC)/config_utils.o \
+               $(BOOKSIM_SRC)/credit.o \
+               $(BOOKSIM_SRC)/flitchannel.o \
+               $(BOOKSIM_SRC)/flit.o \
+               $(BOOKSIM_SRC)/injection.o \
+               $(BOOKSIM_SRC)/main.o \
+               $(BOOKSIM_SRC)/misc_utils.o \
+               $(BOOKSIM_SRC)/module.o \
+               $(BOOKSIM_SRC)/outputset.o \
+               $(BOOKSIM_SRC)/packet_reply_info.o \
+               $(BOOKSIM_SRC)/random_utils.o \
+               $(BOOKSIM_SRC)/stats.o \
+               $(BOOKSIM_SRC)/traffic.o \
+               $(BOOKSIM_SRC)/vc.o
+
+# Topology files
+TOPO_OBJS = $(BOOKSIM_SRC)/networks/kncube.o \
+            $(BOOKSIM_SRC)/networks/network.o \
+            $(BOOKSIM_SRC)/networks/anynet.o \
+            $(BOOKSIM_SRC)/networks/cmesh.o \
+            $(BOOKSIM_SRC)/networks/fattree.o \
+            $(BOOKSIM_SRC)/networks/fly.o \
+            $(BOOKSIM_SRC)/networks/qtree.o
+
+# Router files
+ROUTER_OBJS = $(BOOKSIM_SRC)/routers/iq_router.o \
+              $(BOOKSIM_SRC)/routers/router.o \
+              $(BOOKSIM_SRC)/routers/event_router.o
+
+# Allocator files
+ALLOC_OBJS = $(BOOKSIM_SRC)/allocators/allocator.o \
+             $(BOOKSIM_SRC)/allocators/islip.o \
+             $(BOOKSIM_SRC)/allocators/loa.o \
+             $(BOOKSIM_SRC)/allocators/maxsize.o \
+             $(BOOKSIM_SRC)/allocators/pim.o \
+             $(BOOKSIM_SRC)/allocators/selalloc.o \
+             $(BOOKSIM_SRC)/allocators/separable.o \
+             $(BOOKSIM_SRC)/allocators/separable_input_first.o \
+             $(BOOKSIM_SRC)/allocators/separable_output_first.o \
+             $(BOOKSIM_SRC)/allocators/wavefront.o
+
+# Arbiter files
+ARB_OBJS = $(BOOKSIM_SRC)/arbiters/arbiter.o \
+           $(BOOKSIM_SRC)/arbiters/matrix_arb.o \
+           $(BOOKSIM_SRC)/arbiters/prio_arb.o \
+           $(BOOKSIM_SRC)/arbiters/roundrobin_arb.o \
+           $(BOOKSIM_SRC)/arbiters/tree_arb.o
+
+ALL_OBJS = $(BOOKSIM_OBJS) $(TOPO_OBJS) $(ROUTER_OBJS) $(ALLOC_OBJS) $(ARB_OBJS)
+
+# Compiler flags
+CXXFLAGS = -O3 -Wall -shared -fPIC -std=c++11 $(PYTHON_INC) \
+           -I$(BOOKSIM_SRC) \
+           -I$(BOOKSIM_SRC)/arbiters \
+           -I$(BOOKSIM_SRC)/allocators \
+           -I$(BOOKSIM_SRC)/routers \
+           -I$(BOOKSIM_SRC)/networks \
+           -I$(BOOKSIM_SRC)/power
+
+all: pybind
+
+pybind: $(ALL_OBJS) $(PYBIND_SRC)
+	g++ $(CXXFLAGS) $(PYBIND_SRC) $(ALL_OBJS) -o booksim.so $(PYTHON_LIB)
+	@echo "✅ booksim.so created!"
+	@echo "   Test: python3 -c 'import booksim; print(\"OK: booksim module loaded\")'"
+
+clean:
+	rm -f booksim.so
+
+.PHONY: all pybind clean

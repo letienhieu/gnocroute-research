@@ -1,0 +1,3026 @@
+[
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 16.6154,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 19.1739,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 20.9605,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 19.1948,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 19.8464,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 19.5451,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 19.3658,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 19.3402,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 19.5226,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 19.538,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 20.0039,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 19.9566,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 19.9097,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 19.9291,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 20.1303,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 20.0581,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 20.2508,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 20.6579,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 20.9412,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 21.3864,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 22.0081,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 14.6923,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 20.0435,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 18.25,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 19.1111,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 19.4169,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 19.8122,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 19.3173,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 19.6074,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 19.7306,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 19.6096,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 19.8513,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 19.8926,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 19.9576,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 20.0449,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 19.8336,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 20.1672,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 20.1525,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 20.4222,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 20.7645,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 21.1362,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 21.9288,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 17.0,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 17.8696,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 20.6974,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 19.1494,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 20.2602,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 19.6571,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 19.7237,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 19.6192,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 19.6925,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 19.7395,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 19.7999,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 19.9479,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 19.9708,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 20.0813,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 20.596,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 21.1502,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 21.8486,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 30.7747,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 43.655,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 52.2154,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 59.3551,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 17.0,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 17.8696,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 20.6842,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 19.1494,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 20.2476,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 19.6505,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 19.6835,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 19.5605,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 19.5898,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 19.6208,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 19.6533,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 19.679,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 19.6122,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 19.6774,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 19.8325,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 19.9796,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 20.1069,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 20.2979,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 20.5878,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 21.1688,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 21.8102,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 17.7692,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 20.4783,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 19.7895,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 20.2876,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 20.1223,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 20.2308,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 21.3502,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 55.606,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 119.892,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 159.642,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 201.273,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 241.591,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 252.834,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 268.827,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 283.756,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 291.933,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 311.344,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 332.285,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 357.834,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 370.503,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 382.229,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 17.7692,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 20.4783,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 19.7895,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 20.2941,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 20.1473,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 20.2264,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 21.3961,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 52.5686,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 113.457,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 142.78,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 162.14,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 191.65,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 183.701,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 206.467,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 217.862,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 231.448,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 241.498,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 274.528,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 315.219,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 335.198,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh44",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 334.281,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 34.2,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 31.2411,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 34.4138,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 32.1656,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 33.2067,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 33.1056,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 32.8543,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 33.3561,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 33.6593,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 33.486,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 34.3046,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 34.4473,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 34.8757,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 35.2339,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 35.952,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 37.0014,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 37.8595,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 40.883,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 49.5671,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 76.366,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 109.928,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 34.12,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 32.9107,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 33.774,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 32.8487,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 33.3699,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 33.1629,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 33.2592,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 33.0965,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 33.7275,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 33.7072,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 34.0647,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 34.462,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 34.9592,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 34.9376,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 35.7434,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 36.586,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 37.6156,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 40.1628,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 51.0896,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 84.8556,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 119.533,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 31.8,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 32.0088,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 32.6485,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 32.91,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 32.5729,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 32.7663,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 33.7113,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 33.8579,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 34.9507,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 35.7363,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 39.5027,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 55.1098,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 62.8317,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 69.8717,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 77.3134,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 84.982,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 87.689,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 95.6568,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 105.986,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 111.576,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 114.707,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 31.8,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 32.0,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 32.6519,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 32.8867,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 32.5119,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 32.6747,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 33.4425,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 33.371,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 33.787,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 33.6751,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 33.9424,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 34.6002,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 34.9437,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 35.7503,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 37.5412,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 45.0228,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 54.3868,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 76.3456,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 91.245,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 100.467,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 106.394,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 31.64,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 31.6106,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 31.2405,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 31.6414,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 108.679,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 117.356,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 136.262,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 175.544,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 242.627,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 270.412,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 306.771,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 311.149,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 318.604,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 328.628,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 352.026,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 366.134,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 377.939,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 391.642,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 405.064,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 412.579,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 425.761,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 31.64,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 31.5398,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 31.1753,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 31.3889,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 90.7819,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 146.473,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 196.766,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 222.724,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 224.68,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 247.351,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 274.517,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 280.356,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 287.562,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 297.284,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 310.911,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 332.114,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 357.59,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 362.338,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 389.49,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 403.464,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh88",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 411.119,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 58.708,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 59.7505,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 59.9218,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 59.4393,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 59.7411,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 59.895,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 60.0311,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 60.7446,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 61.922,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 62.6594,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 65.7012,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 68.8264,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 74.5091,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 86.4947,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 117.754,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 141.941,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 152.404,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 166.085,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 175.118,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 183.589,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 196.121,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.001,
+    "latency": 58.0089,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.002,
+    "latency": 59.6469,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.005,
+    "latency": 59.7132,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.01,
+    "latency": 59.1392,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "latency": 60.0307,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.03,
+    "latency": 59.6032,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "latency": 60.5005,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.07,
+    "latency": 60.6416,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "latency": 61.3635,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.12,
+    "latency": 62.2377,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.15,
+    "latency": 64.7877,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.18,
+    "latency": 69.1114,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.2,
+    "latency": 77.8975,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.22,
+    "latency": 95.5553,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.25,
+    "latency": 129.261,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.28,
+    "latency": 155.836,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.3,
+    "latency": 174.582,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.35,
+    "latency": 200.401,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.4,
+    "latency": 219.261,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.45,
+    "latency": 240.186,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj_rate": 0.5,
+    "latency": 254.205,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 56.6184,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 57.6479,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 58.5539,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 59.5544,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 59.5517,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 60.2703,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 61.743,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 68.8877,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 96.0415,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 107.933,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 114.749,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 116.332,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 115.794,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 117.014,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 115.59,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 118.622,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 120.94,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 122.989,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 131.794,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 135.977,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 139.006,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.001,
+    "latency": 56.614,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.002,
+    "latency": 57.6458,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.005,
+    "latency": 58.5022,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.01,
+    "latency": 59.4666,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "latency": 59.2737,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.03,
+    "latency": 59.5579,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "latency": 59.536,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.07,
+    "latency": 59.8208,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "latency": 61.5897,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.12,
+    "latency": 64.7726,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.15,
+    "latency": 91.0232,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.18,
+    "latency": 112.376,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.2,
+    "latency": 118.143,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.22,
+    "latency": 120.999,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.25,
+    "latency": 124.578,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.28,
+    "latency": 122.539,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.3,
+    "latency": 123.2,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.35,
+    "latency": 124.604,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.4,
+    "latency": 125.905,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.45,
+    "latency": 127.587,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj_rate": 0.5,
+    "latency": 134.498,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 50.8114,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 51.6674,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 130.165,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 200.575,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 201.16,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 227.721,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 254.255,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 284.218,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 315.57,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 316.238,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 330.078,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 332.191,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 344.309,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 348.19,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 366.802,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 376.718,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 382.787,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 400.46,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 411.22,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 418.947,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 428.446,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.001,
+    "latency": 50.7851,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.002,
+    "latency": 51.4989,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.005,
+    "latency": 114.123,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.01,
+    "latency": 181.363,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "latency": 254.456,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.03,
+    "latency": 290.815,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "latency": 292.982,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.07,
+    "latency": 290.653,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "latency": 284.379,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.12,
+    "latency": 300.187,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.15,
+    "latency": 333.392,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.18,
+    "latency": 328.351,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.2,
+    "latency": 341.424,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.22,
+    "latency": 340.789,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.25,
+    "latency": 360.595,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.28,
+    "latency": 376.783,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.3,
+    "latency": 381.293,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.35,
+    "latency": 402.543,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.4,
+    "latency": 410.395,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.45,
+    "latency": 422.006,
+    "status": "OK"
+  },
+  {
+    "topology": "mesh1616",
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj_rate": 0.5,
+    "latency": 430.238,
+    "status": "OK"
+  }
+]

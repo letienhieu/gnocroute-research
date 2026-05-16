@@ -1,0 +1,17 @@
+{
+  "uniform": {
+    "status": "completed",
+    "avg_reward": -59.023859792128206,
+    "model": "drl_uniform.pt"
+  },
+  "hotspot": {
+    "status": "completed",
+    "avg_reward": -52.17142714396119,
+    "model": "drl_hotspot.pt"
+  },
+  "transpose": {
+    "status": "completed",
+    "avg_reward": -53.02404485076666,
+    "model": "drl_transpose.pt"
+  }
+}

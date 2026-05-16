@@ -1,0 +1,72 @@
+% ============================================================
+\section{Experimental Setup}
+\label{sec:experiments}
+% ============================================================
+
+We evaluate routing algorithms through cycle-accurate simulations using BookSim2~\cite{booksim}, a widely-used NoC simulator. This section describes the experimental methodology, baselines, traffic patterns, and evaluation metrics.
+
+\subsection{Simulation Environment}
+
+Simulation parameters are summarized in Table~\ref{tab:simparams}. All results are obtained with 100 independent sample periods of 1,000 cycles each, preceded by 3 warmup periods.
+
+\begin{table}[h]
+\centering
+\caption{BookSim2 simulation parameters}
+\label{tab:simparams}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Simulator & BookSim2 2.0 \\
+Topologies & Mesh $4\times4$ \\
+Flit size & 32 bytes \\
+Buffer depth & 4 flits/VC \\
+Virtual channels & 4 \\
+Routing computation & 1 cycle \\
+Warmup periods & 3 \\
+Sample periods & 100 (1,000 cycles each) \\
+Simulation length & $\sim$103,000 cycles \\
+Packet size & 1 flit \\
+\midrule
+Seeds per config & 5 \\
+Total runs & 450 (across 5 algorithms, 3 traffics, 6 rates, 5 seeds) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Routing Algorithms}
+
+We compare five routing approaches:
+
+\begin{itemize}
+    \item \textbf{XY (DOR):} Dimension-order routing, the most widely used deterministic algorithm for mesh NoCs. Packets are routed first along the X dimension, then Y.
+    \item \textbf{Adaptive XY/YX:} An adaptive variant that selects between XY and YX paths based on local congestion at the source router~\cite{balfour2006}.
+    \item \textbf{Minimal Adaptive:} Routes packets along any minimal path, with port selection based on buffer occupancy.
+    \item \textbf{Valiant:} Randomized routing that sends packets to a random intermediate node before forwarding to the destination.
+    \item \textbf{GNNocRoute-PPO:} Precomputed routing policy based on a GATv2-GNN encoder (see Section~\ref{sec:method}). The model produces per-source-destination routing decisions (XY or YX) that are stored in a lookup table for online use.
+\end{itemize}
+
+\subsection{Traffic Patterns}
+
+We evaluate under three synthetic traffic patterns:
+
+\begin{itemize}
+    \item \textbf{Uniform Random:} Each node sends packets to a uniformly random destination. Represents balanced workloads.
+    \item \textbf{Transpose:} Node $(i,j)$ sends to node $(j,i)$. Creates diagonal traffic that stresses non-minimal path selection.
+    \item \textbf{Hotspot (10\%):} $10\%$ of traffic targets a single central node $(3,3)$, with the remaining $90\%$ uniformly distributed. Tests congestion handling under skewed loads.
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+
+We measure two primary metrics:
+
+\begin{itemize}
+    \item \textbf{Average packet latency:} Mean number of cycles from packet injection to tail flit reception, averaged over 100 sample periods and 5 random seeds.
+    \item \textbf{Saturation behavior:} Injection rate at which latency exceeds the simulation stability threshold (500 cycles), indicating network saturation.
+\end{itemize}
+
+\subsection{DRL Training Setup}
+
+The GNN-PPO routing policy is trained offline using the NoC routing environment (Section~\ref{sec:method}). Training is conducted on Mesh $4\times4$ with 500 episodes of GATv2 encoder pre-training followed by 500 episodes of DQN training. The trained policy is exported as a precomputed routing table.
+
+All training runs on CPU (Intel Xeon, 2.3 GHz) using PyTorch 2.8 and PyTorch Geometric 2.6.

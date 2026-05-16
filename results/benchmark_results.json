@@ -1,0 +1,722 @@
+[
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.5955,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.512,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.6942,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 19.9304,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 20.3288,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 20.9623,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6184,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.5949,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.6772,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 20.244,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 22.2658,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 500.298,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.6966,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 21.6715,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 1894.11,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 4750.52,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 6009.62,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 7022.76,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.5005,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.5899,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.6818,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 19.9042,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 20.3022,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 20.9287,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6117,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.5673,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.5993,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 19.8723,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 20.3396,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 20.9277,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.7313,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 22.0342,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 1794.66,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 3065.31,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 4423.76,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 5867.28,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.6288,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.6008,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.8999,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 20.5248,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 21.9045,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 28.2091,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.636,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.6519,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.8631,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 25.8027,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 37.0741,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 538.852,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.7999,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 23.7643,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 1736.75,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 4431.15,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 5863.96,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 6845.46,
+    "hops": null,
+    "status": "NEAR_SAT"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 32.22,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 32.2715,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 32.6545,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 34.2527,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 38.335,
+    "hops": null,
+    "status": "OK"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "valiant",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": null,
+    "hops": null,
+    "status": "ERROR: [Errno 2] No such file or directory: '/home/opc/.openclaw/workspace/booksim2/src/booksim'"
+  }
+]

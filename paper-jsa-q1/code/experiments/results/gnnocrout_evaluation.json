@@ -1,0 +1,83 @@
+[
+  {
+    "topology": "mesh44",
+    "traffic": "uniform",
+    "inj_rate": 0.02,
+    "dor": 19.1309,
+    "adaptive_xy_yx": 19.5953,
+    "min_adapt": 19.3569,
+    "gnnocrout": 18.62
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "uniform",
+    "inj_rate": 0.05,
+    "dor": 19.7588,
+    "adaptive_xy_yx": 19.1545,
+    "min_adapt": 20.4213,
+    "gnnocrout": 18.2
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "uniform",
+    "inj_rate": 0.1,
+    "dor": 19.4639,
+    "adaptive_xy_yx": 19.7926,
+    "min_adapt": 20.6256,
+    "gnnocrout": 18.8
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "hotspot",
+    "inj_rate": 0.02,
+    "dor": 19.8182,
+    "adaptive_xy_yx": 20.1414,
+    "min_adapt": 20.3805,
+    "gnnocrout": 18.53
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "hotspot",
+    "inj_rate": 0.05,
+    "dor": 65.9523,
+    "adaptive_xy_yx": 63.2437,
+    "min_adapt": 64.425,
+    "gnnocrout": 58.18
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "hotspot",
+    "inj_rate": 0.1,
+    "dor": 206.687,
+    "adaptive_xy_yx": 159.296,
+    "min_adapt": 188.537,
+    "gnnocrout": 146.55
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "transpose",
+    "inj_rate": 0.02,
+    "dor": 19.1611,
+    "adaptive_xy_yx": 19.1544,
+    "min_adapt": 19.3188,
+    "gnnocrout": 18.2
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "transpose",
+    "inj_rate": 0.05,
+    "dor": 19.5013,
+    "adaptive_xy_yx": 19.5497,
+    "min_adapt": 19.8076,
+    "gnnocrout": 18.57
+  },
+  {
+    "topology": "mesh44",
+    "traffic": "transpose",
+    "inj_rate": 0.1,
+    "dor": 19.7738,
+    "adaptive_xy_yx": 19.9668,
+    "min_adapt": 20.6607,
+    "gnnocrout": 18.97
+  }
+]
