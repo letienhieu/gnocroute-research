@@ -1,0 +1,288 @@
+algorithm,traffic,injection_rate,seed,latency
+XY (DOR),uniform,0.05,42,19.5852
+XY (DOR),uniform,0.05,43,19.5559
+XY (DOR),uniform,0.05,44,19.665
+XY (DOR),uniform,0.1,42,19.7204
+XY (DOR),uniform,0.1,43,19.6773
+XY (DOR),uniform,0.1,44,19.6585
+XY (DOR),uniform,0.2,42,19.9557
+XY (DOR),uniform,0.2,43,19.9415
+XY (DOR),uniform,0.2,44,19.9455
+XY (DOR),uniform,0.3,42,20.3535
+XY (DOR),uniform,0.3,43,20.3243
+XY (DOR),uniform,0.3,44,20.3145
+XY (DOR),uniform,0.4,42,20.9431
+XY (DOR),uniform,0.4,43,20.9251
+XY (DOR),uniform,0.4,44,20.9291
+XY (DOR),uniform,0.5,42,22.0027
+XY (DOR),uniform,0.5,43,21.9775
+XY (DOR),uniform,0.5,44,22.019
+XY (DOR),transpose,0.05,42,19.5883
+XY (DOR),transpose,0.05,43,19.5841
+XY (DOR),transpose,0.05,44,19.5166
+XY (DOR),transpose,0.1,42,19.7597
+XY (DOR),transpose,0.1,43,19.682
+XY (DOR),transpose,0.1,44,19.6738
+XY (DOR),transpose,0.2,42,20.351
+XY (DOR),transpose,0.2,43,20.292
+XY (DOR),transpose,0.2,44,20.2586
+XY (DOR),transpose,0.3,42,22.4718
+XY (DOR),transpose,0.3,43,22.3352
+XY (DOR),transpose,0.3,44,22.3393
+XY (DOR),transpose,0.4,42,537.75
+XY (DOR),transpose,0.4,43,534.8
+XY (DOR),transpose,0.4,44,530.845
+XY (DOR),transpose,0.5,42,772.455
+XY (DOR),transpose,0.5,43,765.196
+XY (DOR),transpose,0.5,44,761.183
+XY (DOR),hotspot,0.05,42,21.6494
+XY (DOR),hotspot,0.05,43,21.671
+XY (DOR),hotspot,0.05,44,21.6469
+XY (DOR),hotspot,0.1,42,1957.81
+XY (DOR),hotspot,0.1,43,1879.43
+XY (DOR),hotspot,0.1,44,1902.9
+XY (DOR),hotspot,0.2,42,4802.35
+XY (DOR),hotspot,0.2,43,4802.33
+XY (DOR),hotspot,0.2,44,4936.89
+XY (DOR),hotspot,0.3,42,5975.05
+XY (DOR),hotspot,0.3,43,5961.01
+XY (DOR),hotspot,0.3,44,6122.66
+XY (DOR),hotspot,0.4,42,7025.42
+XY (DOR),hotspot,0.4,43,7017.38
+XY (DOR),hotspot,0.4,44,7087.14
+XY (DOR),hotspot,0.5,42,7630.67
+XY (DOR),hotspot,0.5,43,7624.01
+XY (DOR),hotspot,0.5,44,7646.02
+Adaptive XY-YX,uniform,0.05,42,19.6436
+Adaptive XY-YX,uniform,0.05,43,19.5814
+Adaptive XY-YX,uniform,0.05,44,19.6437
+Adaptive XY-YX,uniform,0.1,42,19.6891
+Adaptive XY-YX,uniform,0.1,43,19.67
+Adaptive XY-YX,uniform,0.1,44,19.7005
+Adaptive XY-YX,uniform,0.2,42,19.951
+Adaptive XY-YX,uniform,0.2,43,19.9102
+Adaptive XY-YX,uniform,0.2,44,19.9048
+Adaptive XY-YX,uniform,0.3,42,20.3827
+Adaptive XY-YX,uniform,0.3,43,20.3445
+Adaptive XY-YX,uniform,0.3,44,20.3631
+Adaptive XY-YX,uniform,0.4,42,20.9443
+Adaptive XY-YX,uniform,0.4,43,20.9151
+Adaptive XY-YX,uniform,0.4,44,20.9218
+Adaptive XY-YX,uniform,0.5,42,22.0028
+Adaptive XY-YX,uniform,0.5,43,21.963
+Adaptive XY-YX,uniform,0.5,44,21.9353
+Adaptive XY-YX,transpose,0.05,42,19.5652
+Adaptive XY-YX,transpose,0.05,43,19.5585
+Adaptive XY-YX,transpose,0.05,44,19.4895
+Adaptive XY-YX,transpose,0.1,42,19.6754
+Adaptive XY-YX,transpose,0.1,43,19.6016
+Adaptive XY-YX,transpose,0.1,44,19.5971
+Adaptive XY-YX,transpose,0.2,42,19.9737
+Adaptive XY-YX,transpose,0.2,43,19.9146
+Adaptive XY-YX,transpose,0.2,44,19.8821
+Adaptive XY-YX,transpose,0.3,42,20.3994
+Adaptive XY-YX,transpose,0.3,43,20.3591
+Adaptive XY-YX,transpose,0.3,44,20.3335
+Adaptive XY-YX,transpose,0.4,42,21.0295
+Adaptive XY-YX,transpose,0.4,43,21.0151
+Adaptive XY-YX,transpose,0.4,44,20.9728
+Adaptive XY-YX,transpose,0.5,42,22.3201
+Adaptive XY-YX,transpose,0.5,43,22.2132
+Adaptive XY-YX,transpose,0.5,44,22.2202
+Adaptive XY-YX,hotspot,0.05,42,22.0493
+Adaptive XY-YX,hotspot,0.05,43,22.0517
+Adaptive XY-YX,hotspot,0.05,44,22.0054
+Adaptive XY-YX,hotspot,0.1,42,1849.9
+Adaptive XY-YX,hotspot,0.1,43,1718.16
+Adaptive XY-YX,hotspot,0.1,44,1782.55
+Adaptive XY-YX,hotspot,0.2,42,3205.73
+Adaptive XY-YX,hotspot,0.2,43,3155.04
+Adaptive XY-YX,hotspot,0.2,44,3196.08
+Adaptive XY-YX,hotspot,0.3,42,4545.42
+Adaptive XY-YX,hotspot,0.3,43,4438.51
+Adaptive XY-YX,hotspot,0.3,44,4558.31
+Adaptive XY-YX,hotspot,0.4,42,5897.49
+Adaptive XY-YX,hotspot,0.4,43,5868.77
+Adaptive XY-YX,hotspot,0.4,44,5961.73
+Adaptive XY-YX,hotspot,0.5,42,6737.55
+Adaptive XY-YX,hotspot,0.5,43,6708.24
+Adaptive XY-YX,hotspot,0.5,44,6756.1
+Min Adapt,uniform,0.05,42,19.6756
+Min Adapt,uniform,0.05,43,19.6445
+Min Adapt,uniform,0.05,44,19.7583
+Min Adapt,uniform,0.1,42,19.9285
+Min Adapt,uniform,0.1,43,19.8896
+Min Adapt,uniform,0.1,44,19.8665
+Min Adapt,uniform,0.2,42,20.5576
+Min Adapt,uniform,0.2,43,20.534
+Min Adapt,uniform,0.2,44,20.5374
+Min Adapt,uniform,0.3,42,21.9881
+Min Adapt,uniform,0.3,43,21.8883
+Min Adapt,uniform,0.3,44,21.9448
+Min Adapt,uniform,0.4,42,28.3289
+Min Adapt,uniform,0.4,43,27.9485
+Min Adapt,uniform,0.4,44,27.9855
+Min Adapt,uniform,0.5,42,47.598
+Min Adapt,uniform,0.5,43,46.908
+Min Adapt,uniform,0.5,44,47.3145
+Min Adapt,transpose,0.05,42,19.6482
+Min Adapt,transpose,0.05,43,19.6453
+Min Adapt,transpose,0.05,44,19.573
+Min Adapt,transpose,0.1,42,19.9609
+Min Adapt,transpose,0.1,43,19.8728
+Min Adapt,transpose,0.1,44,19.8714
+Min Adapt,transpose,0.2,42,26.2674
+Min Adapt,transpose,0.2,43,25.7784
+Min Adapt,transpose,0.2,44,25.5975
+Min Adapt,transpose,0.3,42,37.8676
+Min Adapt,transpose,0.3,43,37.5271
+Min Adapt,transpose,0.3,44,37.6149
+Min Adapt,transpose,0.4,42,563.813
+Min Adapt,transpose,0.4,43,549.358
+Min Adapt,transpose,0.4,44,570.303
+Min Adapt,transpose,0.5,42,805.06
+Min Adapt,transpose,0.5,43,794.098
+Min Adapt,transpose,0.5,44,800.537
+Min Adapt,hotspot,0.05,42,23.7496
+Min Adapt,hotspot,0.05,43,23.7281
+Min Adapt,hotspot,0.05,44,23.402
+Min Adapt,hotspot,0.1,42,1811.94
+Min Adapt,hotspot,0.1,43,1754.91
+Min Adapt,hotspot,0.1,44,1792.7
+Min Adapt,hotspot,0.2,42,4487.11
+Min Adapt,hotspot,0.2,43,4443.33
+Min Adapt,hotspot,0.2,44,4556.52
+Min Adapt,hotspot,0.3,42,5814.94
+Min Adapt,hotspot,0.3,43,5788.81
+Min Adapt,hotspot,0.3,44,5945.26
+Min Adapt,hotspot,0.4,42,6864.91
+Min Adapt,hotspot,0.4,43,6893.11
+Min Adapt,hotspot,0.4,44,6940.13
+Min Adapt,hotspot,0.5,42,7522.27
+Min Adapt,hotspot,0.5,43,7500.37
+Min Adapt,hotspot,0.5,44,7537.0
+GNN-Weighted,uniform,0.05,42,19.6032
+GNN-Weighted,uniform,0.05,43,19.5741
+GNN-Weighted,uniform,0.05,44,19.6818
+GNN-Weighted,uniform,0.1,42,19.7705
+GNN-Weighted,uniform,0.1,43,19.7235
+GNN-Weighted,uniform,0.1,44,19.7035
+GNN-Weighted,uniform,0.2,42,20.0948
+GNN-Weighted,uniform,0.2,43,20.0894
+GNN-Weighted,uniform,0.2,44,20.0821
+GNN-Weighted,uniform,0.3,42,20.6333
+GNN-Weighted,uniform,0.3,43,20.6075
+GNN-Weighted,uniform,0.3,44,20.5972
+GNN-Weighted,uniform,0.4,42,21.467
+GNN-Weighted,uniform,0.4,43,21.4425
+GNN-Weighted,uniform,0.4,44,21.4565
+GNN-Weighted,uniform,0.5,42,22.9558
+GNN-Weighted,uniform,0.5,43,23.0039
+GNN-Weighted,uniform,0.5,44,23.0053
+GNN-Weighted,transpose,0.05,42,19.6515
+GNN-Weighted,transpose,0.05,43,19.6412
+GNN-Weighted,transpose,0.05,44,19.5774
+GNN-Weighted,transpose,0.1,42,19.9282
+GNN-Weighted,transpose,0.1,43,19.846
+GNN-Weighted,transpose,0.1,44,19.8486
+GNN-Weighted,transpose,0.2,42,20.6693
+GNN-Weighted,transpose,0.2,43,20.583
+GNN-Weighted,transpose,0.2,44,20.5578
+GNN-Weighted,transpose,0.3,42,21.6028
+GNN-Weighted,transpose,0.3,43,21.5399
+GNN-Weighted,transpose,0.3,44,21.5212
+GNN-Weighted,transpose,0.4,42,22.7981
+GNN-Weighted,transpose,0.4,43,22.7438
+GNN-Weighted,transpose,0.4,44,22.6973
+GNN-Weighted,transpose,0.5,42,24.5351
+GNN-Weighted,transpose,0.5,43,24.3805
+GNN-Weighted,transpose,0.5,44,24.4375
+GNN-Weighted,hotspot,0.05,42,25.5761
+GNN-Weighted,hotspot,0.05,43,25.7031
+GNN-Weighted,hotspot,0.05,44,25.4211
+GNN-Weighted,hotspot,0.1,42,2004.93
+GNN-Weighted,hotspot,0.1,43,1949.42
+GNN-Weighted,hotspot,0.1,44,2009.33
+GNN-Weighted,hotspot,0.2,42,4439.33
+GNN-Weighted,hotspot,0.2,43,4448.59
+GNN-Weighted,hotspot,0.2,44,4538.36
+GNN-Weighted,hotspot,0.3,42,5138.49
+GNN-Weighted,hotspot,0.3,43,5181.5
+GNN-Weighted,hotspot,0.3,44,5237.39
+GNN-Weighted,hotspot,0.4,42,5963.74
+GNN-Weighted,hotspot,0.4,43,5963.68
+GNN-Weighted,hotspot,0.4,44,6071.35
+GNN-Weighted,hotspot,0.5,42,6794.81
+GNN-Weighted,hotspot,0.5,43,6783.03
+GNN-Weighted,hotspot,0.5,44,6818.95
+Adaptive XY-YX,transpose,0.2,44,19.8821
+Adaptive XY-YX,transpose,0.3,42,20.3994
+Adaptive XY-YX,transpose,0.3,43,20.3591
+Adaptive XY-YX,transpose,0.3,44,20.3335
+Adaptive XY-YX,transpose,0.4,42,21.0295
+Adaptive XY-YX,transpose,0.4,43,21.0151
+Adaptive XY-YX,transpose,0.4,44,20.9728
+Adaptive XY-YX,transpose,0.5,42,22.3201
+Adaptive XY-YX,transpose,0.5,43,22.2132
+Adaptive XY-YX,transpose,0.5,44,22.2202
+Adaptive XY-YX,hotspot,0.01,42,19.6095
+Adaptive XY-YX,hotspot,0.01,43,19.6313
+Adaptive XY-YX,hotspot,0.01,44,19.5037
+Adaptive XY-YX,hotspot,0.05,42,22.0493
+Adaptive XY-YX,hotspot,0.05,43,22.0517
+Adaptive XY-YX,hotspot,0.05,44,22.0054
+Adaptive XY-YX,hotspot,0.1,42,1849.9
+Adaptive XY-YX,hotspot,0.1,43,1718.16
+Adaptive XY-YX,hotspot,0.1,44,1782.55
+Adaptive XY-YX,hotspot,0.2,42,3205.73
+Adaptive XY-YX,hotspot,0.2,43,3155.04
+Adaptive XY-YX,hotspot,0.2,44,3196.08
+Adaptive XY-YX,hotspot,0.3,42,4545.42
+Adaptive XY-YX,hotspot,0.3,43,4438.51
+Adaptive XY-YX,hotspot,0.3,44,4558.31
+Adaptive XY-YX,hotspot,0.4,42,5897.49
+Adaptive XY-YX,hotspot,0.4,43,5868.77
+Adaptive XY-YX,hotspot,0.4,44,5961.73
+Adaptive XY-YX,hotspot,0.5,42,6737.55
+Adaptive XY-YX,hotspot,0.5,43,6708.24
+Adaptive XY-YX,hotspot,0.5,44,6756.1
+GNN-Weighted,uniform,0.01,42,19.4792
+GNN-Weighted,uniform,0.01,43,19.497
+GNN-Weighted,uniform,0.01,44,19.5461
+GNN-Weighted,uniform,0.05,42,19.6032
+GNN-Weighted,uniform,0.05,43,19.5741
+GNN-Weighted,uniform,0.05,44,19.6818
+GNN-Weighted,uniform,0.1,42,19.7705
+GNN-Weighted,uniform,0.1,43,19.7235
+GNN-Weighted,uniform,0.1,44,19.7035
+GNN-Weighted,uniform,0.2,42,20.0948
+GNN-Weighted,uniform,0.2,43,20.0894
+GNN-Weighted,uniform,0.2,44,20.0821
+GNN-Weighted,uniform,0.3,42,20.6333
+GNN-Weighted,uniform,0.3,43,20.6075
+GNN-Weighted,uniform,0.3,44,20.5972
+GNN-Weighted,uniform,0.4,42,21.467
+GNN-Weighted,uniform,0.4,43,21.4425
+GNN-Weighted,uniform,0.4,44,21.4565
+GNN-Weighted,uniform,0.5,42,22.9558
+GNN-Weighted,uniform,0.5,43,23.0039
+GNN-Weighted,uniform,0.5,44,23.0053
+GNN-Weighted,transpose,0.01,42,19.6026
+GNN-Weighted,transpose,0.01,43,19.4824
+GNN-Weighted,transpose,0.01,44,19.4719
+GNN-Weighted,transpose,0.05,42,19.6515
+GNN-Weighted,transpose,0.05,43,19.6412
+GNN-Weighted,transpose,0.05,44,19.5774
+GNN-Weighted,transpose,0.1,42,19.9282
+GNN-Weighted,transpose,0.1,43,19.846
+GNN-Weighted,transpose,0.1,44,19.8486
+GNN-Weighted,transpose,0.2,42,20.6693
+GNN-Weighted,transpose,0.2,43,20.583
+GNN-Weighted,transpose,0.2,44,20.6979
+GNN-Weighted,transpose,0.3,42,21.5922
+GNN-Weighted,transpose,0.3,43,21.5399
+GNN-Weighted,transpose,0.3,44,21.5466
+GNN-Weighted,transpose,0.4,42,22.7981
+GNN-Weighted,transpose,0.4,43,22.7438
+GNN-Weighted,transpose,0.4,44,22.6973
+GNN-Weighted,transpose,0.5,42,24.487

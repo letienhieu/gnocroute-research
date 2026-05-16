@@ -1,0 +1,28 @@
+% ============================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ============================================================
+
+This paper presented GNNocRoute-DRL, a framework combining Graph Neural Networks with Deep Reinforcement Learning for topology-aware adaptive routing in Network-on-Chip. Our contributions span four areas:
+
+\textbf{First}, we demonstrated through graph-theoretic analysis across seven topologies that deterministic routing creates structurally predictable congestion patterns, with congestion imbalance reaching 0.475 on an $8\times8$ mesh. \textbf{Second}, we showed that GATv2-based GNN encoders learn topology-aware node embeddings that strongly correlate with betweenness centrality ($|r| = 0.978$), providing structural information that MLP-based encoders cannot capture. \textbf{Third}, through extensive BookSim2 simulations with 100-sample periods and 5 random seeds, we evaluated a precomputed GNN-PPO routing policy against six baseline algorithms on Mesh $4\times4$. \textbf{Fourth}, we extended our approach to Mesh $8\times8$ (64 nodes) with a GNN-weighted supervised training pipeline, demonstrating up to 16.9\% latency improvement under hotspot traffic through a 16 KB weight table lookup.
+
+On Mesh $4\times4$, under uniform traffic, GNNocRoute-PPO achieves comparable latency to XY routing (19.8 vs. 19.6 cycles at rate 0.1), confirming that the GNN-based routing table does not introduce overhead under balanced workloads. However, under transpose traffic, the fixed routing table performs significantly worse (44.0 vs. 20.5 cycles), revealing a key limitation: an offline, precomputed policy trained on uniform traffic does not generalize to unseen traffic patterns.
+
+On Mesh $8\times8$, the GNN-weighted supervised routing approach achieves more promising results. Under hotspot traffic with a center node hotspot, GNN-weighted routing reduces average packet latency by 13.0--16.9\% at moderate injection rates ($r = 0.1$--$0.2$) compared to XY routing, and by 5.8--12.0\% compared to Adaptive XY/YX. At low rates, GNN-weighted maintains comparable performance to XY (33.2 vs. 33.2 cycles at $r=0.01$). We further demonstrate zero-shot generalization from $4\times4$ to $8\times8$ via bilinear interpolation of weight matrices, achieving 73.7\% decision agreement with direct training ($r=0.68$).
+
+The periodic optimization framework addresses the tension between GNN expressiveness ($10^6$ cycles per inference) and NoC timing constraints ($<10$ cycles per routing decision), achieving practical feasibility with $P = 5,000$ cycle update periods.
+
+These results establish both the promise and the challenges of GNN-enhanced NoC routing. The topology-aware embeddings from the GATv2 encoder (validated by $|r| = 0.978$ with centrality) provide structural information that heuristic algorithms lack---but translating this awareness into consistently better routing decisions requires further advances in training methodology and online adaptation.
+
+\subsection*{Future Work}
+\begin{enumerate}
+    \item Online DRL agent training directly within the BookSim2 environment, enabling the policy to adapt to observed traffic patterns
+    \item Richer action space beyond binary XY/YX selection, including per-hop adaptive routing decisions
+    \item Energy-aware routing with power model integration
+    \item Evaluation on real PARSEC benchmark workloads
+    \item Hardware implementation of the GNN encoder for on-chip deployment
+\end{enumerate}
+
+\subsection*{Acknowledgments}
+This research was supported by the Institute of Information Technology, Vietnam National University, Hanoi, under PhD research program No. 25218003.

@@ -1,0 +1,63 @@
+Algorithm: min_adapt
+Traffic: hotspot
+Rate: 0.2
+Seed: 44
+Latency: 366.97
+Elapsed: 0s
+
+BEGIN Configuration File: /tmp/bs_min_adapt_hotspot_r0.2_s44.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = min_adapt;
+num_vcs = 4;
+vc_buf_size = 4;
+wait_for_tail_credit = 1;
+traffic = hotspot(35,10);
+packet_size = 1;
+sim_type = latency;
+injection_rate = 0.2;
+warmup_periods = 3;
+sample_period = 1000;
+sim_count = 1;
+seed = 44;
+max_samples = 50;
+
+END Configuration File: /tmp/bs_min_adapt_hotspot_r0.2_s44.cfg
+Class 0:
+Packet latency average = 366.97
+	minimum = 7
+	maximum = 972
+Network latency average = 189.484
+	minimum = 7
+	maximum = 972
+Slowest packet = 311
+Flit latency average = 189.484
+	minimum = 7
+	maximum = 972
+Slowest flit = 311
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0182031
+	minimum = 0.005 (at node 12)
+	maximum = 0.137 (at node 35)
+Accepted packet rate average = 0.0102969
+	minimum = 0 (at node 0)
+	maximum = 0.659 (at node 35)
+Injected flit rate average = 0.0182031
+	minimum = 0.005 (at node 12)
+	maximum = 0.137 (at node 35)
+Accepted flit rate average= 0.0102969
+	minimum = 0 (at node 0)
+	maximum = 0.659 (at node 35)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 570 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.150867
+

@@ -1,0 +1,62 @@
+% ============================================================
+% MASTER FILE — GNNocRoute-DRL Paper
+% Journal of Systems Architecture (Elsevier)
+% ============================================================
+\documentclass[5p,twocolumn]{elsarticle}
+
+\graphicspath{{./figures/}}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{footnote}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subcaption}
+\usepackage{xcolor}
+
+\journal{Journal of Systems Architecture}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{GNNocRoute-DRL: Topology-Aware Adaptive Routing for Network-on-Chip using Graph Neural Networks and Deep Reinforcement Learning}
+
+\author[1]{Le Tien Hieu\corref{cor1}}
+\ead{letienhieu@mcs.edu.vn}
+\cortext[cor1]{Corresponding author}
+
+\address[1]{Institute of Information Technology, Vietnam National University, Hanoi, Vietnam}
+
+\begin{abstract}
+Network-on-Chip (NoC) has become the standard communication infrastructure for modern multi-core processors and AI accelerators. However, conventional deterministic routing algorithms suffer from structural congestion imbalance---our graph-theoretic analysis across seven topologies shows that an $8\times8$ mesh under XY routing achieves a congestion imbalance of 0.475, with central nodes experiencing $2-3\times$ higher betweenness centrality than edge nodes. While adaptive routing algorithms improve performance under non-uniform traffic, they rely on local heuristics that cannot leverage global topology structure.
+
+This paper presents GNNocRoute-DRL, a framework combining Graph Neural Networks (GNN) with Deep Reinforcement Learning (DRL) for topology-aware adaptive routing in NoC. The framework introduces two key components: (1) a GATv2 encoder that learns topology-aware node representations correlating with betweenness centrality ($|r| = 0.978$); and (2) a periodic policy optimization scheme that decouples GNN inference ($\approx 10^6$ cycles) from per-packet routing ($<10$ cycles).
+
+Through BookSim2 cycle-accurate simulations on Mesh $4\times4$ with 100 sample periods and 5 random seeds, we evaluate a precomputed GNN-PPO routing policy against four baseline algorithms. Under uniform traffic, GNNocRoute-PPO achieves comparable latency to XY routing (19.8 vs. 19.6 cycles). Under transpose traffic, the fixed policy exhibits limited generalization (44.0 vs. 20.5 cycles for XY). On Mesh $8\times8$ (64 nodes), a supervised GNN-weighted approach achieves up to 16.9\% latency reduction under hotspot traffic through a 16 KB weight table lookup, and zero-shot generalization from $4\times4$ to $8\times8$ via bilinear interpolation reaches 73.7\% decision agreement with direct training ($r=0.68$). These findings establish both the promise of GNN-enhanced topology awareness---validated through $|r| = 0.978$ correlation with betweenness centrality---and the challenges of offline policy generalization, motivating future work on fully online DRL agents for NoC routing.
+\end{abstract}
+
+\begin{keyword}
+Network-on-Chip \sep Graph Neural Networks \sep Deep Reinforcement Learning \sep Adaptive Routing \sep Congestion Management
+\end{keyword}
+
+\end{frontmatter}
+
+\input{01-introduction}
+\input{02-related-work}
+\input{03-method}
+\input{04-experiments}
+\input{05-results}
+\input{06-discussion}
+\input{07-conclusion}
+
+
+\nocite{*}
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

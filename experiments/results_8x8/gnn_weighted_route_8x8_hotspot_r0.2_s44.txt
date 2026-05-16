@@ -1,0 +1,63 @@
+Algorithm: gnn_weighted_route_8x8
+Traffic: hotspot
+Rate: 0.2
+Seed: 44
+Latency: 323.252
+Elapsed: 0s
+
+BEGIN Configuration File: /tmp/bs_gnn_weighted_route_8x8_hotspot_r0.2_s44.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = gnn_weighted_route_8x8;
+num_vcs = 4;
+vc_buf_size = 4;
+wait_for_tail_credit = 1;
+traffic = hotspot(35,10);
+packet_size = 1;
+sim_type = latency;
+injection_rate = 0.2;
+warmup_periods = 3;
+sample_period = 1000;
+sim_count = 1;
+seed = 44;
+max_samples = 50;
+
+END Configuration File: /tmp/bs_gnn_weighted_route_8x8_hotspot_r0.2_s44.cfg
+Class 0:
+Packet latency average = 323.252
+	minimum = 7
+	maximum = 978
+Network latency average = 156.211
+	minimum = 7
+	maximum = 978
+Slowest packet = 91
+Flit latency average = 156.211
+	minimum = 7
+	maximum = 978
+Slowest flit = 91
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0163906
+	minimum = 0.004 (at node 53)
+	maximum = 0.187 (at node 35)
+Accepted packet rate average = 0.0102969
+	minimum = 0 (at node 0)
+	maximum = 0.659 (at node 35)
+Injected flit rate average = 0.0163906
+	minimum = 0.004 (at node 53)
+	maximum = 0.187 (at node 35)
+Accepted flit rate average= 0.0102969
+	minimum = 0 (at node 0)
+	maximum = 0.659 (at node 35)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 453 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.114244
+

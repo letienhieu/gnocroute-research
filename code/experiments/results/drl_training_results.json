@@ -1,0 +1,6 @@
+{
+  "time_min": 1.506985342502594,
+  "avg_reward": -20.8805125,
+  "episodes": 200,
+  "model": "drl_fast.pt"
+}

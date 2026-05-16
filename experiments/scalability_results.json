@@ -1,0 +1,1514 @@
+[
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.0878
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.2276
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.1756
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 33.3428
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 33.3515
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 33.634
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 33.6404
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 33.9573
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 33.7313
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 489.392
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 511.362
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 515.277
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 690.647
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 647.147
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 690.889
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 544.299
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 547.28
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 552.392
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.0493
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.9248
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.3212
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 33.8246
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 33.7546
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 33.7392
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 463.676
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 493.345
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 408.377
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 442.039
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 513.119
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 443.513
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 535.9
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 529.644
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 566.124
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 776.002
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 799.236
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 763.28
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 41.1651
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 54.1138
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 34.0622
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 355.325
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 368.397
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 398.989
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 296.464
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 290.232
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 290.45
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 370.687
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 379.14
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 384.273
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 421.965
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 415.183
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 417.067
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 448.335
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 450.029
+  },
+  {
+    "algorithm": "dor",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 454.017
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.4392
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.1345
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.4786
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 33.577
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 33.7095
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 33.7947
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 34.9272
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 35.0495
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 35.2513
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 521.164
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 548.805
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 542.132
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 988.337
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 978.856
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 1003.45
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 638.017
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 633.089
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 646.463
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.0616
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.9309
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.3255
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 33.7602
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 33.7474
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 33.7568
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 42.1923
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 45.45
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 43.9104
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 444.011
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 479.751
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 463.453
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 683.24
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 623.322
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 589.817
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 866.608
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 847.516
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 873.846
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 43.1475
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 52.6982
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 35.0132
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 395.167
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 403.92
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 424.485
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 278.551
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 254.788
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 277.014
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 353.829
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 355.068
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 362.109
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 404.59
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 393.88
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 404.273
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 442.173
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 443.388
+  },
+  {
+    "algorithm": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 447.722
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.7772
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.8389
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.6986
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 37.5909
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 37.6408
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 38.0232
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 44.0381
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 44.7786
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 44.0268
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 503.859
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 497.505
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 543.629
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 756.597
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 745.814
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 768.892
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 567.674
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 572.135
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 576.506
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.5196
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 34.4005
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.6734
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 36.9821
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 36.9228
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 36.8455
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 499.447
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 499.778
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 501.359
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 475.829
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 478.053
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 488.586
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 453.635
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 454.21
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 453.744
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 735.103
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 740.372
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 745.04
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 67.2218
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 77.0858
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 61.4389
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 336.249
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 326.746
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 344.644
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 284.275
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 273.308
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 276.233
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 364.722
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 364.187
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 366.97
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 416.638
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 411.359
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 409.28
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 444.786
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 445.166
+  },
+  {
+    "algorithm": "min_adapt",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 450.755
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.1746
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 33.2737
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.2163
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 34.6233
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 34.5872
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 34.8239
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 357.464
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 244.861
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 455.362
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 635.678
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 587.991
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 717.974
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 1106.45
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 1124.76
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 1109.53
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 658.957
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 679.507
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "uniform",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 666.421
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 33.2357
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 34.1453
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 33.4352
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 231.837
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 456.593
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 424.253
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 422.366
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 466.265
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 436.734
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 514.489
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 469.904
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 510.417
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 743.903
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 698.889
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 723.791
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 807.583
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 781.343
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "transpose",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 792.246
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 42,
+    "latency": 325.901
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 43,
+    "latency": 189.72
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.01,
+    "seed": 44,
+    "latency": 365.093
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 42,
+    "latency": 337.661
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 43,
+    "latency": 347.758
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.05,
+    "seed": 44,
+    "latency": 343.189
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 42,
+    "latency": 254.046
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 43,
+    "latency": 246.845
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.1,
+    "seed": 44,
+    "latency": 262.263
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 42,
+    "latency": 318.428
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 43,
+    "latency": 301.161
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.2,
+    "seed": 44,
+    "latency": 323.252
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 42,
+    "latency": 372.986
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 43,
+    "latency": 361.038
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.3,
+    "seed": 44,
+    "latency": 375.52
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 42,
+    "latency": 427.91
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 43,
+    "latency": 432.293
+  },
+  {
+    "algorithm": "gnn_weighted_route_8x8",
+    "traffic": "hotspot",
+    "rate": 0.5,
+    "seed": 44,
+    "latency": 432.272
+  }
+]

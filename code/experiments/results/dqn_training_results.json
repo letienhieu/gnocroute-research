@@ -1,0 +1,20 @@
+{
+  "hotspot_005": {
+    "train_time_min": 0.8446086605389913,
+    "avg_delivery_rate": 1.0,
+    "avg_hops": 2.5217999999999994,
+    "std_delivery": 0.0
+  },
+  "hotspot_01": {
+    "train_time_min": 0.5109786589940389,
+    "avg_delivery_rate": 1.0,
+    "avg_hops": 2.5161333333333338,
+    "std_delivery": 0.0
+  },
+  "uniform_005": {
+    "train_time_min": 0.5003475149472555,
+    "avg_delivery_rate": 1.0,
+    "avg_hops": 2.6344000000000003,
+    "std_delivery": 0.0
+  }
+}

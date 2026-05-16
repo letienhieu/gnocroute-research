@@ -1,0 +1,98 @@
+% ============================================================
+\section{Experimental Setup}
+\label{sec:experiments}
+% ============================================================
+
+We evaluate routing algorithms through cycle-accurate simulations using BookSim2~\cite{booksim}, a widely-used NoC simulator. This section describes the experimental methodology, baselines, traffic patterns, and evaluation metrics.
+
+\subsection{Simulation Environment}
+
+Simulation parameters are summarized in Table~\ref{tab:simparams}. All results are obtained with 100 independent sample periods of 1,000 cycles each, preceded by 3 warmup periods.
+
+\begin{table}[h]
+\centering
+\caption{BookSim2 simulation parameters}
+\label{tab:simparams}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Simulator & BookSim2 2.0 \\
+Topologies & Mesh $4\times4$ \\
+Flit size & 32 bytes \\
+Buffer depth & 4 flits/VC \\
+Virtual channels & 4 \\
+Routing computation & 1 cycle \\
+Warmup periods & 3 \\
+Sample periods & 100 (1,000 cycles each) \\
+Simulation length & $\sim$103,000 cycles \\
+Packet size & 1 flit \\
+\midrule
+Seeds per config & 5 \\
+Total runs & 600+ (across 7 algorithms, 3 traffics, 6 rates, 5 seeds) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Routing Algorithms}
+
+We compare seven routing approaches spanning deterministic, locally-adaptive, randomized, and GNN-enhanced methods:
+
+\begin{itemize}
+    \item \textbf{XY (DOR):} Dimension-order routing, the most widely used deterministic algorithm for mesh NoCs. Packets are routed first along the X dimension, then Y.
+    \item \textbf{Adaptive XY/YX:} An adaptive variant that selects between XY and YX paths based on local congestion at the source router~\cite{balfour2006}.
+    \item \textbf{Minimal Adaptive:} Routes packets along any minimal path, with port selection based on buffer occupancy.
+    \item \textbf{Planar Adaptive:} An adaptive routing algorithm that divides the mesh into adaptive planes for deadlock-free operation, selecting output ports based on local congestion across multiple dimensions simultaneously~\cite{chiu2000}.
+    \item \textbf{ROMM:} A randomized partially-minimal routing scheme that selects a random intermediate node within the minimal quadrant, combining load balancing with bounded path length~\cite{ni1999romm}.
+    \item \textbf{Valiant:} Randomized routing that sends packets to a random intermediate node before forwarding to the destination.
+    \item \textbf{GNNocRoute-PPO:} Precomputed routing policy based on a GATv2-GNN encoder (see Section~\ref{sec:method}). The model produces per-source-destination routing decisions (XY or YX) that are stored in a lookup table for online use.
+\end{itemize}
+
+\subsection{Traffic Patterns}
+
+We evaluate under three synthetic traffic patterns:
+
+\begin{itemize}
+    \item \textbf{Uniform Random:} Each node sends packets to a uniformly random destination. Represents balanced workloads.
+    \item \textbf{Transpose:} Node $(i,j)$ sends to node $(j,i)$. Creates diagonal traffic that stresses non-minimal path selection.
+    \item \textbf{Hotspot (10\%):} $10\%$ of traffic targets a single central node $(3,3)$, with the remaining $90\%$ uniformly distributed. Tests congestion handling under skewed loads.
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+
+We measure two primary metrics:
+
+\begin{itemize}
+    \item \textbf{Average packet latency:} Mean number of cycles from packet injection to tail flit reception, averaged over 100 sample periods and 5 random seeds.
+    \item \textbf{Saturation behavior:} Injection rate at which latency exceeds the simulation stability threshold (500 cycles), indicating network saturation.
+\end{itemize}
+
+\subsection{DRL Training Setup}
+
+The GNN-PPO routing policy is trained offline using the NoC routing environment (Section~\ref{sec:method}). Training is conducted on Mesh $4\times4$ with 500 episodes of GATv2 encoder pre-training followed by 500 episodes of DQN training. The trained policy is exported as a precomputed routing table.
+
+All training runs on CPU (Intel Xeon, 2.3 GHz) using PyTorch 2.8 and PyTorch Geometric 2.6.
+
+\subsection{Faulty Topology Experiments}
+\label{sec:faulty}
+
+To evaluate routing resilience under link failures, we conduct experiments on Mesh $4\times4$ with randomly disabled links. Link failures are introduced before simulation at rates of 0, 2, 4, and 7 failures (0\%, 5\%, 10\%, and 17.5\% of the 40 bidirectional links). Each faulty topology uses a unique random seed (101) to ensure reproducibility. We test three routing algorithms under uniform, transpose, and hotspot traffic at injection rates 0.01 and 0.05, with two simulation seeds per configuration (144 runs total).
+
+The GNNocRoute v4 model (GNN Port Score with fault-aware training) is trained on 20 faulty topologies plus 1 fault-free topology across 7 traffic patterns (147 training samples). Fault-aware node features include a binary flag for router isolation status, the number of failed adjacent links, and a normalized distance-to-fault metric. The model uses a 12-dimensional input (7 spatial + 5 fault-aware features) with GATv2 layers ($12 \rightarrow 48 \rightarrow 32$) and achieves a validation loss of 3.42 after 300 epochs.
+
+The routing architecture implements a four-phase fallback strategy to guarantee deadlock-free operation: (1) score all non-faulty minimal ports with congestion penalty; (2) congestion-based reroute among minimal ports; (3) fault-aware DOR fallback (XY $\rightarrow$ YX); (4) DOR without fault checking as a deadlock escape mechanism. This design ensures that GNNocRoute never misroutes packets, maintaining deadlock freedom by construction.
+
+\subsection{Scalability Study on Mesh $8\times8$}
+\label{sec:scalability}
+
+To evaluate the scalability of GNN-weighted routing to larger networks, we conducted experiments on Mesh $8\times8$ (64 nodes, 112 bidirectional links). The routing table stores precomputed weights $W[i][j] \in [0,1]$ for all $64 \times 64 = 4,096$ source-destination pairs, each encoded as a 32-bit float in a ROM lookup table requiring 16 KB of storage.
+
+We compare three baseline algorithms (XY, Adaptive XY/YX, Minimal Adaptive) against the GNN-weighted adaptive routing under the same traffic patterns (uniform, transpose, hotspot at node 35). Simulation parameters are identical to the $4\times4$ experiments.
+
+Two training strategies are evaluated:
+\begin{itemize}
+    \item \textbf{Direct training:} The GNN (GATv2, $7\rightarrow 64 \rightarrow 32$ hidden dimensions) is trained from scratch on Mesh $8\times8$ with 5 training traffic patterns (uniform, transpose, center hotspot, corner hotspot, bit complement). Node features include normalized coordinates $(x/7, y/7)$, degree, betweenness centrality, and corner/edge/center flags.
+    \item \textbf{Zero-shot transfer:} The GNN is trained solely on Mesh $4\times4$, and the resulting 16$\times$16 weight table is extended to 64$\times$64 through position-based bilinear interpolation. This tests whether structural patterns learned on a small mesh can transfer to a larger one without retraining.
+\end{itemize}
+
+The zero-shot approach is motivated by the observation that network structure---corner, edge, and center nodes---is self-similar across mesh sizes. By mapping normalized positions of $8\times8$ nodes to corresponding positions in the $4\times4$ space, weight values can be estimated through bilinear interpolation: $W_{8\times8}(s,d) = \mathcal{I}(W_{4\times4}, \hat{s}, \hat{d})$ where $\hat{s} = s / 7 \times 3$ is the normalized position of source $s$ in $4\times4$ coordinates, and $\mathcal{I}$ denotes bilinear interpolation.

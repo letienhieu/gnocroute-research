@@ -1,0 +1,434 @@
+[
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.6167
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.5807
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.7476
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 19.8838
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 20.3143
+  },
+  {
+    "algo": "dor",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 20.9621
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6305
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.5862
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.7186
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 20.2691
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 22.309
+  },
+  {
+    "algo": "dor",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 258.077
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.7314
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 21.7064
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 971.981
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 2392.95
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 2993.89
+  },
+  {
+    "algo": "dor",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 3513.67
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.5753
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.5913
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.7457
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 19.9029
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 20.2785
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 20.8964
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6255
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.5559
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.6412
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 19.9045
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 20.3433
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 20.929
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.753
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 21.9458
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 918.818
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 1549.68
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 2218.59
+  },
+  {
+    "algo": "adaptive_xy_yx",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 2947.27
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.645
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.6608
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.9617
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 20.4562
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 21.8403
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 28.1217
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6489
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.6446
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.9083
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 26.137
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 37.1284
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 282.677
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.845
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 23.8372
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 879.375
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 2227.41
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 2928.65
+  },
+  {
+    "algo": "min_adapt",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 3423.08
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.02,
+    "latency": 19.6204
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.05,
+    "latency": 19.5926
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.1,
+    "latency": 19.7969
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.2,
+    "latency": 20.0409
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.3,
+    "latency": 20.7033
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "uniform",
+    "inj": 0.4,
+    "latency": 21.9766
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.02,
+    "latency": 19.6461
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.05,
+    "latency": 19.6451
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.1,
+    "latency": 19.9273
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.2,
+    "latency": 20.9381
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.3,
+    "latency": 22.3202
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "transpose",
+    "inj": 0.4,
+    "latency": 23.9802
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.02,
+    "latency": 19.8172
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.05,
+    "latency": 22.6788
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.1,
+    "latency": 958.579
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.2,
+    "latency": 2186.65
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.3,
+    "latency": 2592.1
+  },
+  {
+    "algo": "gnn_ppo_route_4x4",
+    "traffic": "hotspot",
+    "inj": 0.4,
+    "latency": 3011.7
+  }
+]

@@ -1,0 +1,57 @@
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+% ============================================================
+
+\subsection{Evaluation of the GNNocRoute-PPO Routing Policy}
+
+Table~\ref{tab:latency} presents the performance of seven routing algorithms on Mesh $4\times4$ at injection rate 0.1. The experiment reveals several important findings.
+
+Under \textbf{uniform traffic}, all minimal algorithms achieve comparable performance (19.6--22.0 cycles). GNNocRoute-PPO (19.8) matches XY (19.6) exactly, confirming that the precomputed routing table does not introduce overhead under balanced workloads.
+
+Under \textbf{transpose traffic}, XY and Adaptive XY/YX achieve the lowest latencies (20.4--20.5 cycles). ROMM (21.7) and GNNocRoute-PPO (44.0) perform worse, with GNNocRoute-PPO showing a 115\% increase. This degradation occurs because the GNN-PPO policy was trained exclusively under uniform traffic and does not generalize to the diagonal communication pattern of transpose traffic. The precomputed routing table selects YX for certain source-destination pairs that create pathologically long routes under this pattern.
+
+Under \textbf{hotspot traffic}, we observe the clearest performance hierarchy. Planar Adaptive (176.3 cycles) and ROMM (219.7) significantly outperform deterministic algorithms. XY (467.6) and GNNocRoute-PPO (473.4) perform comparably but show no adaptive advantage. This indicates that the central hotspot creates a structural bottleneck that only locally-adaptive routing---which responds to real-time buffer occupancy---can effectively mitigate.
+
+\subsection{Implications for GNN-Based Routing}
+
+The experimental results reveal an important insight: GNN-based topology awareness, while effective at structural encoding ($|r| = 0.978$ with centrality), must be coupled with online adaptation to realize its full potential. A precomputed, offline routing table cannot respond to changing traffic patterns---the very scenarios where topology-aware routing would provide the most benefit.
+
+This finding does not diminish the value of the GNN encoder. Rather, it highlights a clear path forward: integrating the GNN encoder into a fully online DRL agent that periodically updates routing decisions based on real-time congestion observations. The periodic optimization framework (Section~\ref{sec:method}) provides exactly this capability, with the GNN re-encoding at coarse timescales ($10^5$--$10^6$ cycles) and the policy update at finer timescales ($P = 5,000$ cycles).
+
+\subsection{Comparison with Prior Work}
+
+Our findings provide critical context to results reported in the current literature. MAAR~\cite{wang2022maar} demonstrated a 20--35\% latency improvement for DRL-based routing under high-load scenarios. Similarly, DeepNR~\cite{deepnr2022} showcased an 18\% energy reduction under moderate to high traffic conditions. Our study contributes a systematic evaluation of a precomputed GNN-based routing policy, revealing both the promise (topology-aware structural encoding) and the challenges (generalization to unseen traffic patterns) that must be addressed for practical deployment.
+
+\subsection{Scalability and Overhead}
+
+Our experiments on Mesh $8\times8$ demonstrate that the GNN-weighted approach scales to larger networks with practical storage requirements. Table~\ref{tab:overhead} summarizes the overhead across mesh sizes.
+
+\begin{table}[h]
+\centering
+\caption{Overhead analysis of GNN-weighted routing across mesh sizes}
+\label{tab:overhead}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccc}
+\toprule
+\textbf{Metric} & \textbf{Mesh 4$\times$4} & \textbf{Mesh 8$\times$8} & \textbf{Mesh 16$\times$16} \\
+\midrule
+ROM size & 1.0 KB & 16.0 KB & 256.0 KB \\
+Pipeline latency & +0--1 cycle & +0--1 cycle & +0--1 cycle \\
+Est. area (32nm) & $<$0.01 mm$^2$ & $\sim$0.06 mm$^2$ & $\sim$1.0 mm$^2$\\
+Dynamic energy & pJ/access & pJ/access & pJ/access \\
+GNN inference (CPU) & 5.5 ms & 6.9 ms & 21.3 ms \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+A 64$\times$64 weight table requires 16 KB of ROM (4,096 entries $\times$ 4 bytes). This is modest compared to typical router buffer storage (4 flits $\times$ 4 VCs $\times$ 5 ports $\times$ 32 bytes = 2.56 KB per router). The lookup adds at most one cycle to the router pipeline, comparable to the adaptive XY/YX credit-read latency. Power analysis (32nm, 0.9V) estimates approximately 0.1 $\mu$W dynamic power per table access, negligible compared to the router pipeline power ($\sim$10 mW).
+
+GNN inference (GATv2, PyTorch CPU) takes approximately 5.5 ms for Mesh 4$\times$4 and 6.9 ms for Mesh 8$\times$8. Under the periodic optimization framework, this runs in the background every $10^5$--$10^6$ cycles, adding less than 0.5\% effective overhead. At 1 GHz clock frequency, the latency of 5.5 ms corresponds to 5.5 million cycles, which is amortized over 100,000--1,000,000 packet routing decisions between policy updates.
+
+The zero-shot generalization results suggest that structural routing patterns transfer across mesh sizes, achieving 73.7\% decision agreement between a 4$\times$4-trained and directly 8$\times$8-trained model. However, the zero-shot approach produces more conservative routing (3\% YX decisions vs.~20\% for direct training), limiting its congestion avoidance capability under non-uniform traffic.
+
+\subsection{Limitations and Future Work}
+
+We acknowledge several limitations in our current study. First, the GNN-PPO routing policy is precomputed and offline; a fully online DRL agent trained directly within the BookSim2 environment would enable adaptive routing decisions that respond to observed congestion. Second, the binary action space (XY vs.\ YX selection) limits the policy's expressiveness---a multi-port output selection would provide finer-grained routing control. Third, our evaluation relies on synthetic traffic patterns; validation against real application execution traces (e.g., PARSEC) is required for comprehensive profiling. Fourth, the GNN-weighted approach on 8$\times8$ under uniform and transpose traffic underperforms baselines at moderate injection rates, indicating that the supervised training targets do not fully capture the congestion dynamics of balanced traffic patterns. Finally, transitioning from unsupervised structural encodings to supervised fine-tuning using cycle-accurate routing performance data remains a promising avenue for improving the DRL agent's baseline policy.

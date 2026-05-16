@@ -1,0 +1,63 @@
+Algorithm: adaptive_xy_yx
+Traffic: hotspot
+Rate: 0.5
+Seed: 44
+Latency: 447.722
+Elapsed: 0s
+
+BEGIN Configuration File: /tmp/bs_adaptive_xy_yx_hotspot_r0.5_s44.cfg
+topology = mesh;
+k = 8;
+n = 2;
+routing_function = adaptive_xy_yx;
+num_vcs = 4;
+vc_buf_size = 4;
+wait_for_tail_credit = 1;
+traffic = hotspot(35,10);
+packet_size = 1;
+sim_type = latency;
+injection_rate = 0.5;
+warmup_periods = 3;
+sample_period = 1000;
+sim_count = 1;
+seed = 44;
+max_samples = 50;
+
+END Configuration File: /tmp/bs_adaptive_xy_yx_hotspot_r0.5_s44.cfg
+Class 0:
+Packet latency average = 447.722
+	minimum = 7
+	maximum = 976
+Network latency average = 179.452
+	minimum = 7
+	maximum = 974
+Slowest packet = 325
+Flit latency average = 179.452
+	minimum = 7
+	maximum = 974
+Slowest flit = 325
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0177187
+	minimum = 0.007 (at node 15)
+	maximum = 0.148 (at node 35)
+Accepted packet rate average = 0.0103281
+	minimum = 0 (at node 0)
+	maximum = 0.661 (at node 35)
+Injected flit rate average = 0.0177187
+	minimum = 0.007 (at node 15)
+	maximum = 0.148 (at node 35)
+Accepted flit rate average= 0.0103281
+	minimum = 0 (at node 0)
+	maximum = 0.661 (at node 35)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 537 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.134326
+

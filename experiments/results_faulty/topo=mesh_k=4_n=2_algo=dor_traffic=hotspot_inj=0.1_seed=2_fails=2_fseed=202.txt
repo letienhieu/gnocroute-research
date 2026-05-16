@@ -1,0 +1,132 @@
+BEGIN Configuration File: /tmp/tmp_1ho8tqf.cfg
+topology = mesh;
+k = 4;
+n = 2;
+routing_function = dor;
+num_vcs = 4;
+vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip;
+sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2;
+routing_delay = 1;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+input_speedup = 2;
+output_speedup = 1;
+internal_speedup = 1.0;
+traffic = hotspot;
+packet_size = 1;
+sim_type = latency;
+injection_rate = 0.1;
+warmup_periods = 3;
+sample_period = 500;
+sim_count = 50;
+seed = 2;
+link_failures = 2;
+fail_seed = 202;
+
+END Configuration File: /tmp/tmp_1ho8tqf.cfg
+failure at node 4, channel 2 (1/2)
+failure at node 13, channel 0 (2/2)
+Class 0:
+Packet latency average = 116.16
+	minimum = 7
+	maximum = 449
+Network latency average = 94.6708
+	minimum = 7
+	maximum = 449
+Slowest packet = 79
+Flit latency average = 94.6708
+	minimum = 7
+	maximum = 449
+Slowest flit = 79
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.04475
+	minimum = 0.018 (at node 14)
+	maximum = 0.096 (at node 1)
+Accepted packet rate average = 0.030375
+	minimum = 0 (at node 1)
+	maximum = 0.486 (at node 0)
+Injected flit rate average = 0.04475
+	minimum = 0.018 (at node 14)
+	maximum = 0.096 (at node 1)
+Accepted flit rate average= 0.030375
+	minimum = 0 (at node 1)
+	maximum = 0.486 (at node 0)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 129 (0 measured)
+latency change    = 1
+throughput change = 1
+Class 0:
+Packet latency average = 201.648
+	minimum = 7
+	maximum = 888
+Network latency average = 123.65
+	minimum = 7
+	maximum = 844
+Slowest packet = 112
+Flit latency average = 123.65
+	minimum = 7
+	maximum = 844
+Slowest flit = 169
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.037875
+	minimum = 0.01 (at node 13)
+	maximum = 0.107 (at node 0)
+Accepted packet rate average = 0.03075
+	minimum = 0 (at node 1)
+	maximum = 0.492 (at node 0)
+Injected flit rate average = 0.037875
+	minimum = 0.01 (at node 13)
+	maximum = 0.107 (at node 0)
+Accepted flit rate average= 0.03075
+	minimum = 0 (at node 1)
+	maximum = 0.492 (at node 0)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 128 (0 measured)
+latency change    = 0.423945
+throughput change = 0.0121951
+Class 0:
+Packet latency average = 465.797
+	minimum = 7
+	maximum = 1405
+Network latency average = 191.773
+	minimum = 7
+	maximum = 1405
+Slowest packet = 55
+Flit latency average = 191.773
+	minimum = 7
+	maximum = 1405
+Slowest flit = 55
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.031875
+	minimum = 0 (at node 15)
+	maximum = 0.1 (at node 0)
+Accepted packet rate average = 0.031375
+	minimum = 0 (at node 1)
+	maximum = 0.502 (at node 0)
+Injected flit rate average = 0.031875
+	minimum = 0 (at node 15)
+	maximum = 0.1 (at node 0)
+Accepted flit rate average= 0.031375
+	minimum = 0 (at node 1)
+	maximum = 0.502 (at node 0)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 133 (0 measured)
+latency change    = 0.567089
+throughput change = 0.0199203
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.113726
