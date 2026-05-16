@@ -21,20 +21,20 @@ Adaptive routing addresses this limitation by allowing packets to take alternati
 
 The fundamental challenge in applying GNN-based routing to NoC is \textbf{inference latency}. A single GNN forward pass on a 64-node graph requires approximately $10^6$ cycles on a CPU, while each NoC routing decision must complete within $5-10$ cycles~\cite{wang2022maar}. This approximately five-order-of-magnitude gap renders per-packet GNN inference infeasible.
 
-\textbf{Our approach:} GNNocRoute-DRL addresses this challenge through \textbf{port-scoring decoupling}. Instead of making per-packet decisions with GNN, we precompute a $4$-directional port score for every source-destination pair during offline training. At routing time, each router selects the minimal port with the highest score via single-cycle table lookup---requiring only 4 KB of storage (0.13\% of router power) for a $4\times4$ mesh. The GNN inference runs in the background ($5.5$ ms on CPU for $4\times4$) and updates the weight tables only when topology or traffic patterns change, completely eliminating inference latency from the routing critical path.
+For a $4\times4$ mesh, the GNN inference executes asynchronously in the background (requiring approximately $5.5$ ms on a standard CPU). The precomputed weight tables are subsequently updated only in response to structural topology shifts or significant traffic variations. This decoupled approach completely eliminates the neural network inference latency from the critical path of per-packet routing.
 
 \subsection{Contributions}
 
-This paper makes the following contributions:
+This paper makes the following major contributions:
 
 \begin{enumerate}
-    \item \textbf{Congestion analysis:} Quantitative demonstration across seven topologies that deterministic routing creates structurally predictable bottlenecks.
-    
-    \item \textbf{GNN-topology correlation:} Experimental evidence showing GATv2 node embeddings correlate with betweenness centrality ($|r| = 0.978$), validating that topology-aware representations emerge implicitly without supervision.
-    
-    \item \textbf{Port-scoring architecture:} A decoupled inference-execution framework that reduces per-packet routing cost to a single-cycle table lookup, consuming only 0.13\% of the router power budget through a 4 KB weight table.
-    
-    \item \textbf{Comprehensive evaluation:} Cycle-accurate simulations (700+ configurations) comparing against 7 baseline algorithms across 6 traffic patterns, demonstrating 5--16\% hotspot latency reduction over Planar Adaptive on fault-free meshes and only 2.5\% degradation vs.~257\% for Planar Adaptive under 15\% link failures.
-    
-    \item \textbf{Fault-tolerant and zero-shot generalization:} A fault-aware training variant that maintains near-zero throughput loss under 15\% random link failures, and zero-shot transfer from $4\times4$ to $8\times8$ meshes achieving 99.78\% minimal-port accuracy with up to 25\% hotspot improvement over XY.
+    \item \textbf{Congestion analysis:} A quantitative demonstration across seven NoC topologies revealing that deterministic routing intrinsically creates structurally predictable bottlenecks.
+
+    \item \textbf{GNN-topology correlation:} Strong empirical evidence showing that GATv2 node embeddings naturally correlate with betweenness centrality ($|r| = 0.978$), validating the unsupervised emergence of topology-aware structural representations.
+
+    \item \textbf{Port-scoring architecture:} A novel decoupled inference-execution framework that minimizes the per-packet routing cost to a single-cycle table lookup. This hardware-friendly architecture consumes a mere 0.13\% of the router's power budget utilizing a highly compact 4 KB weight table.
+
+    \item \textbf{Comprehensive evaluation:} An extensive cycle-accurate simulation study encompassing over 700 configurations, 7 baseline algorithms, and 6 distinct traffic patterns. Results demonstrate a 5--16\% reduction in hotspot latency compared to Planar Adaptive routing on fault-free meshes, and a remarkably resilient 2.5\% latency degradation (versus a catastrophic 257\% surge for Planar Adaptive) under a 15\% link failure rate.
+
+    \item \textbf{Fault-tolerance and zero-shot generalization:} The introduction of a fault-aware training regime that sustains near-zero throughput loss under 15\% random link failures. Furthermore, the model exhibits robust zero-shot transferability from $4\times4$ to $8\times8$ mesh scales, achieving 99.78\% minimal-port routing accuracy and outperforming XY routing by up to 25\% under hotspot traffic.
 \end{enumerate}
