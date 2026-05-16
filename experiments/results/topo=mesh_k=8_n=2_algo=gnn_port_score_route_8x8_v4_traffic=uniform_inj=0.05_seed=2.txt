@@ -1,0 +1,91 @@
+BEGIN Configuration File: /tmp/tmpii6195kk.cfg
+topology = mesh;
+k = 8; n = 2;
+routing_function = gnn_port_score_route_8x8_v4;
+num_vcs = 4; vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip; sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2; routing_delay = 1;
+vc_alloc_delay = 1; sw_alloc_delay = 1;
+input_speedup = 2; output_speedup = 1; internal_speedup = 1.0;
+traffic = uniform;
+packet_size = 1; sim_type = latency;
+injection_rate = 0.05;
+warmup_periods = 3; sample_period = 1000; sim_count = 100;
+seed = 2;
+
+END Configuration File: /tmp/tmpii6195kk.cfg
+WARNING: Possible network deadlock.
+Class 0:
+Packet latency average = 45.9633
+	minimum = 7
+	maximum = 221
+Network latency average = 45.9332
+	minimum = 7
+	maximum = 221
+Slowest packet = 466
+Flit latency average = 45.9332
+	minimum = 7
+	maximum = 221
+Slowest flit = 466
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0220781
+	minimum = 0.012 (at node 36)
+	maximum = 0.037 (at node 60)
+Accepted packet rate average = 0.0140313
+	minimum = 0.005 (at node 20)
+	maximum = 0.028 (at node 57)
+Injected flit rate average = 0.0220781
+	minimum = 0.012 (at node 36)
+	maximum = 0.037 (at node 60)
+Accepted flit rate average= 0.0140313
+	minimum = 0.005 (at node 20)
+	maximum = 0.028 (at node 57)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 579 (0 measured)
+latency change    = 1
+throughput change = 1
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+Class 0:
+Packet latency average = 45.9633
+	minimum = 7
+	maximum = 221
+Network latency average = 45.9332
+	minimum = 7
+	maximum = 221
+Slowest packet = 466
+Flit latency average = 45.9332
+	minimum = 7
+	maximum = 221
+Slowest flit = 466
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0110391
+	minimum = 0.006 (at node 36)
+	maximum = 0.0185 (at node 60)
+Accepted packet rate average = 0.00701563
+	minimum = 0.0025 (at node 20)
+	maximum = 0.014 (at node 57)
+Injected flit rate average = 0.0110391
+	minimum = 0.006 (at node 36)
+	maximum = 0.0185 (at node 60)
+Accepted flit rate average= 0.00701563
+	minimum = 0.0025 (at node 20)
+	maximum = 0.014 (at node 57)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 579 (0 measured)
+latency change    = 0
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.52057

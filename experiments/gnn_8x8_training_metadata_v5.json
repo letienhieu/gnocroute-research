@@ -1,0 +1,23 @@
+{
+  "G": 8,
+  "N": 64,
+  "pattern_names": [
+    "uniform",
+    "transpose",
+    "hotspot_c28",
+    "hotspot_c0",
+    "bit_reversal",
+    "shuffle",
+    "transpose2",
+    "hotspot_light"
+  ],
+  "num_patterns": 8,
+  "total_pairs": 4032,
+  "generated_at": "2026-05-16 22:58:54",
+  "target_shape": [
+    8,
+    64,
+    64,
+    4
+  ]
+}

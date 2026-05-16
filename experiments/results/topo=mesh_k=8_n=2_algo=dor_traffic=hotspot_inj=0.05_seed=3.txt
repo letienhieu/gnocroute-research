@@ -1,0 +1,54 @@
+BEGIN Configuration File: /tmp/tmpxwlg8boc.cfg
+topology = mesh;
+k = 8; n = 2;
+routing_function = dor;
+num_vcs = 4; vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip; sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2; routing_delay = 1;
+vc_alloc_delay = 1; sw_alloc_delay = 1;
+input_speedup = 2; output_speedup = 1; internal_speedup = 1.0;
+traffic = hotspot;
+packet_size = 1; sim_type = latency;
+injection_rate = 0.05;
+warmup_periods = 3; sample_period = 1000; sim_count = 100;
+seed = 3;
+
+END Configuration File: /tmp/tmpxwlg8boc.cfg
+Class 0:
+Packet latency average = 225.665
+	minimum = 7
+	maximum = 945
+Network latency average = 184.858
+	minimum = 7
+	maximum = 945
+Slowest packet = 83
+Flit latency average = 184.858
+	minimum = 7
+	maximum = 945
+Slowest flit = 83
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0155469
+	minimum = 0.004 (at node 35)
+	maximum = 0.055 (at node 12)
+Accepted packet rate average = 0.00770312
+	minimum = 0 (at node 0)
+	maximum = 0.493 (at node 11)
+Injected flit rate average = 0.0155469
+	minimum = 0.004 (at node 35)
+	maximum = 0.055 (at node 12)
+Accepted flit rate average= 0.00770312
+	minimum = 0 (at node 0)
+	maximum = 0.493 (at node 11)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 561 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.124419

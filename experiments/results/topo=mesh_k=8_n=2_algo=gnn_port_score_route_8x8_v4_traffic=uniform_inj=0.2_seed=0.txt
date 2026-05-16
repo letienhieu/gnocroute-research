@@ -1,0 +1,57 @@
+BEGIN Configuration File: /tmp/tmpuvd4ktcp.cfg
+topology = mesh;
+k = 8; n = 2;
+routing_function = gnn_port_score_route_8x8_v4;
+num_vcs = 4; vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip; sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2; routing_delay = 1;
+vc_alloc_delay = 1; sw_alloc_delay = 1;
+input_speedup = 2; output_speedup = 1; internal_speedup = 1.0;
+traffic = uniform;
+packet_size = 1; sim_type = latency;
+injection_rate = 0.2;
+warmup_periods = 3; sample_period = 1000; sim_count = 100;
+seed = 0;
+
+END Configuration File: /tmp/tmpuvd4ktcp.cfg
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+Class 0:
+Packet latency average = 38.668
+	minimum = 7
+	maximum = 161
+Network latency average = 37.1172
+	minimum = 7
+	maximum = 161
+Slowest packet = 61
+Flit latency average = 37.1172
+	minimum = 7
+	maximum = 161
+Slowest flit = 61
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0129375
+	minimum = 0.006 (at node 59)
+	maximum = 0.019 (at node 7)
+Accepted packet rate average = 0.004
+	minimum = 0 (at node 31)
+	maximum = 0.008 (at node 24)
+Injected flit rate average = 0.0129375
+	minimum = 0.006 (at node 59)
+	maximum = 0.019 (at node 7)
+Accepted flit rate average= 0.004
+	minimum = 0 (at node 31)
+	maximum = 0.008 (at node 24)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 636 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.310423

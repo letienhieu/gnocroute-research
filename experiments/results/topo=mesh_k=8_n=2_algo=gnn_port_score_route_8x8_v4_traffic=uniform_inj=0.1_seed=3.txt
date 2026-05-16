@@ -1,0 +1,56 @@
+BEGIN Configuration File: /tmp/tmpebzdbtga.cfg
+topology = mesh;
+k = 8; n = 2;
+routing_function = gnn_port_score_route_8x8_v4;
+num_vcs = 4; vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip; sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2; routing_delay = 1;
+vc_alloc_delay = 1; sw_alloc_delay = 1;
+input_speedup = 2; output_speedup = 1; internal_speedup = 1.0;
+traffic = uniform;
+packet_size = 1; sim_type = latency;
+injection_rate = 0.1;
+warmup_periods = 3; sample_period = 1000; sim_count = 100;
+seed = 3;
+
+END Configuration File: /tmp/tmpebzdbtga.cfg
+WARNING: Possible network deadlock.
+WARNING: Possible network deadlock.
+Class 0:
+Packet latency average = 44.2286
+	minimum = 7
+	maximum = 179
+Network latency average = 43.9053
+	minimum = 7
+	maximum = 179
+Slowest packet = 326
+Flit latency average = 43.9053
+	minimum = 7
+	maximum = 179
+Slowest flit = 326
+Fragmentation average = 0
+	minimum = 0
+	maximum = 0
+Injected packet rate average = 0.0154844
+	minimum = 0.009 (at node 45)
+	maximum = 0.028 (at node 7)
+Accepted packet rate average = 0.00676562
+	minimum = 0 (at node 20)
+	maximum = 0.016 (at node 27)
+Injected flit rate average = 0.0154844
+	minimum = 0.009 (at node 45)
+	maximum = 0.028 (at node 7)
+Accepted flit rate average= 0.00676562
+	minimum = 0 (at node 20)
+	maximum = 0.016 (at node 27)
+Injected packet length average = 1
+Accepted packet length average = 1
+Total in-flight flits = 622 (0 measured)
+latency change    = 1
+throughput change = 1
+Average latency for class 0 exceeded 500 cycles. Aborting simulation.
+Too many sample periods needed to converge
+Simulation unstable, ending ...
+Total run time 0.337743
