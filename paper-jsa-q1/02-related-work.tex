@@ -1,0 +1,52 @@
+% ============================================================
+\section{Related Work}
+\label{sec:related}
+% ============================================================
+
+Adaptive routing for Network-on-Chip has been extensively studied over the past two decades. This section reviews relevant literature across three categories: classic heuristic adaptive routing, deep reinforcement learning approaches, and graph neural network methods for network optimization.
+
+\subsection{Classic Adaptive Routing}
+
+Early adaptive routing algorithms rely on local congestion heuristics. DyAD~\cite{dyad2004} dynamically switches between deterministic and adaptive routing modes based on congestion thresholds. When local buffer occupancy exceeds a threshold, the router switches to adaptive mode to explore alternative paths. Regional Congestion Awareness (RCA)~\cite{ebrahimi2019} extends this concept by propagating congestion information across multiple hops, providing a wider view of network state. However, these methods use fixed, hand-crafted thresholds that cannot adapt to changing traffic patterns. Moreover, they rely on local or limited-region information, missing the global topology structure.
+
+Deadlock-free adaptive routing theory was established by Duato~\cite{duato1996,duato1993}, who proved necessary and sufficient conditions for deadlock-free routing in wormhole networks. The Odd-Even turn model~\cite{odd2000} and West-First routing~\cite{glass1992} provide deadlock-free adaptive routing by restricting certain turns. While these methods are theoretically sound, they trade routing flexibility for deadlock freedom and cannot exploit global congestion information.
+
+\subsection{Deep Reinforcement Learning for NoC Routing}
+
+DRL has emerged as a promising approach for adaptive NoC routing, treating the routing problem as a sequential decision-making process. MAAR~\cite{wang2022maar} proposes multi-agent DRL where each router hosts an independent Q-network, trained with centralized experience replay. Their approach achieves 20-35\% latency improvement over XY routing across multiple traffic patterns. However, MAAR uses an MLP encoder that flattens router state into a fixed vector, discarding the spatial relationships between neighboring routers.
+
+DeepNR~\cite{deepnr2022} applies deep Q-networks to NoC routing with a focus on energy efficiency. Their approach achieves 18\% energy reduction while maintaining performance. GARNN~\cite{garnn2023} incorporates graph attention mechanisms but stops short of providing a full NoC-specific GNN architecture for routing decisions. Q-learning based approaches~\cite{choudhary2026} have been proposed for fault-tolerant routing, using RL to bypass faulty links.
+
+The key limitation across DRL-based approaches is their use of fully-connected (MLP) encoders. An MLP processes router state as a flat vector of features, without any mechanism to capture the graph structure of the NoC topology. As we demonstrate in Section~\ref{sec:problem}, topology structure significantly affects congestion patterns, suggesting that topology-aware representations could improve routing decisions.
+
+\subsection{Graph Neural Networks for Network Routing}
+
+GNNs have been applied to routing in wide-area and software-defined networks (SDN). G-Routing~\cite{g-routing2023} combines GNNs with DRL for routing in communication networks, demonstrating that GNN-based policies generalize across different network topologies. DRL-GNN~\cite{drl-gnn2019} uses GNN encoders for routing optimization, showing that message-passing architectures capture graph structure better than MLPs. However, these approaches target networks with millisecond-scale latency requirements, not the nanosecond-scale constraints of on-chip routing.
+
+For chip design, GNNs have been used for NoC topology optimization. NOCTOPUS~\cite{noctopus2026} predicts NoC performance metrics using GNNs, achieving high accuracy for latency and throughput prediction. Circuit-GNN~\cite{mirhoseini2021} uses graph representations for chip placement optimization, demonstrating that GNNs can learn useful representations of circuit structure. GraphNoC~\cite{graphnoc2024} applies GNNs for application-specific FPGA NoC performance prediction, showing that GNN embeddings correlate with post-implementation metrics. However, these works use GNNs for prediction rather than routing decisions.
+
+Inference latency is the critical barrier to GNN-based on-chip routing. A single GNN forward pass on a 64-node graph requires approximately $10^6$ cycles on a CPU~\cite{xiao2024}, while NoC routing decisions must complete within $5-10$ cycles~\cite{wang2022maar}. This three-order-of-magnitude gap necessitates architectural innovations such as periodic policy optimization~\cite{periodic2025} or dedicated GNN accelerators~\cite{xiao2024}.
+
+\subsection{Position of This Work}
+
+To our knowledge, this work is the first to combine GNN-based topology encoding with DRL-based routing decisions specifically designed for NoC, with a practical periodic optimization scheme that addresses the inference latency constraint. Table~\ref{tab:related} positions our work relative to existing approaches.
+
+\begin{table}[h]
+\centering
+\caption{Comparison with representative works}
+\label{tab:related}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lccccl}
+\toprule
+\textbf{Work} & \textbf{Encoder} & \textbf{Decision} & \textbf{Objective} & \textbf{Latency-aware} \\
+\midrule
+DyAD~\cite{dyad2004} & Threshold & Local heuristic & Latency & Yes \\
+RCA~\cite{ebrahimi2019} & Regional & Heuristic & Latency & Yes \\
+MAAR~\cite{wang2022maar} & MLP & DRL & Latency & Yes \\
+DeepNR~\cite{deepnr2022} & MLP & DQN & Latency+Energy & Yes \\
+G-Routing~\cite{g-routing2023} & GNN & DRL & Latency & No (WAN) \\
+GNNocRoute (Ours) & \textbf{GNN} & \textbf{DRL} & \textbf{Latency+Energy} & \textbf{Yes} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

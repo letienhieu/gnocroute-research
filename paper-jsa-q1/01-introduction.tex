@@ -1,0 +1,40 @@
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+% ============================================================
+
+Network-on-Chip (NoC) has become the dominant communication paradigm for multi-core processors, AI accelerators~\cite{journeys}, and System-on-Chips (SoCs). As the number of integrated cores scales from tens to hundreds~\cite{amd2023,apple2023}, the efficiency of the on-chip interconnection network directly determines overall system performance in terms of latency, throughput, and energy consumption~\cite{dally2004}.
+
+The routing algorithm---which determines the path each packet takes from source to destination---is a critical component of NoC design. Conventional deterministic algorithms such as XY dimension-order routing (DOR)~\cite{dally2004} are widely used due to their simplicity and deadlock freedom. However, deterministic routing always selects the same path for each source-destination pair regardless of network congestion, leading to structural bottlenecks.
+
+Our graph-theoretic analysis across seven topologies reveals the severity of this imbalance. Under XY routing on an $8\times8$ mesh, the congestion imbalance---measured as the coefficient of variation ($\sigma/\mu$) of link utilization---reaches 0.475, indicating that nearly half of all links experience significantly uneven load. Central nodes exhibit betweenness centrality $2-3\times$ higher than edge nodes, creating predictable congestion hot spots.
+
+Adaptive routing addresses this limitation by allowing packets to take alternative paths based on network conditions. Research in adaptive NoC routing has evolved through three generations:
+
+\begin{enumerate}
+    \item \textbf{Heuristic adaptive routing}~\cite{dyad2004,ebrahimi2019} uses local congestion thresholds to dynamically select output ports. While simple to implement, these approaches rely on hand-crafted heuristics that cannot capture global traffic patterns.
+    
+    \item \textbf{Deep Reinforcement Learning (DRL) routing}~\cite{wang2022maar,deepnr2022,garnn2023} employs neural network agents trained via RL to make routing decisions. These methods achieve 20--35\% latency improvement over deterministic routing. However, they use Multi-Layer Perceptron (MLP) encoders that process flattened router states as vectors, discarding the inherent graph structure of the NoC.
+    
+    \item \textbf{Graph Neural Network (GNN) routing for wide-area networks}~\cite{g-routing2023,drl-gnn2019} applies message-passing neural networks to network routing problems. GNNs naturally operate on graph-structured data and can capture topological relationships. However, these approaches target software-defined networks with millisecond-scale latency requirements, not the nanosecond-scale constraints of on-chip routing.
+\end{enumerate}
+
+The fundamental challenge in applying GNN-based routing to NoC is \textbf{inference latency}. A single GNN forward pass on a 64-node graph requires approximately $10^6$ cycles on a CPU, while each NoC routing decision must complete within $5-10$ cycles~\cite{wang2022maar}. This three-order-of-magnitude gap renders per-packet GNN inference infeasible.
+
+\textbf{Our approach:} GNNocRoute-DRL addresses this challenge through \textbf{periodic policy optimization}. Instead of making per-packet routing decisions with GNNs, we propose a two-timescale architecture: (1) a \textit{slow timescale} where GNN inference runs periodically (every $10^4-10^5$ cycles) to extract topology-aware node embeddings, and (2) a \textit{fast timescale} where lightweight routing decisions use pre-computed embeddings and local congestion information.
+
+\subsection{Contributions}
+
+This paper makes the following contributions:
+
+\begin{enumerate}
+    \item \textbf{Congestion analysis:} Quantitative demonstration across seven topologies that deterministic routing creates structurally predictable bottlenecks, with congestion imbalance of 0.475 on $8\times8$ mesh.
+    
+    \item \textbf{GNN-topology correlation:} Experimental evidence showing GATv2 node embeddings correlate with betweenness centrality ($|r| = 0.978$), validating that topology-aware representations emerge implicitly.
+    
+    \item \textbf{GNNocRoute-DRL framework:} A complete architecture combining GNN-based topology encoding with DRL-based routing decisions, designed for periodic operation under NoC timing constraints.
+    
+    \item \textbf{Comprehensive evaluation:} Cycle-accurate simulation (BookSim2, 252 configurations) comparing four routing algorithms across three topologies and three traffic patterns, demonstrating up to 22\% latency reduction for hotspot traffic.
+    
+    \item \textbf{Cross-topology transfer:} Demonstration that GNN embeddings pre-trained on small topologies transfer effectively to larger configurations (Pearson $r \approx 0.96$), reducing re-training cost.
+\end{enumerate}

@@ -1,0 +1,78 @@
+% ============================================================
+\section{Experimental Setup}
+\label{sec:experiments}
+% ============================================================
+
+We evaluate GNNocRoute-DRL through cycle-accurate simulations using BookSim2~\cite{booksim}, a widely-used NoC simulator. This section describes the experimental methodology, baselines, traffic patterns, and evaluation metrics.
+
+\subsection{Simulation Environment}
+
+Simulation parameters are summarized in Table~\ref{tab:simparams}.
+
+\begin{table}[h]
+\centering
+\caption{BookSim2 simulation parameters}
+\label{tab:simparams}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Simulator & BookSim2 2.0 \\
+Topologies & Mesh $4\times4$, Mesh $8\times8$, Torus $4\times4$ \\
+Flit size & 32 bytes \\
+Buffer depth & 4 flits/VC \\
+Virtual channels & 4 \\
+Routing computation & 1 cycle \\
+Warmup periods & 3 \\
+Sample period & 1,000 cycles \\
+Simulation length & 100,000 cycles \\
+Packet size & 1 flit \\
+\midrule
+Seeds per config & 5 \\
+Total configs & 252 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Baselines}
+
+We compare GNNocRoute-DRL against four routing algorithms:
+
+\begin{itemize}
+    \item \textbf{XY (DOR):} Dimension-order routing, the most widely used deterministic algorithm for mesh NoCs. Packets are routed first along the X dimension, then Y.
+    \item \textbf{Adaptive XY/YX:} An adaptive variant that selects between XY and YX paths based on local congestion at the source router.
+    \item \textbf{Minimal Adaptive:} Routes packets along any minimal path, with port selection based on buffer occupancy.
+    \item \textbf{Valiant:} Randomized routing that sends packets to a random intermediate node before forwarding to the destination, providing load balancing at the cost of non-minimal paths.
+\end{itemize}
+
+\subsection{Traffic Patterns}
+
+We evaluate under three synthetic traffic patterns:
+
+\begin{itemize}
+    \item \textbf{Uniform Random:} Each node sends packets to a uniformly random destination. Represents balanced workloads.
+    \item \textbf{Transpose:} Node $(i,j)$ sends to node $(j,i)$. Creates diagonal traffic with moderate stress on specific links.
+    \item \textbf{Hotspot:} $10\%$ of traffic targets a single hotspot node $(3,3)$ in the center. Tests congestion handling under skewed loads.
+\end{itemize}
+
+\subsection{Evaluation Metrics}
+
+We measure four metrics:
+
+\begin{itemize}
+    \item \textbf{Average packet latency:} Mean number of cycles from packet injection to tail flit reception.
+    \item \textbf{Throughput:} Accepted flit rate measured as flits/cycle/node.
+    \item \textbf{Energy consumption:} Total energy including router dynamic power, link power, and buffer power.
+    \item \textbf{Saturation throughput:} Injection rate at which latency exceeds $3\times$ the zero-load latency.
+\end{itemize}
+
+\subsection{DRL Training Setup}
+
+The DRL agent is trained offline using the NoC routing environment (Section~\ref{sec:method}). Training consists of:
+\begin{enumerate}
+    \item GNN encoder pre-training: 500 episodes on Mesh $4\times4$
+    \item DQN training: 500 episodes on Mesh $4\times4$, 300 on Mesh $8\times8$
+    \item Transfer learning: Pre-trained weights from $4\times4$ fine-tuned on $8\times8$ for 100 episodes
+\end{enumerate}
+
+All training runs on CPU (Intel Xeon, 2.3 GHz) using PyTorch 2.8 and PyTorch Geometric 2.6.

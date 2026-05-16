@@ -1,0 +1,132 @@
+% ============================================================
+\section{Proposed Method: GNNocRoute-DRL}
+\label{sec:method}
+% ============================================================
+
+This section describes the GNNocRoute-DRL framework. We first establish the problem formulation and motivation from graph-theoretic analysis, then detail the system architecture, GNN encoder, DRL agent, and periodic optimization scheme.
+
+\subsection{Graph-Theoretic Motivation}
+\label{sec:problem}
+
+A NoC is naturally represented as a directed weighted graph $G = (V, E, X_v, X_e)$, where $V$ is the set of routers ($|V| = N$), $E$ is the set of links ($|E| = M$), $X_v \in \mathbb{R}^{N \times d_v}$ are node features, and $X_e \in \mathbb{R}^{M \times d_e}$ are edge features.
+
+\textbf{Node features (8 dimensions):} buffer occupancy per port (4), congestion level (1), VC utilization (1), and relative position (2).
+
+\textbf{Edge features (3 dimensions):} link utilization, average packet latency, energy per flit.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\columnwidth]{fig3-architecture.png}
+\caption{GNNocRoute-DRL architecture: (1) NoC state monitored periodically; (2) GATv2 encoder extracts topology-aware embeddings; (3) DQN agent selects routing policy; (4) routing tables updated.}
+\label{fig:architecture}
+\end{figure}
+
+\subsubsection{Congestion Imbalance Analysis}
+
+We analyzed seven NoC topologies using NetworkX~\cite{networkx2008}. Table~\ref{tab:metrics} shows that deterministic XY routing creates significant congestion imbalance, particularly in larger meshes.
+
+\begin{table}[h]
+\centering
+\caption{Graph metrics across NoC topologies}
+\label{tab:metrics}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Topology} & \textbf{Nodes} & \textbf{Diameter} & \textbf{BC Max} & \textbf{CI} \\
+\midrule
+Mesh $4\times4$ & 16 & 6 & 0.25 & 0.382 \\
+Mesh $8\times8$ & 64 & 14 & 0.18 & \textbf{0.475} \\
+Torus $4\times4$ & 16 & 4 & 0.13 & 0.251 \\
+Fat-Tree k=4 & 14 & 2 & \textbf{0.42} & 0.341 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+The congestion imbalance (CI) is defined as $\sigma/\mu$ of link utilization across all links under uniform traffic. Mesh $8\times8$ exhibits the highest CI (0.475), meaning nearly half of all links carry disproportionate load. Central nodes have BC values $2-3\times$ higher than edge nodes, creating structural bottlenecks regardless of traffic pattern.
+
+This finding motivates GNN-based encoding: if graph structure determines bottleneck locations, then a GNN that naturally captures graph structure can learn to identify and avoid these bottlenecks.
+
+\subsection{GNN Encoder Architecture}
+
+We adopt GATv2~\cite{gatv2} as the primary GNN encoder, with GCN~\cite{gcn2017} used as an ablation baseline. The encoder processes the NoC graph and produces node embeddings $h_v \in \mathbb{R}^{d}$ for each router $v \in V$.
+
+\subsubsection{GATv2 Encoder}
+
+The GATv2 encoder consists of two layers:
+
+\begin{equation}
+h_v^{(1)} = \sigma\left( \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(1)} W^{(1)} x_u \right)
+\end{equation}
+
+\begin{equation}
+h_v^{(2)} = \sigma\left( \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(2)} W^{(2)} h_u^{(1)} \right)
+\end{equation}
+
+where $\alpha_{vu}$ are attention coefficients computed as:
+
+\begin{equation}
+\alpha_{vu} = \frac{\exp\left( \mathbf{a}^{\top} \text{LeakyReLU}\left( W_1 h_v \| W_2 h_u \| W_e e_{vu} \right) \right)}{\sum_{w \in \mathcal{N}(v)} \exp\left( \mathbf{a}^{\top} \text{LeakyReLU}\left( W_1 h_v \| W_2 h_w \| W_e e_{vw} \right) \right)}
+\end{equation}
+
+Key hyperparameters: hidden dimension 64, 4 attention heads, edge features integrated via $W_e$, dropout rate 0.1, and ELU activation between layers.
+
+\subsection{DRL Agent Design}
+
+\subsubsection{State Representation}
+
+The state $s_t$ at time $t$ consists of the GNN node embeddings for all routers. For a single router making a routing decision, the state is its own node embedding $h_v$, which encodes:
+\begin{itemize}
+    \item Structural information (centrality, topology position) from the GNN
+    \item Dynamic state (buffer occupancy, congestion) from node features
+    \item Neighbor information through message passing
+\end{itemize}
+
+\subsubsection{Action Space}
+
+The action $a_t \in \{N, S, E, W\}$ selects the output port for the current packet. Following Duato's theory~\cite{duato1996}, we ensure deadlock freedom by restricting actions to physically admissible directions and applying turn-model constraints.
+
+\subsubsection{Reward Function}
+
+The multi-objective reward function jointly optimizes three metrics:
+
+\begin{equation}
+r_t = -\alpha \cdot \frac{L_t}{L_{ref}} - \beta \cdot \frac{E_t}{E_{ref}} + \gamma \cdot \frac{T_t}{T_{ref}}
+\end{equation}
+
+where $L_t$, $E_t$, and $T_t$ are measured latency, energy, and throughput at update interval $t$, normalized by reference values from XY routing. The weights $\alpha = 1.0$, $\beta = 0.5$, $\gamma = 0.3$ are tuned via Bayesian optimization.
+
+\subsubsection{DQN Architecture}
+
+We use Double DQN~\cite{ddqn2016} with experience replay. The Q-network is a 3-layer MLP (128 $\rightarrow$ 256 $\rightarrow$ 128 $\rightarrow$ 4) with ReLU activations and LayerNorm. Key training parameters are summarized in Table~\ref{tab:hyperparams}.
+
+\begin{table}[h]
+\centering
+\caption{DRL training hyperparameters}
+\label{tab:hyperparams}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Learning rate & $10^{-3}$ \\
+Discount factor $\gamma$ & 0.99 \\
+Batch size & 64 \\
+Replay buffer size & 50,000 \\
+Target network update & 200 steps \\
+Exploration ($\epsilon$) & 0.5 $\rightarrow$ 0.01 \\
+Update period $P$ & 5,000 cycles \\
+\midrule
+Total parameters & $\sim$40K \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Periodic Policy Optimization}
+
+The key architectural innovation is the two-timescale periodic optimization scheme:
+
+\textbf{Slow timescale} (every $P = 5,000$ cycles): The GNN encoder runs a forward pass on the current NoC state graph, computing updated node embeddings. The DRL agent uses these embeddings to update the routing policy (Q-values). This takes approximately $10^6$ cycles for GNN inference, which is acceptable at $5,000$-cycle intervals on a dedicated controller.
+
+\textbf{Fast timescale} (every packet): Each router uses its current policy and node embedding to select output ports. This is a simple table lookup requiring $<10$ cycles, well within the timing budget.
+
+The update frequency $P$ represents a design trade-off: smaller $P$ means more responsive adaptation but higher computational overhead; larger $P$ reduces overhead but may miss rapid traffic changes. We evaluate this trade-off in Section~\ref{sec:results}.

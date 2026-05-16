@@ -1,0 +1,22 @@
+% ============================================================
+\section{Discussion}
+\label{sec:discussion}
+% ============================================================
+
+\subsection{Performance Trade-offs Across Load Regimes}
+
+Our experimental results reveal a significant performance trade-off for adaptive routing across different load regimes. Under high injection rates (IR $\geq 0.10$), adaptive routing consistently outperforms XY, achieving latency reductions of up to 27.3\% on Mesh $4\times4$ at IR 0.20. However, under low to moderate loads (IR $0.02-0.07$), adaptive routing exhibits notable performance degradation: up to 44.4\% higher latency on Mesh $8\times8$ and 26.5\% on Mesh $16\times16$ compared to XY routing.
+
+This phenomenon can be explained by the interplay between congestion-aware routing heuristics and network states at low loads. When the network is lightly loaded, buffer occupancy is inherently low across all routers, causing the credit-based congestion signals to lack stable gradients for congestion avoidance. Consequently, the adaptive routing algorithm may select non-minimal paths that deviate from standard Manhattan-distance routes, introducing additional hops without any tangible congestion alleviation benefits. This hop-count overhead is particularly pronounced on larger meshes, where the latency penalty of sub-optimal routing decisions compounds over longer trajectories.
+
+\subsection{Practical Implications}
+
+The load-dependent performance of adaptive routing has vital implications for real-world deployment. In many-core systems where utilization varies dynamically, a hybrid strategy---enforcing strictly minimal XY routing under low loads and activating adaptive routing only when a specific congestion threshold is breached---would harness the strengths of both paradigms. This empirical observation strongly validates the GNN-based periodic policy optimization framework proposed in our work. Since our DRL agent already incorporates global network load into its state representation, dynamically adjusting the update period $P$ or enforcing a hybrid switching policy becomes a natural extension of our architecture.
+
+\subsection{Comparison with Prior Work}
+
+Our findings provide critical context to results reported in the current literature. MAAR~\cite{wang2022maar} demonstrated a 20--35\% latency improvement for DRL-based routing under high-load scenarios but did not comprehensively evaluate low-load regimes. Similarly, DeepNR~\cite{deepnr2022} showcased an 18\% energy reduction primarily under moderate to high traffic conditions. Our study fills this critical gap by providing a systematic characterization of adaptive routing performance across the full operational load spectrum (IR 0.001 to 0.50), bringing to light the inherent trade-offs that must be mitigated in practical AI-driven routing designs.
+
+\subsection{Limitations and Future Work}
+
+We acknowledge several limitations in our current study. First, our evaluation relies on synthetic traffic patterns; validation against real application execution traces (e.g., PARSEC) is required for comprehensive profiling. Second, the current adaptive routing degradation at low loads underscores the necessity for load-aware policy switching, which we will formally integrate in future iterations. Third, our energy analysis utilizes BookSim2's built-in analytical power models; post-layout simulations using commercial EDA tools would provide higher-fidelity hardware cost estimations. Finally, transitioning from unsupervised structural encodings to supervised fine-tuning using cycle-accurate routing performance data remains a promising avenue for improving the PPO agent's baseline policy.
