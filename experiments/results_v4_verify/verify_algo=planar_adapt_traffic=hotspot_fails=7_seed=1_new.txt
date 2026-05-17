@@ -1,0 +1,38 @@
+BEGIN Configuration File: /tmp/bs2_new_lYxp.cfg
+topology = mesh;
+k = 4;
+n = 2;
+routing_function = planar_adapt;
+num_vcs = 4;
+vc_buf_size = 4;
+wait_for_tail_credit = 1;
+vc_allocator = islip;
+sw_allocator = islip;
+alloc_iters = 1;
+credit_delay = 2;
+routing_delay = 1;
+vc_alloc_delay = 1;
+sw_alloc_delay = 1;
+input_speedup = 2;
+output_speedup = 1;
+internal_speedup = 1.0;
+traffic = hotspot;
+packet_size = 1;
+sim_type = latency;
+injection_rate = 0.05;
+warmup_periods = 3;
+sample_period = 1000;
+sim_count = 100;
+link_failures = 7;
+fail_seed = 1;
+seed = 1;
+
+END Configuration File: /tmp/bs2_new_lYxp.cfg
+failure at node 6, channel 3 (1/7)
+failure at node 9, channel 0 (2/7)
+failure at node 9, channel 3 (3/7)
+failure at node 15, channel 1 (4/7)
+failure at node 9, channel 2 (5/7)
+failure at node 10, channel 0 (6/7)
+failure at node 5, channel 1 (7/7)
+Error in network_0/router_2_1 : There seem to be faults in d_i and d_{i+1}

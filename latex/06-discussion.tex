@@ -36,6 +36,15 @@ Crucially, GNNocRoute achieves exactly zero throughput degradation at 7 link fai
 
 The fundamental mechanism driving this robustness is the GNN's intrinsic capacity to learn generalized structural dependencies rather than memorizing deterministic paths. Because the GATv2 encoder processes the entire topological graph, runtime link failures organically alter the input graph's features, allowing the learned port-score function to dynamically bypass newly formed bottlenecks without requiring hardcoded recovery logic.
 
+Figure~\ref{fig:attention} provides direct visualization of this mechanism. Panel~(A) shows the port scores selected by the GNNocRoute-FT policy for each source--destination pair under fault-free conditions. Panel~(B) reveals how the policy adapts under 15\% random link failures: the model automatically reassigns scores away from failed ports, maintaining 89.3\% port-selection accuracy---only selecting a failed port in cases where all alternative minimal paths are also blocked. Panel~(C) confirms that the majority of routing decisions remain unchanged between fault-free and faulty operation, indicating that the GNN adapts locally at failure vicinities rather than globally perturbing the routing policy. Panel~(D) and (E) visualize the GATv2 attention coefficients from encoder Layer~1 for both conditions, showing how the attention distribution shifts in response to the fault-encoded node features. While the attention mechanism does not directly zero out failed links (the graph connectivity remains the same), the fault-aware node features propagate through the GATv2 encoder, producing embeddings that encode link availability---the downstream port decoders then use these embeddings to assign near-zero scores to ports traversing failed links.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{fig5-attention-fault.png}
+\caption{GNNocRoute-FT port-score and attention visualization on Mesh~$4\times4$ under fault-free and 15\% random link failure conditions. Panels~(A--C) show selected-port heatmaps; Panels~(D--E) show GATv2 Layer~1 attention weights; Panel~(F) summarizes key metrics. The model maintains 89.3\% port-selection accuracy under faults, with failed-link attention redistributing through the GNN encoder.}
+\label{fig:attention}
+\end{figure}
+
 \subsection{Zero-Shot Generalization}
 \label{sec:zero-shot}
 
@@ -79,6 +88,7 @@ We acknowledge several limitations that motivate future research directions:
     \item \textbf{Compounded congestion and faults:} While GNNocRoute excels under isolated fault scenarios, it underperforms Planar Adaptive routing when severe hotspots coincide perfectly with dense link failures (-13.9\% latency disadvantage). Future iterations require fault-aware training regimes that explicitly model these pathological intersections.
     \item \textbf{GNN inference acceleration:} Although the 5.5 ms inference latency is completely decoupled from the critical routing path, reducing this overhead is essential for workloads requiring high-frequency policy updates. Exploring model quantization (FP16/INT8) and dedicated GNN accelerators remains a priority.
     \item \textbf{Online DRL adaptation:} Transitioning from static precomputed port scores to fully online DRL agents that periodically update routing decisions based on real-time congestion observations will provide even finer-grained routing control.
+    \item \textbf{Probabilistic port selection:} We explored replacing the deterministic argmax over port scores with a softmax-based stochastic sampling strategy. While this approach naturally distributes traffic across multiple minimal paths, our experiments on Mesh~$4\times4$ reveal that probabilistic selection incurs a 2--3\% latency penalty under moderate uniform loads (0.08--0.10 flits/cycle/node) and slightly reduces the saturation throughput compared to deterministic argmax. The stochastic noise introduced by sampling occasionally selects suboptimal ports, increasing average hop count and counteracting any path-diversity benefit at the $4\times4$ scale. This cost-benefit trade-off may reverse on larger meshes (e.g., $8\times8$ or $16\times16$) where path diversity is substantially higher---a direction left for future investigation.
     \item \textbf{Realistic workload validation:} Our evaluation relies on synthetic traffic patterns. Validating GNNocRoute against trace-driven full-system benchmarks (e.g., PARSEC, SPLASH-2) is required for comprehensive profiling.
     \item \textbf{Energy-latency co-optimization:} Integrating dynamic per-packet energy consumption into the DRL reward function will enable Pareto-optimal routing policies that actively balance latency and thermal limits.
 \end{itemize}

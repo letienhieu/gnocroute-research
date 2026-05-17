@@ -12,6 +12,8 @@ A NoC is naturally represented as a directed weighted graph $G = (V, E, X_v, X_e
 
 To capture both transient congestion and structural topology variations (including link failures), we expand the node features to a \textbf{12-dimensional fault-aware representation}: buffer occupancy per port (4), fault status per local link (4), VC utilization (1), historical congestion level (1), and relative physical coordinates (2).
 
+After each policy update cycle ($P$ cycles), node features are collected and normalized as follows: buffer occupancy (max 8 flits) is divided by 8; fault status is binary (0/1); VC utilization is a ratio (0--1); historical congestion is updated via exponential moving average with $\alpha=0.3$; and coordinates are normalized to $[0,1]$ according to mesh dimensions. Edge features (link utilization, latency, energy) are similarly min-max normalized to $[0,1]$. This normalization ensures gradient stability during GNN training.
+
 \subsubsection{Congestion Imbalance Analysis}
 
 We analyzed seven standard NoC topologies using NetworkX. As demonstrated in Table~\ref{tab:metrics}, deterministic XY routing creates a significant congestion imbalance.

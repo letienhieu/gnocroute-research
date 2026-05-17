@@ -21,6 +21,7 @@ These results establish a robust foundation for next-generation AI-driven routin
     \item Validating the framework against trace-driven full-system workloads (e.g., PARSEC, SPLASH-2) within closed-loop execution environments.
     \item Integrating dynamic per-packet energy consumption into the DRL reward function for Pareto-optimal thermal-latency balancing.
     \item Exploring model quantization (FP16/INT8) and dedicated hardware accelerators to further compress the offline GNN inference latency for ultra-high-frequency policy updates.
+    \item \textbf{Probabilistic port selection:} Extending the current hardmax port selection to a probabilistic routing scheme where port scores define a probability distribution over minimal directions. This would enable stochastic load balancing under high-utilization scenarios, mitigating the path imbalance observed under uniform traffic at intermediate injection rates.
 \end{enumerate}
 
 \subsection*{Acknowledgments}

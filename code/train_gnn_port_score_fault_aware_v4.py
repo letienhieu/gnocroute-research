@@ -153,7 +153,7 @@ def generate_faulty_links(num_fails, fail_seed, G=4):
 def get_active_ports(node, faulty_links, G=4):
     """Return set of active (non-faulty) ports for a given node."""
     all_ports = set(range(4))
-    faulty = {(node, p) for p in range(4) if (node, p) in faulty_links}
+    faulty = {p for p in range(4) if (node, p) in faulty_links}
     return all_ports - faulty
 
 
@@ -1140,7 +1140,7 @@ if __name__ == '__main__':
     t0 = time.time()
     
     # Also compute fault-free baseline (7-dim) for comparison
-    model_v4, scores_v4 = train_fault_aware(epochs=300, lr=3e-4, seed=12345)
+    model_v4, scores_v4 = train_fault_aware(epochs=500, lr=3e-4, seed=12345)
     
     print(f"\nTotal training + evaluation time: {time.time()-t0:.1f}s")
     

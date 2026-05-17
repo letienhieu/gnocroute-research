@@ -12,7 +12,7 @@ Our graph-theoretic analysis across seven topologies reveals the severity of thi
 Adaptive routing addresses this limitation by allowing packets to take alternative paths based on network conditions. Research in adaptive NoC routing has evolved through three generations:
 
 \begin{enumerate}
-    \item \textbf{Heuristic adaptive routing}~\cite{dyad2004,ebrahimi2019} uses local congestion thresholds to dynamically select output ports. While simple to implement, these approaches rely on hand-crafted heuristics that cannot capture global traffic patterns.
+    \item \textbf{Heuristic adaptive routing}~\cite{dyad2004,ebrahimi2019} uses local congestion thresholds to dynamically select output ports. Heuristic adaptive routing can be further categorized into oblivious routing (e.g., Valiant), which randomizes path selection without congestion feedback; partially adaptive routing (e.g., Planar Adaptive, DyAD), which uses turn-model constraints with local congestion thresholds; and fully adaptive routing (e.g., RCA), which requires virtual channels for complete path flexibility. While simple to implement, these approaches rely on hand-crafted heuristics that cannot capture global traffic patterns.
     
     \item \textbf{Deep Reinforcement Learning (DRL) routing}~\cite{wang2022maar,deepnr2022,garnn2023} employs neural network agents trained via RL to make routing decisions. These methods achieve 20--35\% latency improvement over deterministic routing. However, they use Multi-Layer Perceptron (MLP) encoders that process flattened router states as vectors, discarding the inherent graph structure of the NoC.
     
