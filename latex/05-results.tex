@@ -13,6 +13,7 @@ Table~\ref{tab:latency} compares average packet latency for all five algorithms 
 \centering
 \caption{Average packet latency (cycles) on Mesh $4\times4$ at injection rate 0.1 (mean $\pm$ 95\% CI, 5 seeds)}
 \label{tab:latency}
+\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
@@ -23,7 +24,7 @@ Adaptive XY/YX & $20.0\pm0.0$ & $20.4\pm0.1$ & $>$500 (saturated)\\
 Minimal Adaptive & $21.4\pm0.1$ & $22.2\pm0.1$ & $436.7\pm13.7$\\
 Planar Adaptive & $22.0\pm0.1$ & $54.0\pm0.6$ & $\mathbf{176.3\pm7.2}$\\
 ROMM & $20.3\pm0.1$ & $21.7\pm0.3$ & $219.7\pm11.9$\\
-Valiant & $39.7\pm0.1$ & $43.7\pm2.0$ & $>$500 (saturated)\\
+Valiant & $39.7\pm0.1$ & $43.7\pm2.0$ & $>$500 (saturated)\\\
 GNNocRoute-PPO & $19.8\pm0.0$ & $44.0\pm2.4$ & $473.4\pm21.7$\\
 \bottomrule
 \end{tabular}%
@@ -39,6 +40,13 @@ Key observations from Table~\ref{tab:latency}:
 
 
 \subsection{Injection Rate Analysis}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig1-latency-hotspot.png}
+\caption{Average packet latency as a function of injection rate under hotspot traffic patterns across different mesh topologies.}
+\label{fig:latency-rate}
+\end{figure}
 
 Figure~\ref{fig:latency-rate} shows latency as a function of injection rate for each traffic pattern.
 
@@ -129,6 +137,7 @@ Planar Adaptive & 20.29 & 24.90 & 65.15 & 72.44 \\
 \end{tabular}%
 }
 \vspace{2mm}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 \textbf{Metric} & \textbf{DOR} & \textbf{GNN v4} & \textbf{PlanAdapt} \\
@@ -136,7 +145,8 @@ Planar Adaptive & 20.29 & 24.90 & 65.15 & 72.44 \\
 Max latency degradation & +2.5\% & \textbf{+2.5\%} & +257\% \\
 Throughput degradation (7 faults) & -0.5\% & \textbf{-0.0\%} & -37.1\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 Several key observations emerge:

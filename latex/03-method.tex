@@ -52,6 +52,13 @@ where $\alpha_{vu}$ are the dynamic attention coefficients computed across the n
 
 \subsection{Port-Scoring Decoupling Architecture}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=2\columnwidth]{fig3-architecture-flow.png}
+\caption{Overall operational workflow of the GNNocRoute-DRL framework, highlighting the decoupled execution between offline GNN re-encoding and single-cycle online port-score table lookups.}
+\label{fig:architecture}
+\end{figure*}
+
 The fundamental bottleneck in prior DRL-based NoC routing is the necessity of executing a neural network forward pass for every packet. GNNocRoute completely circumvents this via a decoupled port-scoring architecture.
 
 During the offline training phase, the agent learns a continuous scoring function for each of the four physical directional ports $p \in \{N, S, E, W\}$. These learned policies are then projected and quantized into a \textbf{precomputed weight table}. For a Mesh $4\times4$, the complete mapping of all source-destination pairs to $4$-directional port scores fits into a highly compact \textbf{4 KB ROM weight table}.
