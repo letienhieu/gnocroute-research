@@ -519,7 +519,7 @@ def main():
                  fontsize=13, fontweight='bold', y=1.005)
 
     output_path = os.path.join(output_dir, 'fig5-attention-fault.png')
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close(fig)
     print(f"\n[6] Saved: {output_path}")
 
