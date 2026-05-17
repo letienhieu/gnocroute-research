@@ -308,8 +308,8 @@ def main():
     # ---- Create figure ----
     print(f"\n[5] Creating visualization...")
 
-    fig = plt.figure(figsize=(18, 11))
-    gs = fig.add_gridspec(3, 4, hspace=0.35, wspace=0.28)
+    fig = plt.figure(figsize=(14, 10))
+    gs = fig.add_gridspec(3, 4, hspace=0.45, wspace=0.30, height_ratios=[1, 1, 1.2])
 
     # ======== Row 0-1: PORT SCORE DISTRIBUTION (4 ports in top row) ========
     print("    Panel A: Port score distributions...")
@@ -511,14 +511,16 @@ def main():
     
     ax_stats.text(0.5, 0.5, stats_text, transform=ax_stats.transAxes,
                   fontsize=9, ha='center', va='center', family='monospace',
-                  bbox=dict(boxstyle='round', facecolor='#f0f0f0', alpha=0.8))
+                  bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
+                            edgecolor='gray', alpha=0.85))
     ax_stats.set_title('(F) Key Metrics', fontsize=11, fontweight='bold')
 
     plt.suptitle('GNNocRoute-FT: Fault-Aware Routing via GATv2 Port Scores\n'
                  f'(Mesh 4×4, {num_fails} random link failures, ∼15%)',
-                 fontsize=13, fontweight='bold', y=1.005)
+                 fontsize=13, fontweight='bold', y=1.01)
 
     output_path = os.path.join(output_dir, 'fig5-attention-fault.png')
+    # constrained_layout is set on the figure; no tight_layout needed
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close(fig)
     print(f"\n[6] Saved: {output_path}")

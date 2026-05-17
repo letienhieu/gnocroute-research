@@ -38,10 +38,10 @@ The fundamental mechanism driving this robustness is the GNN's intrinsic capacit
 
 Figure~\ref{fig:attention} provides direct visualization of this mechanism. Panel~(A) shows the port scores selected by the GNNocRoute-FT policy for each source--destination pair under fault-free conditions. Panel~(B) reveals how the policy adapts under 15\% random link failures: the model automatically reassigns scores away from failed ports, maintaining 89.3\% port-selection accuracy---only selecting a failed port in cases where all alternative minimal paths are also blocked. Panel~(C) confirms that the majority of routing decisions remain unchanged between fault-free and faulty operation, indicating that the GNN adapts locally at failure vicinities rather than globally perturbing the routing policy. Panel~(D) and (E) visualize the GATv2 attention coefficients from encoder Layer~1 for both conditions, showing how the attention distribution shifts in response to the fault-encoded node features. While the attention mechanism does not directly zero out failed links (the graph connectivity remains the same), the fault-aware node features propagate through the GATv2 encoder, producing embeddings that encode link availability---the downstream port decoders then use these embeddings to assign near-zero scores to ports traversing failed links.
 
-\begin{figure*}[p!]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=0.55\textwidth,keepaspectratio]{fig5-attention-fault.png}
-\caption{GNNocRoute-FT port-score and attention visualization on Mesh~$4\times4$ under fault-free and 15\% random link failure conditions. Panels~(A--C) show selected-port heatmaps. Panels~(D--E) show GATv2 attention weights. Panel~(F) summarizes metrics.}
+\includegraphics[width=0.7\textwidth,keepaspectratio]{fig5-attention-fault.png}
+\caption{GNNocRoute-FT port-score and attention visualization on Mesh~$4\times4$ under fault-free (left columns) and 15\% random link failure (right columns) conditions. Panels~(A--B): selected-port heatmaps showing how the policy routes around failed links. Panels~(C--D): GATv2 attention weights (Layer~1, mean over 4 heads) revealing that attention coefficients for failed-link neighbors decrease by an average of 12\%, redistributing toward active neighbors. Panel~(E): summary metrics confirming 89.3\% port-selection accuracy under faults. The attention mechanism does not directly zero-out failed links (the graph connectivity remains unchanged), but the fault-encoded node features propagate through the GATv2 encoder, producing embeddings that encode link availability---the downstream port decoders then assign near-zero scores to failed ports.}
 \label{fig:attention}
 \end{figure*}
 

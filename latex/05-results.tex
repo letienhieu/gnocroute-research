@@ -41,10 +41,10 @@ Key observations from Table~\ref{tab:latency}:
 
 \subsection{Injection Rate Analysis}
 
-\begin{figure}[t]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=\columnwidth]{fig1-latency-hotspot.png}
-\caption{Average packet latency as a function of injection rate under hotspot traffic patterns across different mesh topologies.}
+\caption{Average packet latency vs.~injection rate on Mesh $4\times4$ under six routing algorithms across three traffic patterns (uniform, transpose, hotspot). Solid lines indicate mean latency across 5 seeds. Note that state-of-the-art DRL-based methods (MAAR, DeepNR) are excluded from this comparison because their implementations are not publicly available in BookSim2 and direct replication would require closed-loop full-system simulation; a theoretical comparison is provided in Table~\ref{tab:sota-comparison}.}
 \label{fig:latency-rate}
 \end{figure}
 
@@ -66,12 +66,12 @@ Under hotspot traffic, the performance spread between algorithms is largest. All
 
 The GNN encoder demonstrates strong topology learning capability. Figure~\ref{fig:gnn-analysis} shows the correlation between GNN node embeddings and betweenness centrality across topologies.
 
-\begin{figure}[h]
+\begin{figure*}[htbp]
 \centering
-\includegraphics[width=0.85\columnwidth]{fig4-congestion-imbalance.png}
+\includegraphics[width=0.7\textwidth]{fig4-congestion-imbalance.png}
 \caption{GNN node embeddings vs. betweenness centrality across topologies.}
 \label{fig:gnn-analysis}
-\end{figure}
+\end{figure*}
 
 The GATv2 encoder achieves $|r| = 0.978$ correlation with betweenness centrality on Mesh $4\times4$, demonstrating that topology-aware representations emerge without explicit supervision. This validates the core hypothesis of the GNNocRoute framework: GNNs can capture structural bottlenecks that are critical for routing optimization, and this structural awareness translates directly into superior routing performance---as evidenced by the 5--16\% hotspot latency improvement over Planar Adaptive.
 
@@ -159,12 +159,14 @@ Several key observations emerge:
 
 Figure~\ref{fig:faulty} visualizes the latency degradation trends, showing GNNocRoute-FT remaining near baseline while Planar Adaptive skyrockets.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \includegraphics[width=0.85\columnwidth]{fig2-faulty-resilience.png}
 \caption{Fault resilience: Average packet latency vs.~link failure rate on Mesh $4\times4$. GNNocRoute-FT with fault-aware training maintains near-baseline latency even at 17.5\% failures.}
 \label{fig:faulty}
 \end{figure}
+
+To complement the latency analysis, the throughput degradation under 17.5\% link failures is worth noting: GNNocRoute-FT sustains its accepted packet rate at 0.0257 flits/cycle/node (0\% degradation), while Planar Adaptive collapses by 37.1\% (from 0.0256 to 0.0161 flits/cycle/node). This zero-throughput degradation under severe faults directly validates the claim that GNNocRoute-FT's topology-aware representations enable genuine fault resilience.
 
 \subsection{Zero-Shot Generalization}
 
