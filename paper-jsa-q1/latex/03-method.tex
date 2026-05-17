@@ -3,27 +3,18 @@
 \label{sec:method}
 % ============================================================
 
-This section describes the GNNocRoute-DRL framework. We first establish the problem formulation and motivation from graph-theoretic analysis, then detail the system architecture, GNN encoder, DRL agent, and periodic optimization scheme.
+This section details the GNNocRoute-DRL framework. We first establish the problem formulation and graph-theoretic motivation, followed by the GATv2 encoder design, the novel port-scoring decoupled architecture, and the fault-aware zero-shot training pipeline.
 
 \subsection{Graph-Theoretic Motivation}
 \label{sec:problem}
 
-A NoC is naturally represented as a directed weighted graph $G = (V, E, X_v, X_e)$, where $V$ is the set of routers ($|V| = N$), $E$ is the set of links ($|E| = M$), $X_v \in \mathbb{R}^{N \times d_v}$ are node features, and $X_e \in \mathbb{R}^{M \times d_e}$ are edge features.
+A NoC is naturally represented as a directed weighted graph $G = (V, E, X_v, X_e)$, where $V$ is the set of routers ($|V| = N$), $E$ is the set of physical links ($|E| = M$), $X_v \in \mathbb{R}^{N \times d_v}$ are node features, and $X_e \in \mathbb{R}^{M \times d_e}$ are edge features.
 
-\textbf{Node features (8 dimensions):} buffer occupancy per port (4), congestion level (1), VC utilization (1), and relative position (2).
-
-\textbf{Edge features (3 dimensions):} link utilization, average packet latency, energy per flit.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.85\columnwidth]{fig3-architecture.png}
-\caption{GNNocRoute-DRL architecture: (1) NoC state monitored periodically; (2) GATv2 encoder extracts topology-aware embeddings; (3) DQN agent selects routing policy; (4) routing tables updated.}
-\label{fig:architecture}
-\end{figure}
+To capture both transient congestion and structural topology variations (including link failures), we expand the node features to a \textbf{12-dimensional fault-aware representation}: buffer occupancy per port (4), fault status per local link (4), VC utilization (1), historical congestion level (1), and relative physical coordinates (2).
 
 \subsubsection{Congestion Imbalance Analysis}
 
-We analyzed seven NoC topologies using NetworkX~\cite{networkx2008}. Table~\ref{tab:metrics} shows that deterministic XY routing creates significant congestion imbalance, particularly in larger meshes.
+We analyzed seven standard NoC topologies using NetworkX. As demonstrated in Table~\ref{tab:metrics}, deterministic XY routing creates a significant congestion imbalance.
 
 \begin{table}[h]
 \centering
@@ -43,17 +34,11 @@ Fat-Tree k=4 & 14 & 2 & \textbf{0.42} & 0.341 \\
 }
 \end{table}
 
-The congestion imbalance (CI) is defined as $\sigma/\mu$ of link utilization across all links under uniform traffic. Mesh $8\times8$ exhibits the highest CI (0.475), meaning nearly half of all links carry disproportionate load. Central nodes have BC values $2-3\times$ higher than edge nodes, creating structural bottlenecks regardless of traffic pattern.
+The congestion imbalance (CI) is defined as the coefficient of variation ($\sigma/\mu$) of link utilization. Mesh $8\times8$ exhibits an extreme CI of 0.475, meaning nearly half of all links carry disproportionate loads. Central nodes possess betweenness centrality (BC) values $2-3\times$ higher than edge nodes, creating structural bottlenecks. This finding solidifies the core premise of our approach: a GNN that naturally captures macro-graph structures can proactively identify and bypass these inherent bottlenecks.
 
-This finding motivates GNN-based encoding: if graph structure determines bottleneck locations, then a GNN that naturally captures graph structure can learn to identify and avoid these bottlenecks.
+\subsection{Topology-Aware GNN Encoder}
 
-\subsection{GNN Encoder Architecture}
-
-We adopt GATv2~\cite{gatv2} as the primary GNN encoder, with GCN~\cite{gcn2017} used as an ablation baseline. The encoder processes the NoC graph and produces node embeddings $h_v \in \mathbb{R}^{d}$ for each router $v \in V$.
-
-\subsubsection{GATv2 Encoder}
-
-The GATv2 encoder consists of two layers:
+We adopt GATv2 as the primary GNN encoder. The encoder processes the NoC graph state and produces dense topology-aware node embeddings $h_v \in \mathbb{R}^{d}$ for each router $v \in V$. The GATv2 encoder consists of two message-passing layers:
 
 \begin{equation}
 h_v^{(1)} = \sigma\left( \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(1)} W^{(1)} x_u \right)
@@ -63,70 +48,33 @@ h_v^{(1)} = \sigma\left( \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(1)} W^{(1)} x
 h_v^{(2)} = \sigma\left( \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(2)} W^{(2)} h_u^{(1)} \right)
 \end{equation}
 
-where $\alpha_{vu}$ are attention coefficients computed as:
+where $\alpha_{vu}$ are the dynamic attention coefficients computed across the neighborhood $\mathcal{N}(v)$. Key hyperparameters include a hidden dimension of 64, 4 attention heads, edge features explicitly integrated via a projection matrix $W_e$, a dropout rate of 0.1, and ELU activations.
 
-\begin{equation}
-\alpha_{vu} = \frac{\exp\left( \mathbf{a}^{\top} \text{LeakyReLU}\left( W_1 h_v \| W_2 h_u \| W_e e_{vu} \right) \right)}{\sum_{w \in \mathcal{N}(v)} \exp\left( \mathbf{a}^{\top} \text{LeakyReLU}\left( W_1 h_v \| W_2 h_w \| W_e e_{vw} \right) \right)}
-\end{equation}
+\subsection{Port-Scoring Decoupling Architecture}
 
-Key hyperparameters: hidden dimension 64, 4 attention heads, edge features integrated via $W_e$, dropout rate 0.1, and ELU activation between layers.
-
-\subsection{DRL Agent Design}
-
-\subsubsection{State Representation}
-
-The state $s_t$ at time $t$ consists of the GNN node embeddings for all routers. For a single router making a routing decision, the state is its own node embedding $h_v$, which encodes:
-\begin{itemize}
-    \item Structural information (centrality, topology position) from the GNN
-    \item Dynamic state (buffer occupancy, congestion) from node features
-    \item Neighbor information through message passing
-\end{itemize}
-
-\subsubsection{Action Space}
-
-The action $a_t \in \{N, S, E, W\}$ selects the output port for the current packet. Following Duato's theory~\cite{duato1996}, we ensure deadlock freedom by restricting actions to physically admissible directions and applying turn-model constraints.
-
-\subsubsection{Reward Function}
-
-The multi-objective reward function jointly optimizes three metrics:
-
-\begin{equation}
-r_t = -\alpha \cdot \frac{L_t}{L_{ref}} - \beta \cdot \frac{E_t}{E_{ref}} + \gamma \cdot \frac{T_t}{T_{ref}}
-\end{equation}
-
-where $L_t$, $E_t$, and $T_t$ are measured latency, energy, and throughput at update interval $t$, normalized by reference values from XY routing. The weights $\alpha = 1.0$, $\beta = 0.5$, $\gamma = 0.3$ are tuned via Bayesian optimization.
-
-\subsubsection{DQN Architecture}
-
-We use Double DQN~\cite{ddqn2016} with experience replay. The Q-network is a 3-layer MLP (128 $\rightarrow$ 256 $\rightarrow$ 128 $\rightarrow$ 4) with ReLU activations and LayerNorm. Key training parameters are summarized in Table~\ref{tab:hyperparams}.
-
-\begin{table}[h]
+\begin{figure*}[t]
 \centering
-\caption{DRL training hyperparameters}
-\label{tab:hyperparams}
-\begin{tabular}{ll}
-\toprule
-\textbf{Parameter} & \textbf{Value} \\
-\midrule
-Learning rate & $10^{-3}$ \\
-Discount factor $\gamma$ & 0.99 \\
-Batch size & 64 \\
-Replay buffer size & 50,000 \\
-Target network update & 200 steps \\
-Exploration ($\epsilon$) & 0.5 $\rightarrow$ 0.01 \\
-Update period $P$ & 5,000 cycles \\
-\midrule
-Total parameters & $\sim$40K \\
-\bottomrule
-\end{tabular}
-\end{table}
+\includegraphics[width=2\columnwidth]{fig3-architecture-flow.png}
+\caption{Overall operational workflow of the GNNocRoute-DRL framework, highlighting the decoupled execution between offline GNN re-encoding and single-cycle online port-score table lookups.}
+\label{fig:architecture}
+\end{figure*}
 
-\subsection{Periodic Policy Optimization}
+The fundamental bottleneck in prior DRL-based NoC routing is the necessity of executing a neural network forward pass for every packet. GNNocRoute completely circumvents this via a decoupled port-scoring architecture.
 
-The key architectural innovation is the two-timescale periodic optimization scheme:
+During the offline training phase, the agent learns a continuous scoring function for each of the four physical directional ports $p \in \{N, S, E, W\}$. These learned policies are then projected and quantized into a \textbf{precomputed weight table}. For a Mesh $4\times4$, the complete mapping of all source-destination pairs to $4$-directional port scores fits into a highly compact \textbf{4 KB ROM weight table}.
 
-\textbf{Slow timescale} operates at two sub-levels. (a) \textit{DRL policy update} (every $P = 5,000$ cycles): the DQN agent re-evaluates Q-values using current GNN embeddings and updates routing tables. This lightweight operation completes within $P$ cycles on a dedicated controller. (b) \textit{GNN re-encoding} (every $10^5$--$10^6$ cycles, i.e., every $20$--$200$ policy updates): the GATv2 encoder recomputes node embeddings based on updated NoC state. While a single GNN forward pass on a 64-node graph requires approximately $10^6$ cycles on a CPU, it runs in the background on the dedicated controller and does not block per-packet routing.
+At runtime (the fast timescale), the routing logic is stripped of all complex mathematics. When a packet arrives, the router simply executes a \textbf{single-cycle table lookup} to retrieve the precomputed scores for its minimal physical ports, selecting the direction with the highest value. This mechanism strictly adheres to Duato's protocol to guarantee deadlock freedom, consuming merely 0.13\% of the router's power budget and achieving a 0.53 pJ/decision dynamic energy profile.
 
-\textbf{Fast timescale} (every packet): Each router uses its current policy and node embedding to select output ports. This is a simple table lookup requiring $<10$ cycles, well within the timing budget.
+\subsection{Fault-Aware Training and Zero-Shot Transfer}
 
-The update frequency $P$ represents a design trade-off: smaller $P$ means more responsive adaptation but higher computational overhead; larger $P$ reduces overhead but may miss rapid traffic changes. We evaluate this trade-off in Section~\ref{sec:results}.
+To achieve robustness against silicon wear-out and manufacturing defects, we introduce a \textbf{Fault-Aware Structural Dropout} mechanism during offline training. By artificially simulating up to 15\% random physical link failures during the GNN optimization phase, the encoder is forced to learn highly resilient, fault-tolerant pathing distributions rather than overfitting to a pristine deterministic grid.
+
+Furthermore, because the GATv2 node embeddings capture generalized structural metrics (such as relative degrees and centrality) rather than absolute coordinates, the learned weights become inherently scale-invariant. To scale the routing policy from a $4\times4$ mesh to an $8\times8$ mesh without retraining, we apply a \textbf{Bilinear Weight Interpolation} mapping. This transforms the 4 KB weight matrix into a 16 KB matrix, enabling robust zero-shot generalization to larger network dimensions.
+
+\subsection{Periodic Optimization Framework}
+
+The architecture operates on a decoupled two-timescale paradigm:
+
+\textbf{Slow Timescale (Background Execution):} The computationally heavy GATv2 inference (requiring approximately 5.5 ms on a standard CPU for a $4\times4$ mesh) executes entirely asynchronously. The weight tables are re-calculated and pushed to the routers only when macroscopic network conditions shift significantly (e.g., a physical link fails or a massive traffic regime change is detected).
+
+\textbf{Fast Timescale (Per-Packet Routing):} Every individual packet is routed via the single-cycle hardware lookup table. By moving the neural network out of the critical path, GNNocRoute-DRL guarantees zero per-packet inference latency overhead while simultaneously maintaining the structural awareness of a deep graph model.

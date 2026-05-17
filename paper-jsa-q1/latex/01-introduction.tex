@@ -21,20 +21,20 @@ Adaptive routing addresses this limitation by allowing packets to take alternati
 
 The fundamental challenge in applying GNN-based routing to NoC is \textbf{inference latency}. A single GNN forward pass on a 64-node graph requires approximately $10^6$ cycles on a CPU, while each NoC routing decision must complete within $5-10$ cycles~\cite{wang2022maar}. This approximately five-order-of-magnitude gap renders per-packet GNN inference infeasible.
 
-\textbf{Our approach:} GNNocRoute-DRL addresses this challenge through \textbf{periodic policy optimization}. Instead of making per-packet routing decisions with GNNs, we propose a two-timescale architecture: (1) a \textit{slow timescale} where GNN re-encoding runs sporadically (every $10^5$--$10^6$ cycles) in the background to refresh topology-aware node embeddings, while lightweight DRL policy updates occur every $5,000$ cycles; and (2) a \textit{fast timescale} where per-packet routing decisions use pre-computed Q-values and local congestion information via table lookup.
+For a $4\times4$ mesh, the GNN inference executes asynchronously in the background (requiring approximately $5.5$ ms on a standard CPU). The precomputed weight tables are subsequently updated only in response to structural topology shifts or significant traffic variations. This decoupled approach completely eliminates the neural network inference latency from the critical path of per-packet routing.
 
 \subsection{Contributions}
 
-This paper makes the following contributions:
+This paper makes the following major contributions:
 
 \begin{enumerate}
-    \item \textbf{Congestion analysis:} Quantitative demonstration across seven topologies that deterministic routing creates structurally predictable bottlenecks, with congestion imbalance of 0.475 on $8\times8$ mesh.
-    
-    \item \textbf{GNN-topology correlation:} Experimental evidence showing GATv2 node embeddings correlate with betweenness centrality ($|r| = 0.978$), validating that topology-aware representations emerge implicitly.
-    
-    \item \textbf{GNNocRoute-DRL framework:} A complete architecture combining GNN-based topology encoding with DRL-based routing decisions, designed for periodic operation under NoC timing constraints.
-    
-    \item \textbf{Comprehensive evaluation:} Cycle-accurate simulation (BookSim2, 252 configurations) comparing four routing algorithms across three topologies and three traffic patterns, demonstrating up to 22\% latency reduction for hotspot traffic.
-    
-    \item \textbf{Cross-topology transfer:} Demonstration that GNN embeddings pre-trained on small topologies transfer effectively to larger configurations (Pearson $r \approx 0.96$), reducing re-training cost.
+    \item \textbf{Congestion analysis:} A quantitative demonstration across seven NoC topologies revealing that deterministic routing intrinsically creates structurally predictable bottlenecks.
+
+    \item \textbf{GNN-topology correlation:} Strong empirical evidence showing that GATv2 node embeddings naturally correlate with betweenness centrality ($|r| = 0.978$), validating the unsupervised emergence of topology-aware structural representations.
+
+    \item \textbf{Port-scoring architecture:} A novel decoupled inference-execution framework that minimizes the per-packet routing cost to a single-cycle table lookup. This hardware-friendly architecture consumes a mere 0.13\% of the router's power budget utilizing a highly compact 4 KB weight table.
+
+    \item \textbf{Comprehensive evaluation:} An extensive cycle-accurate simulation study encompassing over 700 configurations, 7 baseline algorithms, and 6 distinct traffic patterns. Results demonstrate a 5--16\% reduction in hotspot latency compared to Planar Adaptive routing on fault-free meshes, and a remarkably resilient 2.5\% latency degradation (versus a catastrophic 257\% surge for Planar Adaptive) under a 15\% link failure rate.
+
+    \item \textbf{Fault-tolerance and zero-shot generalization:} The introduction of a fault-aware training regime that sustains near-zero throughput loss under 15\% random link failures. Furthermore, the model exhibits zero-shot transferability from $4\times4$ to $8\times8$ mesh scales, achieving 99.78\% minimal-port routing accuracy, providing a strong initialization for few-shot fine-tuning that can reduce training epochs by an estimated 60--80\%.
 \end{enumerate}

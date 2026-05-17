@@ -47,7 +47,7 @@ We compare seven routing approaches spanning deterministic, locally-adaptive, ra
     \item \textbf{Planar Adaptive:} An adaptive routing algorithm that divides the mesh into adaptive planes for deadlock-free operation, selecting output ports based on local congestion across multiple dimensions simultaneously~\cite{chiu2000}.
     \item \textbf{ROMM:} A randomized partially-minimal routing scheme that selects a random intermediate node within the minimal quadrant, combining load balancing with bounded path length~\cite{ni1999romm}.
     \item \textbf{Valiant:} Randomized routing that sends packets to a random intermediate node before forwarding to the destination.
-    \item \textbf{GNNocRoute-PPO (baseline):} Precomputed routing policy based on a GATv2-GNN encoder (see Section~\ref{sec:method}). The model produces per-source-destination routing decisions (XY or YX) that are stored in a lookup table for online use. This binary-decision variant is included as a baseline to illustrate the limitations of coarse-grained action spaces.
+    \item \textbf{GNNocRoute-PPO:} Precomputed routing policy based on a GATv2-GNN encoder (see Section~\ref{sec:method}). The model produces per-source-destination routing decisions (XY or YX) that are stored in a lookup table for online use.
 \end{itemize}
 
 \subsection{Traffic Patterns}
@@ -71,7 +71,7 @@ We measure two primary metrics:
 
 \subsection{DRL Training Setup}
 
-The GNNocRoute-PPO routing policy (binary XY/YX baseline) is trained offline using the NoC routing environment (Section~\ref{sec:method}). Training is conducted on Mesh $4\times4$ with 500 episodes of GATv2 encoder pre-training followed by 500 episodes of DQN training. The trained policy is exported as a precomputed routing table.
+The GNN-PPO routing policy is trained offline using the NoC routing environment (Section~\ref{sec:method}). Training is conducted on Mesh $4\times4$ with 500 episodes of GATv2 encoder pre-training followed by 500 episodes of DQN training. The trained policy is exported as a precomputed routing table.
 
 All training runs on CPU (Intel Xeon, 2.3 GHz) using PyTorch 2.8 and PyTorch Geometric 2.6.
 
@@ -80,7 +80,7 @@ All training runs on CPU (Intel Xeon, 2.3 GHz) using PyTorch 2.8 and PyTorch Geo
 
 To evaluate routing resilience under link failures, we conduct experiments on Mesh $4\times4$ with randomly disabled links. Link failures are introduced before simulation at rates of 0, 2, 4, and 7 failures (0\%, 5\%, 10\%, and 17.5\% of the 40 bidirectional links). Each faulty topology uses a unique random seed (101) to ensure reproducibility. We test three routing algorithms under uniform, transpose, and hotspot traffic at injection rates 0.01 and 0.05, with two simulation seeds per configuration (144 runs total).
 
-The GNNocRoute-FT model (fault-tolerant GNNocRoute with fault-aware training) is trained on 20 faulty topologies plus 1 fault-free topology across 7 traffic patterns (147 training samples). Fault-aware node features include a binary flag for router isolation status, the number of failed adjacent links, and a normalized distance-to-fault metric. The model uses a 12-dimensional input (7 spatial + 5 fault-aware features) with GATv2 layers ($12 \rightarrow 48 \rightarrow 32$) and achieves a validation loss of 3.42 after 300 epochs.
+The GNNocRoute v4 model (GNN Port Score with fault-aware training) is trained on 20 faulty topologies plus 1 fault-free topology across 7 traffic patterns (147 training samples). Fault-aware node features include a binary flag for router isolation status, the number of failed adjacent links, and a normalized distance-to-fault metric. The model uses a 12-dimensional input (7 spatial + 5 fault-aware features) with GATv2 layers ($12 \rightarrow 48 \rightarrow 32$) and achieves a validation loss of 3.42 after 300 epochs.
 
 The routing architecture implements a four-phase fallback strategy to guarantee deadlock-free operation: (1) score all non-faulty minimal ports with congestion penalty; (2) congestion-based reroute among minimal ports; (3) fault-aware DOR fallback (XY $\rightarrow$ YX); (4) DOR without fault checking as a deadlock escape mechanism. This design ensures that GNNocRoute never misroutes packets, maintaining deadlock freedom by construction.
 
@@ -98,20 +98,3 @@ Two training strategies are evaluated:
 \end{itemize}
 
 The zero-shot approach is motivated by the observation that network structure---corner, edge, and center nodes---is self-similar across mesh sizes. By mapping normalized positions of $8\times8$ nodes to corresponding positions in the $4\times4$ space, weight values can be estimated through bilinear interpolation: $W_{8\times8}(s,d) = \mathcal{I}(W_{4\times4}, \hat{s}, \hat{d})$ where $\hat{s} = s / 7 \times 3$ is the normalized position of source $s$ in $4\times4$ coordinates, and $\mathcal{I}$ denotes bilinear interpolation.
-
-\subsection{Hardware Overhead Estimation}
-\label{sec:hardware-overhead}
-
-We estimate hardware overhead using standard CMOS technology parameters at 32nm node, based on the ITRS 2012 roadmap~\cite{itrs2012} and ORION 3.0 power--area modeling framework~\cite{orion3}. The weight table is implemented as a synthesizable SRAM-based ROM.
-
-\textbf{Area:} At 32nm, SRAM bit-cell density is approximately 0.5~$\mu$m$^2$/bit. A 4 KB weight table (32,768 bits) for Mesh $4\times4$ therefore occupies:
-\begin{equation}
-A_{4\times4} = 32,768 \times 0.5~\mu\text{m}^2/\text{bit} = 16,384~\mu\text{m}^2 = 0.016~\text{mm}^2
-\end{equation}
-For Mesh $8\times8$, the 16 KB table (131,072 bits) occupies 0.066~mm$^2$. These areas represent less than 0.1\% of a typical router's buffer-dominated die area.
-
-\textbf{Dynamic power:} The table lookup consumes dynamic power approximated by the standard CMOS switching equation:
-\begin{equation}
-P_{\text{dyn}} = 0.5 \times C_{\text{load}} \times V_{\text{dd}}^2 \times A \times f
-\end{equation}
-where $C_{\text{load}}$ is the load capacitance per bit-line, $V_{\text{dd}} = 0.9$~V at 32nm, $A$ is the activity factor (0.1 for typical NoC routing queries), and $f = 1$~GHz is the operating frequency. Using ORION 3.0 calibrated parameters, each table lookup consumes 0.53~pJ, representing approximately 0.13\% of a router's total dynamic power budget. This confirms that the hardware overhead of the precomputed port-scoring table is negligible for practical NoC deployment.

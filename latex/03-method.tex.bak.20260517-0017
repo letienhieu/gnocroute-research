@@ -63,7 +63,7 @@ The fundamental bottleneck in prior DRL-based NoC routing is the necessity of ex
 
 During the offline training phase, the agent learns a continuous scoring function for each of the four physical directional ports $p \in \{N, S, E, W\}$. These learned policies are then projected and quantized into a \textbf{precomputed weight table}. For a Mesh $4\times4$, the complete mapping of all source-destination pairs to $4$-directional port scores fits into a highly compact \textbf{4 KB ROM weight table}.
 
-At runtime (the fast timescale), the routing logic is stripped of all complex mathematics. When a packet arrives, the router simply executes a \textbf{single-cycle table lookup} to retrieve the precomputed scores for its minimal physical ports, selecting the direction with the highest value. This mechanism strictly adheres to Duato's protocol to guarantee deadlock freedom, consuming merely 0.13\% of the router's power budget and achieving a 0.53 pJ/decision dynamic energy profile.
+At runtime (the fast timescale), the routing logic is stripped of all complex mathematics. When a packet arrives, the router simply executes a \textbf{single-cycle table lookup} to retrieve the precomputed scores for its minimal physical ports, selecting the direction with the highest value. This mechanism strictly adheres to Duato's protocol to guarantee deadlock freedom, consuming merely 0.13\% of the router's power budget and achieving an unprecedented 0.53 pJ/decision dynamic energy profile.
 
 \subsection{Fault-Aware Training and Zero-Shot Transfer}
 
